@@ -801,14 +801,14 @@ $(".slider").slick({
                breakpoint: 960, //화면 사이즈 960px
                settings: {
                     // 옵션 추가
-                    slidesToShow:3 
+                    slidesToShow:1 
                } 
           },
           { 
                breakpoint: 768, //화면 사이즈 768px
                settings: {	
                     // 옵션 추가
-                    slidesToShow:2 
+                    slidesToShow:1
                } 
           }
      ]

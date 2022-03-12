@@ -203,8 +203,8 @@ h6{padding:80px 0;margin:0;font-size:50px;text-align:center;color:#886b90;backgr
 html.skrollr-mobile{overflow:inherit!important}
 #skrollr-body{height:100vh}
 
-.swislide{padding:10px 0;margin-bottom:0;height:360px;z-index:0}
-.swiper-container{width:100%;height:100%;background-color:#b7247c}
+.swislide{padding: 2px 0;margin-bottom:0;height:360px;background-color: #000000;z-index:0}
+.swiper-container{width:100%;height:100%;background-color: #1f1d1f;}
 .swislide .swiper-button-prev{left:0}
 .swislide .swiper-button-next{right:0}
 .swislide .swiper-button-prev,
@@ -218,8 +218,8 @@ html.skrollr-mobile{overflow:inherit!important}
 .swislide .swiper-button-prev i:before,
 .swislide .swiper-button-next i:before{font-size:30px}
 .swiper-slide{position:relative;overflow:hidden;text-align:center;font-size:18px;background:#1f1d1f;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
-.swiper-slide>div{position:absolute;bottom:20%;left:70px;z-index:1;width:50%}
-.swiper-slide>div h5{display:inline-block;padding:0 20px;text-align:left;font-size:30px;text-shadow:0 0 2px rgba(0,0,0,.3);background-color:rgba(0,0,0,.5)}
+.swiper-slide>div{position:absolute;left: 0;bottom:20%;width: 100%;padding: 0 40px;box-sizing: border-box;z-index:1;}
+.swiper-slide>div h5{display:inline-block;padding: 5px 20px;text-align:left;font-size: 54px;text-shadow:0 0 2px rgba(0,0,0,.3);background-color:rgba(0,0,0,.5);line-height: 12px;}
 .swiper-slide>div *{color:#fff;text-shadow:0 0 2px rgb(0 0 0 / 30%);letter-spacing:-.015em}
 .swiper-slide>div p{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%;font-size:14px}
 .swiper-slide img{position:absolute;top:50%;left:50%;width:100%;height:auto;transform:translate(-50%,-29%) rotate(4deg);box-shadow:0 0 8px #000}
@@ -287,8 +287,8 @@ html.skrollr-mobile{overflow:inherit!important}
 .parallaxcss h5{margin-top:0;color:#fff;font-size:40px}
 .parallaxcss p{padding:0 20px;color:#eee;font-size:16px;background-color:rgba(0,0,0,.6)}
 
-.ftlink{position: relative;z-index: 1;margin:0 80px;margin-top:-80px;padding:30px 0 40px 0;text-align:center;font-size:0;background-color:#fff;box-shadow:0 0 15px rgba(0,0,0,.1);border-radius:3px;}
-.ftlink li{display:inline-block;margin-right:30px;vertical-align:top}
+.ftlink{position: relative;z-index: 1;margin: 0 80px 100px 80px;margin-top:-80px;padding: 30px 0 40px 0;text-align:center;font-size:0;background-color:#fff;box-shadow:0 0 15px rgba(0,0,0,.1);border-radius:3px;}
+.ftlink li{display:inline-block;margin-right: 20px;vertical-align:top}
 .ftlink li:last-child{margin-right:0}
 .ftlink a{position:relative;top:0;display:block;text-align:center}
 .ftlink i{display:inline-block;width:120px;height:50px;text-align:center;line-height:50px;font-size:32px;color:#986bc1;border-radius:4px;overflow:hidden}
@@ -298,16 +298,16 @@ html.skrollr-mobile{overflow:inherit!important}
 .ftlink a:hover p{color:#b148bb}
 .ftlink a,.ftlink a:hover,.ftlink a p,.ftlink a i,.ftlink a:hover>*{transition:all .2s}
 
-.companyinfo .movie{padding:180px 0 60px 0;text-align:center;font-size:0}
-.companyinfo .movie li{position:relative;display:inline-block;padding-right:51px;margin-right:50px;vertical-align:top;color:#303030;transition:color 1s}
+.companyinfo .movie{z-index: 1;position: relative;padding: 100px 60px 60px 60px;box-sizing: border-box;text-align:center;font-size:0}
+.companyinfo .movie li{position:relative;display:inline-block;padding-right: 41px;margin-right: 40px;vertical-align:top;color:#303030;transition:color 1s}
 .companyinfo .movie li:hover{color:#000;transition:color 1s}
 .companyinfo .movie li:before{content:'';position:absolute;top:0;right:0;width:1px;height:100%;background-color:#d6a825;vertical-align:top}
 .companyinfo .movie li:nth-child(2):before{height:50%;width:3px;background-color:#986bc1}
-.companyinfo .movie li:nth-child(3):before{top:inherit;bottom:0;height:30%;width:4px;background-color:#8cc16b}
+.companyinfo .movie li:nth-child(3):before{top:inherit;height:30%;width:4px;background-color:#8cc16b}
 .companyinfo .movie li:last-child:before{display:none}
 .companyinfo .movie li:last-child{padding-right:0;margin-right:0}
-.companyinfo .movie p{padding:20px 0}
-.companyinfo .movie strong{font-size:30px}
+.companyinfo .movie p{padding: 10px 0;}
+.companyinfo .movie strong{font-size: 20px;}
 .companyinfo .select-wrapper{display:inline-block;width:25%;margin:0 30px;box-sizing:border-box}
 .companyinfo .select-wrapper input{box-sizing:border-box;padding-left:10px;color:#ad9db1;font-size:14px;border-bottom:1px solid #856c8b!important}
 .companyinfo .dropdown-content li>a,
@@ -745,12 +745,12 @@ input[type='search']::-webkit-search-decoration,input[type='search']::-webkit-se
 
 /* slick.js */
 .slicktimeslide h3{margin:10px 0;font-size:12px;color:#fff;text-align:center}
-.slicktimeslide .sliderContainer{position:relative;width:100%;height:600px;overflow:hidden}
+.slicktimeslide .sliderContainer{position:relative;width:100%;height: 600px;overflow:hidden;}
 .slicktimeslide .slider{width:100%;height:100%}
 .slicktimeslide .slick-slide{text-align:center}
 .slicktimeslide .slick-prev:before,.slick-next:before{color:black}
 .slicktimeslide .slick-dots{bottom:-30px}
-.slicktimeslide .progressBarContainer{position:absolute;display:block;bottom:258px;right:0;padding-right:20px;transform:translate(0, 0);text-align:right;font-size:0}
+.slicktimeslide .progressBarContainer{position:absolute;display:block;bottom: 50%;width: 100%;left: 50%;margin-bottom: 24px;margin-left: -23px;transform: translate(-50%, 0);text-align: right;font-size:0}
 .slicktimeslide .progressBarContainer>div{display:inline-block;cursor:pointer;width:100px;color:white;margin-bottom:40px}
 .slicktimeslide .progressBarContainer div:last-child{margin-right:0}
 .slicktimeslide .progressBarContainer div span.progressBar{width:100%;height:1px;background-color:rgb(255 255 255 / 53%);display:block}
@@ -766,12 +766,13 @@ input[type='search']::-webkit-search-decoration,input[type='search']::-webkit-se
 .slicktimeslide .slick-loading .slick-track{visibility:hidden}
 .slicktimeslide .slick-slide{display:none;float:left;height:100%}
 [dir='rtl'] .slicktimeslide .slick-slide{float:right}
-.slicktimeslide .slick-slide img{display:block;position:absolute;top:50%;left:0;width:280%;height:auto;transform:translate(0, -50%)}
+.slicktimeslide .slick-slide h5{position:absolute;top:0;left:0}
+.slicktimeslide .slick-slide img{display:block;position:absolute;top: 0;left:0;width:100%;height:auto;transition:all .025s}
 .slicktimeslide .slick-slide.slick-loading img{display:none}
 .slicktimeslide .slick-slide.dragging img{pointer-events:none}
-.slicktimeslide .slick-initialized .slick-slide{display:block}
+.slicktimeslide .slick-initialized .slick-slide{display:block;}
 .slicktimeslide .slick-initialized .slick-slide>div,
-.slicktimeslide .slick-initialized .slick-slide>div>div{position:relative;height:100%}
+.slicktimeslide .slick-initialized .slick-slide>div>div{position:relative;height:100%;text-align: center;}
 .slicktimeslide .slick-loading .slick-slide{visibility:hidden}
 .slicktimeslide .slick-vertical .slick-slide{display:block;height:auto;border:1px solid transparent}
 .slicktimeslide .slick-arrow.slick-hidden{display:none}
@@ -885,12 +886,22 @@ body{overflow:auto;height:100%}}
 @media screen and (-webkit-min-device-pixel-ratio:0){}
 @media all and (max-width:2000px){}
 @media all and (max-width:1024px){
+  .companyinfo .movie li{width: 100%;padding: 20px 0;margin: 0;border-bottom: 1px solid #ccc;}
+  .companyinfo .movie li:before{display:none}
+  .companyinfo .movie strong{display: block;text-align: center;font-size: 34px;line-height: 40px;}
+  .companyinfo .movie p{text-align: center;padding-top:0;font-size: 12px;}
+  .ftlink li{width:33.33334%;margin: 10px 0;}
+  .swiper-slide>div h5{font-size:24px;line-height:22px}
+  .swiper-slide>div p{font-size:12px}
+  .slicktimeslide .sliderContainer{height:500px}
 .rowbox.three,
 .sidectt{display:block}
 .rowbox.three>div,
 .sidectt.ct>div:first-child, .sidectt.ct>div:last-child{width:100%}
+  .slicktimeslide .slick-slide img{height: auto;width: 100%;}
 }
 @media all and (max-width:768px){
+  
 .sidectt>div:last-child{padding:0}
 body{overflow-x:hidden}
 header.pc h1,
@@ -903,21 +914,18 @@ header.m{display:block}
 .gridbox div a{background-position:center center}
 .companyinfo select{width:100%;margin-bottom:20px;transition:all 1s;font-size:20px;height:60px}
 .companyinfo select option{font-size:16px}
-.companyinfo .movie li{width:100%}
 .companyinfo>div{padding-right:20px;padding-left:20px}
-.ftlink li{width:50%;margin:40px 0 110px 0;transform:scale(1.3)}
-.ftlink li:nth-child(odd){position:relative;left:10px}
-.ftlink li:nth-child(even){position:relative;right:10px}
-.ftlink li:nth-child(5),
-.ftlink li:nth-child(6){margin-bottom:40px}
 .rowbox.three>div,.rowbox.two>div,.rowbox.three,.rowbox.two,.sidectt.ct,.sidectt.ct>div:first-child,.sidectt.ct>div:last-child,
 .countingnb ul{display:block;width:100%}
 .countingnb li{display:inline-block;width:50%;vertical-align:top;height:140px}
 .gridctt{height:600px}
 .companyinfo .select-wrapper{width:100%;margin:0 0 20px 0}
-.companyinfo .movie li{margin:0}
+.companyinfo .movie li{}
+  .companyinfo .movie li:before{display:none}
 }
-@media all and (max-width:640px){}
+@media all and (max-width:640px){
+  .slicktimeslide .sliderContainer{height:460px}
+}
 @media all and (max-width:533px){}
 @media all and (max-width:480px){}
 @media all and (max-width:414px){}
