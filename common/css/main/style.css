@@ -777,6 +777,15 @@ input[type='search']::-webkit-search-decoration,input[type='search']::-webkit-se
 .slicktimeslide .slick-vertical .slick-slide{display:block;height:auto;border:1px solid transparent}
 .slicktimeslide .slick-arrow.slick-hidden{display:none}
 
+.loading{position:fixed;top:0;left:0;z-index:99999;width:100%;height:100%;background-color:rgba(0,0,0,.6)}
+.loading span{border:3px solid #f3f3f3;border-top:3px solid #40a3ff;border-radius:50%;width:60px;height:60px;-webkit-animation:spin 2s linear infinite;animation:spin 2s linear infinite;position:fixed;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}
+@-webkit-keyframes spin{
+  0%{-webkit-transform:translate(-50%,-50%) rotate(0deg);transform:translate(-50%,-50%) rotate(0deg)}
+  100%{-webkit-transform:translate(-50%,-50%) rotate(360deg);transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes spin{
+  0%{-webkit-transform:translate(-50%,-50%) rotate(0deg);transform:translate(-50%,-50%) rotate(0deg)}
+  100%{-webkit-transform:translate(-50%,-50%) rotate(360deg);transform:translate(-50%,-50%) rotate(360deg)}}
+
 @-webkit-keyframes bounce{
   0%,20%,53%,80%,100%{-webkit-transition-timing-function:cubic-bezier(0.215,0.61,0.355,1);transition-timing-function:cubic-bezier(0.215,0.61,0.355,1);-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
   40%,43%{-webkit-transition-timing-function:cubic-bezier(0.755,0.05,0.855,0.06);transition-timing-function:cubic-bezier(0.755,0.05,0.855,0.06);-webkit-transform:translate3d(0,-30px,0);transform:translate3d(0,-30px,0)}
@@ -907,7 +916,6 @@ body{overflow-x:hidden}
 header.pc h1,
 .topnav .depth-one{display:none}
 .searchbtn{position:fixed;right:58px;left:inherit;top:0;padding:0;width:60px}
-.searchbtn.up{top:0}
 header.m{display:block}
 .container>div:first-child.sidectt{display:block}
 .sidectt>div:first-child{display:block;width:100%}
@@ -925,6 +933,7 @@ header.m{display:block}
 }
 @media all and (max-width:640px){
   .slicktimeslide .sliderContainer{height:460px}
+  .ftlink{margin-right:20px;margin-left:20px;padding:20px;}
 }
 @media all and (max-width:533px){}
 @media all and (max-width:480px){}

@@ -28,6 +28,10 @@
 	</head>
 	<body>
 
+		<div class="loading" id="loading">
+            <span></span>
+        </div>
+
 		<!-- skrollr mobile tag -->
 		<div id="skrollr-body">
 
@@ -82,7 +86,7 @@
 				</header>
 
 				<!-- full slide menu -->
-				<header class="m">
+				<header class="hdtop m">
 					<h1><a href="#!">Avengers</a></h1>
 					<span onclick="openFullNav()" class="overlaybtn"><i class="material-icons">more_vert</i></span>
 				</header>
@@ -146,7 +150,7 @@
 					</div>
 				</div>
 
-				<button onclick="openSearch()" data-icon="search" class="searchbtn hdtop"></button>
+				<button onclick="openSearch()" data-icon="search" class="hdtop searchbtn"></button>
 				<div id="fullsearch" class="fullsearchbox wow fadeInDown">
 					<span class="closebtn"  data-icon="arrow_upward" onclick="closeSearch()" title="Close Overlay"></span>
 					<div class="content">
@@ -586,7 +590,7 @@
 								</div>
 							</div>
 
-							<h4>Number Count Animation</h4>
+							<!-- <h4>Number Count Animation</h4>
 							<h5>Scroll down Counting</h5>
 							<div class="countingnb">
 								<ul>
@@ -615,7 +619,7 @@
 										</div>
 									</li>
 								</ul>
-						   </div>
+						   </div> -->
 
 							<div class="sidectt ct pdzero">
 								<div>
@@ -1051,6 +1055,67 @@
 
 		<!-- Common Script -->
 		<script src="common/script/AutoSizing/Common.js"></script>
+
+		<script>
+            wow = new WOW({
+                boxclass: 'wow',
+                mobile: true,
+                live: true
+            })
+            wow.init();
+
+            //skrolr
+            $(function(){
+                $(window).scroll(function(event){
+                    var windowScroll = $(window).scrollTop();
+                    console.log(windowScroll);
+                });
+            });
+            skrollr.init({
+                forceHeight: false,
+                mobileCheck: function(){
+                    if((/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
+                    // mobile device
+                    }
+                }
+            });
+
+            // loading
+            $(function () {
+                $("#loading").delay("1000").fadeOut();
+            });
+
+            // number count animation
+            function numberCounter(target_frame, target_number) {
+                this.count = 0; this.diff = 0;
+                this.target_count = parseInt(target_number);
+                this.target_frame = document.getElementById(target_frame);
+                this.timer = null;
+                this.counter();
+            };
+            numberCounter.prototype.counter = function() {
+                var self = this;
+                this.diff = this.target_count - this.count;
+                if(this.diff > 0) {
+                    self.count += Math.ceil(this.diff / 10);
+                }
+                this.target_frame.innerHTML = this.count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                if(this.count < this.target_count) {
+                    this.timer = setTimeout(function() { self.counter(); }, 30);
+                } else {
+                    clearTimeout(this.timer);
+                }
+            };
+            $(document).ready(function(){ 
+                $(window).bind("scroll", function(){
+                    if($(window).scrollTop() > 2700){
+                        new numberCounter("texta", 6714783512);
+                        $(this).unbind();
+                    }
+                    return true;
+                })
+            });
+        </script>
 
 	</body>
 </html>
