@@ -35,137 +35,139 @@
 		<!-- scroll indicator -->
 		<div class="progress-container"><div class="progress-bar" id="toplinebar"></div></div>
 
+		<header class="hdtop fixed pc">
+			<div class="down">
+				<h1><a href="#!">Avengers</a></h1>
+				<div class="topnav">
+					<ul class="depth-one">
+						<li><a href="#!"><span>Hero List</span></a></li>
+						<li>
+							<a href="#!"><span>Episode</span></a>
+							<ul class="depth-two">
+								<li><a href="#!"><span>DepthB</span></a></li>
+								<li>
+									<a href="#!"><span>DepthB</span></a>
+									<ul class="depth-three" style="display:none">
+										<li><a href="#!"><span>DepthC</span></a></li>
+										<li>
+											<a href="#!"><span>DepthC</span></a>
+											<ul class="depth-four">
+												<li><a href="#!"><span>DepthD</span></a></li>
+												<li><a href="#!"><span>DepthD</span></a></li>
+												<li><a href="#!"><span>DepthD</span></a></li>
+												<li><a href="#!"><span>DepthD</span></a></li>
+											</ul>
+										</li>
+										<li><a href="#!"><span>DepthC</span></a></li>
+										<li><a href="#!"><span>DepthC</span></a></li>
+									</ul>
+								</li>
+								<li><a href="#!"><span>DepthB</span></a></li>
+								<li><a href="#!"><span>DepthB</span></a></li>
+								<li><a href="#!"><span>DepthB</span></a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#!"><span>Series</span></a>
+							<ul class="depth-two">
+								<li><a href="#!"><span>DepthB</span></a></li>
+								<li><a href="#!"><span>DepthB</span></a></li>
+								<li><a href="#!"><span>DepthB</span></a></li>
+							</ul>
+						</li>
+						<li><a href="#!"><span>Service</span></a></li>
+						<li><a href="#!"><span>Contnet View</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</header>
+
+		<!-- full slide menu -->
+		<header class="hdtop m">
+			<h1><a href="#!">Avengers</a></h1>
+			<span onclick="openFullNav()" class="overlaybtn"><i class="material-icons">more_vert</i></span>
+		</header>
+		<div id="myNav" class="navbtn overlay">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeFullNav()"><i class="material-icons">close</i></a>
+			<div class="overlay-content">
+				<ul class="collapsible pdmgzero">
+					<!-- open menu : active class add
+					li class="active"
+					collapsible-body : display:block -->
+					<li class="">
+						<div class="collapsible-header" tabindex="0">Avengers?</div>
+						<div class="collapsible-body">
+							<ul class="collapsible">
+								<li class="">
+									<a href="#!" class="collapsible-header" tabindex="0">First</a>
+									<div class="collapsible-body">
+										<a href="#!">Lorem ipsum dolor sit amet.</a>
+									</div>
+								</li>
+								<li>
+									<a href="#!" class="collapsible-header" tabindex="0">Second</a>
+									<div class="collapsible-body">
+										<a href="#!">Lorem ipsum dolor sit amet.</a>
+									</div>
+								</li>
+								<li>
+									<a href="#!" class="collapsible-header" tabindex="0">Third</a>
+									<div class="collapsible-body">
+										<a href="#!">234534234</a>
+										<a href="#!">567li,554</a>
+										<a href="#!">hkjok6786578567567567</a>
+										<a href="#!">ghj thj t tyujtyutygj ghjghjghj ghj </a>
+										<a href="#!">63^#$%^ $%^%^&$^$%^  3$%#$^#4634%^4%^$%6$5^45^$% 6</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header" tabindex="0">Episode</div>
+						<div class="collapsible-body"><a href="#!">Lorem ipsum dolor sit amet.</a></div>
+					</li>
+					<li>
+						<div class="collapsible-header" tabindex="0">Series list</div>
+						<div class="collapsible-body"><a href="#!">Lorem ipsum dolor sit amet.</a></div>
+					</li>
+					<li>
+						<div class="collapsible-header" tabindex="0">Bluetooth</div>
+						<div class="collapsible-body"><a href="#!">Lorem ipsum dolor sit amet.</a></div>
+					</li>
+					<li>
+						<div class="collapsible-header" tabindex="0">Game</div>
+						<div class="collapsible-body"><a href="#!">Lorem ipsum dolor sit amet.</a></div>
+					</li>
+					<li class="">
+						<div class="collapsible-header" tabindex="0">Contnet View</div>
+						<div class="collapsible-body"><a href="#!">Lorem ipsum dolor sit amet.</a></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<button onclick="openSearch()" data-icon="search" class="hdtop searchbtn"></button>
+		<div id="fullsearch" class="fullsearchbox wow fadeInDown">
+			<span class="closebtn"  data-icon="arrow_upward" onclick="closeSearch()" title="Close Overlay"></span>
+			<div class="content">
+				<form action="/">
+					<div class="autoline">
+						<input type="text" placeholder="Search Text .... oh" id="" autocomplete="off" required="">
+						<label><span></span></label>
+					</div>
+					<div><button type="submit" data-icon="search"></button></div>
+				</form>
+			</div>
+		</div>
+
+		<div class="emptyline"></div>
+
 		<!-- skrollr mobile tag -->
 		<div id="skrollr-body">
 
 			<div class="wrap">
-				<header class="hdtop fixed pc">
-					<div class="down">
-						<h1><a href="#!">Avengers</a></h1>
-						<div class="topnav">
-							<ul class="depth-one">
-								<li><a href="#!"><span>Hero List</span></a></li>
-								<li>
-									<a href="#!"><span>Episode</span></a>
-									<ul class="depth-two">
-										<li><a href="#!"><span>DepthB</span></a></li>
-										<li>
-											<a href="#!"><span>DepthB</span></a>
-											<ul class="depth-three" style="display:none">
-												<li><a href="#!"><span>DepthC</span></a></li>
-												<li>
-													<a href="#!"><span>DepthC</span></a>
-													<ul class="depth-four">
-														<li><a href="#!"><span>DepthD</span></a></li>
-														<li><a href="#!"><span>DepthD</span></a></li>
-														<li><a href="#!"><span>DepthD</span></a></li>
-														<li><a href="#!"><span>DepthD</span></a></li>
-													</ul>
-												</li>
-												<li><a href="#!"><span>DepthC</span></a></li>
-												<li><a href="#!"><span>DepthC</span></a></li>
-											</ul>
-										</li>
-										<li><a href="#!"><span>DepthB</span></a></li>
-										<li><a href="#!"><span>DepthB</span></a></li>
-										<li><a href="#!"><span>DepthB</span></a></li>
-									</ul>
-								</li>
-								<li>
-									<a href="#!"><span>Series</span></a>
-									<ul class="depth-two">
-										<li><a href="#!"><span>DepthB</span></a></li>
-										<li><a href="#!"><span>DepthB</span></a></li>
-										<li><a href="#!"><span>DepthB</span></a></li>
-									</ul>
-								</li>
-								<li><a href="#!"><span>Service</span></a></li>
-								<li><a href="#!"><span>Contnet View</span></a></li>
-							</ul>
-						</div>
-					</div>
-				</header>
-
-				<!-- full slide menu -->
-				<header class="hdtop m">
-					<h1><a href="#!">Avengers</a></h1>
-					<span onclick="openFullNav()" class="overlaybtn"><i class="material-icons">more_vert</i></span>
-				</header>
-				<div id="myNav" class="navbtn overlay">
-					<a href="javascript:void(0)" class="closebtn" onclick="closeFullNav()"><i class="material-icons">close</i></a>
-					<div class="overlay-content">
-						<ul class="collapsible pdmgzero">
-							<!-- open menu : active class add
-							li class="active"
-							collapsible-body : display:block -->
-							<li class="">
-								<div class="collapsible-header" tabindex="0">Avengers?</div>
-								<div class="collapsible-body">
-									<ul class="collapsible">
-										<li class="">
-											<a href="#!" class="collapsible-header" tabindex="0">First</a>
-											<div class="collapsible-body">
-												<a href="#!">Lorem ipsum dolor sit amet.</a>
-											</div>
-										</li>
-										<li>
-											<a href="#!" class="collapsible-header" tabindex="0">Second</a>
-											<div class="collapsible-body">
-												<a href="#!">Lorem ipsum dolor sit amet.</a>
-											</div>
-										</li>
-										<li>
-											<a href="#!" class="collapsible-header" tabindex="0">Third</a>
-											<div class="collapsible-body">
-												<a href="#!">234534234</a>
-												<a href="#!">567li,554</a>
-												<a href="#!">hkjok6786578567567567</a>
-												<a href="#!">ghj thj t tyujtyutygj ghjghjghj ghj </a>
-												<a href="#!">63^#$%^ $%^%^&$^$%^  3$%#$^#4634%^4%^$%6$5^45^$% 6</a>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</li>
-							<li>
-								<div class="collapsible-header" tabindex="0">Episode</div>
-								<div class="collapsible-body"><a href="#!">Lorem ipsum dolor sit amet.</a></div>
-							</li>
-							<li>
-								<div class="collapsible-header" tabindex="0">Series list</div>
-								<div class="collapsible-body"><a href="#!">Lorem ipsum dolor sit amet.</a></div>
-							</li>
-							<li>
-								<div class="collapsible-header" tabindex="0">Bluetooth</div>
-								<div class="collapsible-body"><a href="#!">Lorem ipsum dolor sit amet.</a></div>
-							</li>
-							<li>
-								<div class="collapsible-header" tabindex="0">Game</div>
-								<div class="collapsible-body"><a href="#!">Lorem ipsum dolor sit amet.</a></div>
-							</li>
-							<li class="">
-								<div class="collapsible-header" tabindex="0">Contnet View</div>
-								<div class="collapsible-body"><a href="#!">Lorem ipsum dolor sit amet.</a></div>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-				<button onclick="openSearch()" data-icon="search" class="hdtop searchbtn"></button>
-				<div id="fullsearch" class="fullsearchbox wow fadeInDown">
-					<span class="closebtn"  data-icon="arrow_upward" onclick="closeSearch()" title="Close Overlay"></span>
-					<div class="content">
-						<form action="/">
-							<div class="autoline">
-								<input type="text" placeholder="Search Text .... oh" id="" autocomplete="off" required="">
-								<label><span></span></label>
-							</div>
-							<div><button type="submit" data-icon="search"></button></div>
-						</form>
-					</div>
-				</div>
-
-				<div class="emptyline"></div>
+				
 
 				<!-- swiper slide -->
 				<div class="swislide">

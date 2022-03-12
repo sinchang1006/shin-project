@@ -81,7 +81,7 @@ ul.codelist{padding:10px 0 10px 20px;border-left:1px solid #000}
 .titexample{font-size:16px}
 .titexample:before{margin:-2px 6px 0 0}
 
-header{position:fixed;top:0;left:0;z-index:1000;width:100%;height:60px;background-color:#fff;transition:top .3s ease-in-out;box-shadow:0 0 4px rgb(0 0 0 / 10%)}
+header{display: block;position:fixed;top:0;left:0;z-index:1000;width:100%;height:60px;background-color:#fff;transition:top .3s ease-in-out;box-shadow:0 0 4px rgb(0 0 0 / 10%)}
 header.up,
 .searchbtn.up{top:-61px;-webkit-transition:top 1s ease-in-out;-o-transition:top 1s ease-in-out;transition:top 1s ease-in-out}
 h1{position:absolute;top:0;left:0;margin:0}
@@ -916,7 +916,7 @@ body{overflow-x:hidden}
 header.pc h1,
 .topnav .depth-one{display:none}
 .searchbtn{position:fixed;right:58px;left:inherit;top:0;padding:0;width:60px}
-header.m{display:block}
+header.m{display:block;}
 .container>div:first-child.sidectt{display:block}
 .sidectt>div:first-child{display:block;width:100%}
 .gridbox div a{background-position:center center}
