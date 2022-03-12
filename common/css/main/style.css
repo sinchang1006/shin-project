@@ -928,7 +928,6 @@ header.m{display:block}
 .countingnb li{display:inline-block;width:50%;vertical-align:top;height:140px}
 .gridctt{height:600px}
 .companyinfo .select-wrapper{width:100%;margin:0 0 20px 0}
-.companyinfo .movie li{}
   .companyinfo .movie li:before{display:none}
 }
 @media all and (max-width:640px){
