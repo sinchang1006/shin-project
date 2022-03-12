@@ -1,0 +1,57 @@
+@charset "utf-8";
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,input,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;font-size:100%;font-family: 'Play', 'Noto Sans KR',Dotum,Helvetica,AppleSDGothicNeo,sans-serif;background:transparent;text-align:justify;font-size: 12px;-webkit-margin:0;}
+select{margin:0;font-size:13px;height:23px;}
+ol,ul,li{line-height:13px;list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+ins{text-decoration:none;}
+del{text-decoration:line-through;}
+table{border-collapse:collapse;border-spacing:0;}
+img{border:0 none;}
+a,input,li,span{outline-style:none;text-decoration:none;color:#000;font-weight:normal;}
+a{}
+a:hover{opacity:1}
+
+/* Font Asesome Setting */
+@font-face{
+font-family:'FontAwesome';
+src:url('../common/font/fontawesome-webfont.eot?v=4.3.0');
+src:
+url('../font/fontawesome-webfont.eot?#iefix&amp;v=4.3.0') format('embedded-opentype'),
+url('../font/fontawesome-webfont.woff2?v=4.3.0') format('woff2'),
+url('../font/fontawesome-webfont.woff?v=4.3.0') format('woff'),
+url('../font/fontawesome-webfont.ttf?v=4.3.0') format('truetype'),
+url('../font/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+font-weight:normal;
+font-weight:normal;
+font-style: normal
+}
+
+/*NanumGothic*/
+@font-face{font-family:'NanumGothic';src: url('../Font/NanumGothic.eot');src: url('../Font/NanumGothic.eot?#iefix') format('embedded-opentype'),url('../Font/NanumGothic.woff') format('woff'),url('../Font/NanumGothic.ttf') format('truetype');font-weight:normal;font-style:normal}
+@font-face{font-family:'NanumGothicBold';src: url('../Font/NanumGothicbold.eot');src: url('../Font/NanumGothicbold.eot?#iefix') format('embedded-opentype'),url('../Font/NanumGothicbold.woff') format('woff'),url('../Font/NanumGothicbold.ttf') format('truetype');font-weight:normal;font-style:normal}
+
+/*NanumBarunGothic*/
+/*font-family 설정시 주의점*/
+/*Ie에서 NanumBarunGothicLight를 반영하고 font-weight:600 이나 bold 사용시 Chrome,FireFox 등 Webkit 브라우저에서는 깔끔하게 잘 출력됨, Ie에서는 깨짐*/
+/*NanumBarunGothic 사용시 bold가 들어간 태그는 font-weight:normal로 초기화*/
+/*Nomal로 설정할 경우 Reset에서 설정된 값(기본)으로 사용(따로 family를 지정하지 않아야함), 단 bold가 적용된 태그에 Nomal로 설정시 font-weight:normal을 반영하여 해당 bold값을 풀어야함*/
+/*Bold 글씨로 설정할 경우 font-family:NanumBarunGothicBold 로 사용(※ bold가 적용된 태그는 font-weight:normal을 반영하여 해당 bold값을 풀어야함)*/
+/*반영시 아래 네이밍 리스트 참조*/
+@font-face{font-family:'NanumBarunGothic';src:url(../font/NanumBarunGothic.eot);src:url(../font/NanumBarunGothic.eot?#iefix)format('embedded-opentype'),url(../font/NanumBarunGothic.woff)format('woff'),url(../font/NanumBarunGothic.ttf)format('truetype')}
+@font-face{font-family:'NanumBarunGothicBold';src:url(../font/NanumBarunGothicBold.eot);src:url(../font/NanumBarunGothicBold.eot?#iefix)format('embedded-opentype'),url(../font/NanumBarunGothicBold.woff)format('woff'),url(../font/NanumBarunGothicBold.ttf)format('truetype')}
+@font-face{font-family:'NanumBarunGothicLight';src:url(../font/NanumBarunGothicLight.eot);src:url(../font/NanumBarunGothicLight.eot?#iefix)format('embedded-opentype'),url(../font/NanumBarunGothicLight.woff)format('woff'),url(../font/NanumBarunGothicLight.ttf)format('truetype')}
+
+/* IOS input 기본 스타일 초기화 */
+/* Safari 6.1+ (9.0 is the latest version of Safari at this time) */
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){
+	@media{
+		.safari_only {
+			input{-webkit-appearance:none;-moz-appearance:none;appearance:none}
+		}
+	}
+}
+/* Safari 9.0+ */
+_::-webkit-:not(:root:root), .safari_only {
+input{-webkit-appearance:none;-moz-appearance:none;appearance:none}
+}
