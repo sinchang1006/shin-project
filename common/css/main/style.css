@@ -932,6 +932,9 @@ header.m{display:block}
   .companyinfo .movie li:before{display:none}
 }
 @media all and (max-width:640px){
+  .parallaxcss h5{font-size:24px}
+  .parallaxcss p{font-size:12px;}
+  .parallaxcss>div>div{padding:20px;}
   .slicktimeslide .sliderContainer{height:460px}
   .ftlink{margin-right:20px;margin-left:20px;padding:20px;}
 }
