@@ -154,7 +154,7 @@ h6{padding:80px 0;margin:0;font-size:50px;text-align:center;color:#886b90;backgr
 .active .active .collapsible-body{padding:20px 0;background-color:rgba(0,0,0,.05);border-top:1px solid #564569;border-bottom:1px solid #564569}
 .active .active .collapsible-body a{color:#d1b3e6}
 .active .active .collapsible-body a:hover{color:#fff}
-.overlay-content .collapsible-body a{padding:8px;display:block;padding-left:30px;font-size:20px}
+.overlay-content .collapsible-body a{padding:8px;display:block;padding-left: 60px;font-size:20px}
 .overlay-content .active .collapsible>li>a,.overlay-content .collapsible-body a{color:#aa8eb7}
 .overlay-content .active .collapsible>li>a:hover,.overlay-content .collapsible-body a:hover{color:#dab6ea}
 .overlay-content .collapsible-body .collapsible-body a{padding:8px 20px 8px 34px;box-sizing:border-box;word-break:break-all;font-size:14px;line-height:20px}
@@ -205,9 +205,7 @@ html.skrollr-mobile{overflow:inherit!important}
 .swiper-slide>div *{color:#fff;text-shadow:0 0 2px rgb(0 0 0 / 30%);letter-spacing:-.015em}
 .swiper-slide>div p{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%;font-size:14px}
 .swiper-slide img{position:absolute;top:50%;left:50%;width:100%;height:auto;transform:translate(-50%,-29%) rotate(4deg);box-shadow:0 0 8px #000;transition:all .2s}
-.swiper-slide:hover img,
-.swiper-slide:focus img,
-.swiper-slide:active img{filter:grayscale(1);transition:all .2s;transform:scale(1.1) translate(-48%,-30%) rotate(4deg);transform-origin: top left;}
+.swiper-slide:hover img{filter:grayscale(1);transition:all .2s;transform:scale(1.1) translate(-48%,-30%) rotate(4deg);transform-origin: top left;}
 .swiper-container-horizontal>.swiper-pagination-bullets{padding:14px 0;text-align:center;bottom:0}
 .swiper-pagination-bullet{width:20px;height:3px;border-radius:0;background:rgba(255,255,255,1);margin-bottom:4px}
 .swiper-pagination-bullet:hover{opacity:.6;transition:all .5s}
@@ -887,6 +885,8 @@ body{overflow:auto;height:100%}}
   .companyinfo .movie li:before{display:none}
 }
 @media all and (max-width:640px){
+  .overlay-content .collapsible-header{padding:10px;font-size:20px}
+  .overlay-content .collapsible-body a{padding: 0 10px 10px 20px;font-size:16px}
   .parallaxcss h5{font-size:24px}
   .parallaxcss p{font-size:12px}
   .parallaxcss>div>div{padding:20px}
