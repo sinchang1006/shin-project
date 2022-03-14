@@ -127,9 +127,9 @@ h6{padding:80px 0;margin:0;font-size:50px;text-align:center;color:#886b90;backgr
 .m .navbtn{position:absolute;right:0;top:0;height:61px;width:61px;background-color:#eee}
 .m .navbtn:hover{background-color:#28a01d}
 .overlay{height:0%;width:100%;position:fixed;z-index:99999;top:0;left:0;background-color:rgb(34 23 51 / 95%);overflow-y:hidden;-webkit-transition:0.5s;-o-transition:0.5s;transition:0.5s}
-.overlaybtn{position:absolute;top:0;right:0;height:61px;width:61px;overflow:hidden}
+.overlaybtn{position:absolute;top:0;right:0;height: 60px;width:61px;overflow:hidden}
 .overlaybtn:hover{z-index:1;background-color:#e6e6e6;cursor:pointer}
-.overlaybtn i{width:100%;height:100%;text-align:center;font-size:26px;line-height:59px}
+.overlaybtn i{width:100%;height:100%;text-align:center;font-size: 26px;line-height: 59px;}
 .overlaybtn:hover i{color:#7b7b7b}
 .overlaybtn span{position:relative;z-index:1;color:#fff;display:inline-block;width:100%;height:100%;-webkit-box-sizing:border-box;box-sizing:border-box;font-size:12px;background-color:#a155be;line-height:50px;text-align:center;-webkit-transition:all .2s;-o-transition:all .2s;transition:all .2s}
 .overlaybtn:after{content:'';position:absolute;top:0;left:0;display:block;height:400px;width:0;border-radius:50%;height:100%;opacity:0;-webkit-transition:all .2s cubic-bezier(0.25,0.1,0.82,0.6);-o-transition:all .2s cubic-bezier(0.25,0.1,0.82,0.6);transition:all .2s cubic-bezier(0.25,0.1,0.82,0.6);background-color:rgba(0,0,0,.2)}
@@ -342,8 +342,8 @@ adress p{text-align:center;color:#ab8db3;font-size:14px}
 .pstcontent .ctt{position:absolute;top:60px;bottom:60px;width:100%;overflow:auto}
 .pstcontent .ctt>div{height:500px;background-color:#6d2c42;color:#964f67;text-align:center;font-size:30px;line-height:180px}
 
-.searchbtn{position:fixed;top:0;right:0;z-index:1000;width:80px;height:60px;border:0 none;vertical-align:top;outline:none;background-color:#fff;color:#888;font-size:26px;line-height:18px;transition:top .3s ease-in-out}
-.searchbtn:hover{color:#000;background-color:#f4f4f4}
+.searchbtn{position:fixed;top: 0px;right:0;z-index:1000;width:80px;height:60px;border:0 none;vertical-align:top;outline:none;background-color:#fff;color:#888;font-size:26px;line-height:18px;transition:top .3s ease-in-out}
+.searchbtn:hover{color:#000;background-color:#f4f4f4;}
 .searchbtn:focus{background-color:#eee}
 .fullsearchbox{height:100%;width:100%;position:fixed;z-index:1;top:0;left:0;display:none;z-index:1003}
 .fullsearchbox>span,.fullsearchbox>div{position:relative;z-index:1}
@@ -394,7 +394,7 @@ adress p{text-align:center;color:#ab8db3;font-size:14px}
 .drpbtn:hover,.drpbtn:focus{background-color:#fff;color:#000;border-color:#888}
 
 /* Style the header:fixed position (always stay at the top) */
-.progress-container{position:fixed;top:0;z-index:1140;background-color:#f1f1f1;width:100%;height:2px;background:rgba(255,255,255,.5);pointer-events:none;transition:width .2s}
+.progress-container{position:fixed;top:0;z-index:1140;background-color:#f1f1f1;width:100%;height:2px;background:transparent;pointer-events:none;transition:width .2s}
 .progress-bar{height:2px;width:0%;background:#40E0D0;background:-webkit-linear-gradient(to right,#FF0080,#FF8C00,#40E0D0);background:linear-gradient(to right,#FF0080,#FF8C00,#40E0D0);transition:width .5s}
 
 .dragbox{position:absolute;top:88px;left:-15px;z-index:2;transform:translate(17px,-52px);border:1px solid #79397d;text-align:center;box-shadow:0 0 15px rgba(0,0,0,.1);border-radius:6px;overflow:hidden}
