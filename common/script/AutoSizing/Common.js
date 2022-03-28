@@ -112,46 +112,6 @@ $(".anitxtslide").hover(function() {	// mouse over stop
      (this).swiper.autoplay.start();
 });
 
-////////////////////////////////////////////
-// number count animation///////////////////
-// header fixed error///////////////////////
-////////////////////////////////////////////
-// function numberCounter(target_frame, target_number) {
-//      this.count = 0; this.diff = 0;
-//      this.target_count = parseInt(target_number);
-//      this.target_frame = document.getElementById(target_frame);
-//      this.timer = null;
-//      this.counter();
-// };
-// numberCounter.prototype.counter = function() {
-//      var self = this;
-//      this.diff = this.target_count - this.count;
-//      if(this.diff > 0) {
-//           self.count += Math.ceil(this.diff / 20);
-//      }
-//      this.target_frame.innerHTML = this.count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-//      if(this.count < this.target_count) {
-//           this.timer = setTimeout(function() { self.counter(); }, 30);
-//      } else {
-//           clearTimeout(this.timer);
-//      }
-// };
-// $(document).ready(function(){ 
-//      $(window).bind("scroll", function(){
-//           if($(window).scrollTop() > 900){
-//                new numberCounter("texta", 9999);
-//                new numberCounter("textb", 3662313250);
-//                new numberCounter("textc", 9876);
-//                new numberCounter("textd", 215543437);
-//                $(this).unbind();
-//           }
-//           return true;
-//      })
-// });
-/////////////////////////////////////////
-/////////////////////////////////////////
-/////////////////////////////////////////
-
 // Top Bottom Button
 $(function() {
      $(window).scroll(function() {
