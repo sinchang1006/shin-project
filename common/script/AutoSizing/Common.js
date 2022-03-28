@@ -68,49 +68,44 @@ $(".avengersvisual").hover(function() {	// mouse over stop
      }, function() {
      (this).swiper.autoplay.start();
 });
-// Swiper first style
-var swiper = new Swiper('.anitxtslide', {
-     slidesPerView:1,	//slide mem
-     spaceBetween:0,	//margin
-     slidesPerGroup:1,	//group
+// Swiper two style
+var swiper = new Swiper('.swipernotice', {  //class name = html class
+     slidesPerView:3,
+     spaceBetween:36,
+     slidesPerGroup:3,
      loop: true,
-     initialSlide:0,	//start position
-     loopFillGroupWithBlank: true,	//그룹수가 맞지 않는 영역 빈칸 채우기
-     pagination: {	//paging set
-          el: '.anitxtslide-pagination',
+     initialSlide:0,
+     loopFillGroupWithBlank: true,
+     pagination: {
+          el: '.notice-pagination',
           clickable: true,
      },
-     autoplay: {	// autoplay
-          delay: 5000, //speed
+     autoplay: {
+          delay: 5000,
           disableOnInteraction: false,
      },
-     navigation: {	//left right button
-          nextEl: '.anitxtslide-button-next',
-          prevEl: '.anitxtslide-button-prev',
+     navigation: {
+          nextEl: '.notice-button-next',  //class name = html class
+          prevEl: '.notice-button-prev',  //class name = html class
      },
      breakpoints: {
-          640: {
-            slidesPerView: 1,
-            slidesPerGroup:1,
-            spaceBetween:0,
-          },
-          768: {
-            slidesPerView: 1,
-            slidesPerGroup:1,
-            spaceBetween:0,
-          },
-          1024: {
-            slidesPerView: 1,
-            slidesPerGroup:1,
-            spaceBetween:0,
-          },
-     }
-});
-$(".anitxtslide").hover(function() {	// mouse over stop
+         640: {
+           slidesPerView: 1,
+           slidesPerGroup:1,
+           spaceBetween:0,
+         },
+         1024: {
+           slidesPerView: 3,
+           slidesPerGroup:3,
+           spaceBetween:36,
+         },
+       }
+ });
+ $(".swipernotice").hover(function() {  //class name = html class
      (this).swiper.autoplay.stop();
      }, function() {
      (this).swiper.autoplay.start();
-});
+ });
 
 // Top Bottom Button
 $(function() {
