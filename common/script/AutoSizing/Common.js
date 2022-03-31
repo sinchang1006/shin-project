@@ -19,15 +19,16 @@
 //           clearTimeout(this.timer);
 //      }
 // };
-$(document).ready(function(){ 
-     $(window).bind("scroll", function(){
-          if($(window).scrollTop() > 2700){
-               new numberCounter("texta", 6714783512);
-               $(this).unbind();
-          }
-          return true;
-     })
-});
+// $(document).ready(function(){ 
+//      $(window).bind("scroll", function(){
+//           if($(window).scrollTop() > 2700){
+//                new numberCounter("texta", 6714783512);
+//                $(this).unbind();
+//           }
+//           return true;
+//      })
+// });
+
 // nav fixed
 $(function() {
      var didScroll;
