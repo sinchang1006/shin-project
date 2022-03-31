@@ -1,30 +1,62 @@
-// nav fixed
-var didScroll;
-var lastScrollTop = 0;
-var delta = 0;
-var navbarHeight = $('.hdtop').outerHeight();
-$(window).scroll(function(event){
-     didScroll = true;
-});
-setInterval(function() {
-     if (didScroll) {
-          hasScrolled();
-          didScroll = false;
-     }
-}, 5);
-function hasScrolled() {
-     var st = $(this).scrollTop();
-
-     if(Math.abs(lastScrollTop - st) <= delta)
-          return;
-     if (st > lastScrollTop && st > navbarHeight){
-          $('.hdtop').removeClass('down').addClass('up');
-     } else {
-          if(st + $(window).height() < $(document).height()) {
-               $('.hdtop').removeClass('up').addClass('down');
+// // number count animation
+// function numberCounter(target_frame, target_number) {
+//      this.count = 0; this.diff = 0;
+//      this.target_count = parseInt(target_number);
+//      this.target_frame = document.getElementById(target_frame);
+//      this.timer = null;
+//      this.counter();
+// };
+// numberCounter.prototype.counter = function() {
+//      var self = this;
+//      this.diff = this.target_count - this.count;
+//      if(this.diff > 0) {
+//           self.count += Math.ceil(this.diff / 10);
+//      }
+//      this.target_frame.innerHTML = this.count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+//      if(this.count < this.target_count) {
+//           this.timer = setTimeout(function() { self.counter(); }, 30);
+//      } else {
+//           clearTimeout(this.timer);
+//      }
+// };
+$(document).ready(function(){ 
+     $(window).bind("scroll", function(){
+          if($(window).scrollTop() > 2700){
+               new numberCounter("texta", 6714783512);
+               $(this).unbind();
           }
-     } lastScrollTop = st;
-}
+          return true;
+     })
+});
+// nav fixed
+$(function() {
+     var didScroll;
+     var lastScrollTop = 0;
+     var delta = 0;
+     var navbarHeight = $('.hdtop').outerHeight();
+     $(window).scroll(function(event){
+          didScroll = true;
+     });
+     setInterval(function() {
+          if (didScroll) {
+               hasScrolled();
+               didScroll = false;
+          }
+     }, 5);
+     function hasScrolled() {
+          var st = $(this).scrollTop();
+
+          if(Math.abs(lastScrollTop - st) <= delta)
+               return;
+          if (st > lastScrollTop && st > navbarHeight){
+               $('.hdtop').removeClass('down').addClass('up');
+          } else {
+               if(st + $(window).height() < $(document).height()) {
+                    $('.hdtop').removeClass('up').addClass('down');
+               }
+          } lastScrollTop = st;
+     }
+});
 // Swiper first style
 var swiper = new Swiper('.avengersvisual', {
      slidesPerView:2,	//slide mem
