@@ -289,7 +289,7 @@ html.skrollr-mobile{overflow:inherit!important}
 .flipbox .b h5{color:#b9f7ff}
 
 .parallaxcss{position:relative;margin:20px 0;height:200px}
-.parallaxcss>div{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;height:100%;width:100%;background-image:url(../../../Images/AutoSizing/84Reasons_marquee_5fe4f8b24adab8.16646860.jpg);background-size:cover;background-attachment:fixed;background-position:center center}
+.parallaxcss>div{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;height:100%;width:100%;background-image:url(../../../images/84Reasons_marquee_5fe4f8b24adab8.16646860.jpg);background-size:cover;background-attachment:fixed;background-position:center center}
 .parallaxcss>div>div{box-sizing:border-box;padding:30px 70px}
 .parallaxcss h5,.parallaxcss p{display:block;width:100%;text-align:center;text-shadow:0 0 3px #888}
 .parallaxcss h5{margin-top:0;color:#fff;font-size:40px}
