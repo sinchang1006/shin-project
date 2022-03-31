@@ -910,37 +910,45 @@ body{overflow:auto;height:100%}}
 @media screen and (-webkit-min-device-pixel-ratio:0){}
 @media all and (max-width:2000px){}
 @media all and (max-width:1024px){
-.rowbox.three,
-.sidectt{display:block}
-.rowbox.three>div,
-.sidectt.ct>div:first-child, .sidectt.ct>div:last-child{width:100%}
+  .companyinfo .movie strong{font-size:20px}
+  .companyinfo .movie li{width: 100%;padding: 20px 0;margin: 0;border-bottom: 1px solid #ccc}
+  .companyinfo .movie li:before{display:none}
+  .companyinfo .movie strong{display: block;text-align: center;font-size: 34px;line-height: 40px}
+  .companyinfo .movie p{text-align: center;padding-top:0;font-size: 12px}
+  .ftlink li{width:33.33334%;margin: 10px 0}
+  .swiper-slide>div h5{font-size:24px;line-height:22px}
+  .swiper-slide>div p{font-size:12px}
+  .rowbox.three,.sidectt{display:block}
+  .rowbox.three>div,
+  .sidectt.ct>div:first-child, .sidectt.ct>div:last-child{width:100%}
 }
 @media all and (max-width:768px){
   .sidectt>div:last-child{padding:0}
   body{overflow-x:hidden}
   header.pc h1,.topnav .depth-one{display:none}
   .searchbtn{position:fixed;right:58px;left:inherit;top:0;padding:0;width:60px}
-header.m{display:block}
-.container>div:first-child.sidectt{display:block}
-.sidectt>div:first-child{display:block;width:100%}
-.gridbox div a{background-position:center center}
-.companyinfo select{width:100%;margin-bottom:20px;transition:all 1s;font-size:20px;height:60px}
-.companyinfo select option{font-size:16px}
-.companyinfo .movie li{width:100%}
-.companyinfo>div{padding-right:20px;padding-left:20px}
-.ftlink li{width:50%;margin:40px 0 110px 0;transform:scale(1.3)}
-.ftlink li:nth-child(odd){position:relative;left:10px}
-.ftlink li:nth-child(even){position:relative;right:10px}
-.ftlink li:nth-child(5),
-.ftlink li:nth-child(6){margin-bottom:40px}
-.rowbox.three>div,.rowbox.two>div,.rowbox.three,.rowbox.two,.sidectt.ct,.sidectt.ct>div:first-child,.sidectt.ct>div:last-child,
-.countingnb ul{display:block;width:100%}
-.countingnb li{display:inline-block;width:50%;vertical-align:top;height:140px}
-.gridctt{height:600px}
-.companyinfo .select-wrapper{width:100%;margin:0 0 20px 0}
-.companyinfo .movie li{margin:0}
+  header.m{display:block}
+  .container>div:first-child.sidectt{display:block}
+  .sidectt>div:first-child{display:block;width:100%}
+  .gridbox div a{background-position:center center}
+  .companyinfo select{width:100%;margin-bottom:20px;transition:all 1s;font-size:20px;height:60px}
+  .companyinfo select option{font-size:16px}
+  .companyinfo>div{padding-right:20px;padding-left:20px}
+  .rowbox.three>div,.rowbox.two>div,.rowbox.three,.rowbox.two,.sidectt.ct,.sidectt.ct>div:first-child,.sidectt.ct>div:last-child,
+  .countingnb ul{display:block;width:100%}
+  .countingnb li{display:inline-block;width:50%;vertical-align:top;height:140px}
+  .gridctt{height:600px}
+  .companyinfo .select-wrapper{width:100%;margin:0 0 20px 0}
+  .companyinfo .movie li:before{display:none}
 }
-@media all and (max-width:640px){}
+@media all and (max-width:640px){
+  .overlay-content .collapsible-header{padding:10px;font-size:20px}
+  .overlay-content .collapsible-body a{padding: 0 10px 10px 20px;font-size:16px}
+  .parallaxcss h5{font-size:24px}
+  .parallaxcss p{font-size:12px}
+  .parallaxcss>div>div{padding:20px}
+  .ftlink{margin-right:20px;margin-left:20px;padding:20px}
+}
 @media all and (max-width:533px){}
 @media all and (max-width:480px){}
 @media all and (max-width:414px){}

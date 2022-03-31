@@ -68,6 +68,7 @@ $(".avengersvisual").hover(function() {	// mouse over stop
      }, function() {
      (this).swiper.autoplay.start();
 });
+
 // Swiper first style
 var swiper = new Swiper('.anitxtslide', {
      slidesPerView:1,	//slide mem
@@ -751,7 +752,7 @@ $(".slider").slick({
                breakpoint: 960, //화면 사이즈 960px
                settings: {
                     // 옵션 추가
-                    slidesToShow:1 
+                    slidesToShow:1
                } 
           },
           { 

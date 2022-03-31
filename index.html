@@ -699,7 +699,7 @@
 								</div>
 							</div>
 
-							<!-- <h4>Number Count Animation</h4>
+							<h4>Number Count Animation</h4>
 							<h5>Scroll down Counting</h5>
 							<div class="countingnb">
 								<ul>
@@ -723,12 +723,12 @@
 									</li>
 									<li>
 										<div>
-											<h5>내일드림 매출금액</h5>
+											<h5>매출금액</h5>
 											<span class="number d" id="textd">37</span>
 										</div>
 									</li>
 								</ul>
-						   </div> -->
+						   </div>
 
 							<div class="sidectt ct pdzero">
 								<div>
@@ -1173,13 +1173,14 @@
             })
             wow.init();
 
-            //skrolr
             $(function(){
                 $(window).scroll(function(event){
                     var windowScroll = $(window).scrollTop();
                     console.log(windowScroll);
                 });
             });
+
+			//skrolr
             skrollr.init({
                 forceHeight: false,
                 mobileCheck: function(){
@@ -1194,36 +1195,38 @@
                 $("#loading").delay("1000").fadeOut();
             });
 
-            // number count animation
-            function numberCounter(target_frame, target_number) {
-                this.count = 0; this.diff = 0;
-                this.target_count = parseInt(target_number);
-                this.target_frame = document.getElementById(target_frame);
-                this.timer = null;
-                this.counter();
-            };
-            numberCounter.prototype.counter = function() {
-                var self = this;
-                this.diff = this.target_count - this.count;
-                if(this.diff > 0) {
-                    self.count += Math.ceil(this.diff / 10);
-                }
-                this.target_frame.innerHTML = this.count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-                if(this.count < this.target_count) {
-                    this.timer = setTimeout(function() { self.counter(); }, 30);
-                } else {
-                    clearTimeout(this.timer);
-                }
-            };
-            $(document).ready(function(){ 
-                $(window).bind("scroll", function(){
-                    if($(window).scrollTop() > 2700){
-                        new numberCounter("texta", 6714783512);
-                        $(this).unbind();
-                    }
-                    return true;
-                })
-            });
+			$(function () {
+				// number count animation
+				function numberCounter(target_frame, target_number) {
+					this.count = 0; this.diff = 0;
+					this.target_count = parseInt(target_number);
+					this.target_frame = document.getElementById(target_frame);
+					this.timer = null;
+					this.counter();
+				};
+				numberCounter.prototype.counter = function() {
+					var self = this;
+					this.diff = this.target_count - this.count;
+					if(this.diff > 0) {
+						self.count += Math.ceil(this.diff / 10);
+					}
+					this.target_frame.innerHTML = this.count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+					if(this.count < this.target_count) {
+						this.timer = setTimeout(function() { self.counter(); }, 30);
+					} else {
+						clearTimeout(this.timer);
+					}
+				};
+				$(document).ready(function(){ 
+					$(window).bind("scroll", function(){
+						if($(window).scrollTop() > 2700){
+							new numberCounter("texta", 6714783512);
+							$(this).unbind();
+						}
+						return true;
+					})
+				});
+			});
         </script>
 
 	</body>
