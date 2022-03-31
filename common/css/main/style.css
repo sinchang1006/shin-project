@@ -256,12 +256,12 @@ html.skrollr-mobile{overflow:inherit!important}
 .gridbox .boxa{grid-column:1/3;grid-row:1/3}
 .gridbox .boxc{grid-column:3/4;grid-row:2/4}
 .gridbox .boxf{grid-column:1/4}
-.gridbox .boxa a{background-image:url(../../../Images/Autosizing/34.png)}
-.gridbox .boxb a{background-image:url(../../../Images/Autosizing/1556789821892.jpg)}
-.gridbox .boxc a{background-image:url(../../../Images/Autosizing/2615956-avengers_scan.jpg)}
-.gridbox .boxd a{background-image:url(../../../Images/Autosizing/y880clzps12o76302is5.jpg)}
-.gridbox .boxe a{background-image:url(../../../Images/Autosizing/d37d493243a6399ba0fd92a742f42537.jpg)}
-.gridbox .boxf a{background-image:url(../../../Images/Autosizing/M2M8C2LZ90N9MU32G7I7.jpg)}
+.gridbox .boxa a{background-image:url(../../../images/34.png)}
+.gridbox .boxb a{background-image:url(../../../images/1556789821892.jpg)}
+.gridbox .boxc a{background-image:url(../../../images/2615956-avengers_scan.jpg)}
+.gridbox .boxd a{background-image:url(../../../images/y880clzps12o76302is5.jpg)}
+.gridbox .boxe a{background-image:url(../../../images/d37d493243a6399ba0fd92a742f42537.jpg)}
+.gridbox .boxf a{background-image:url(../../../images/M2M8C2LZ90N9MU32G7I7.jpg)}
 
 .txtslide a{position:relative;overflow:hidden}
 .txtslide span{position:absolute;bottom:-100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;padding:4px 10px;height:100%;width:100%;background-color:rgba(0,0,0,.5);text-align:center;color:#fff;-webkit-box-sizing:border-box;box-sizing:border-box;text-align:center;-webkit-transition:top .35s ease;-webkit-transition:bottom .35s ease;-o-transition:bottom .35s ease;transition:bottom .35s ease;font-size:11px}
