@@ -35,6 +35,13 @@
 		<!-- scroll indicator -->
 		<div class="progress-container"><div class="progress-bar" id="toplinebar"></div></div>
 
+		<!-- slide popup -->
+		<div class="syspopup close" id="modal_slide_typea">
+			<div>
+				<a href="#!" onclick="modal_slide('#modal_slide_typea');" style="font-size:20px">slide modal close</a>
+			</div>
+		</div>
+
 		<header class="hdtop fixed pc">
 			<div class="down">
 				<h1><a href="#!">Avengers</a></h1>
@@ -484,6 +491,26 @@
 											</div>
 										</div>
 									</div>
+
+									<div class="slidepopup">
+										<h5>Slide popup</h5>
+										<div>
+											<script>
+												function modal_slide(id) {
+													if ($(id).hasClass('close')) {
+														$(id).removeClass('close').addClass("open");
+													}
+													else {
+														$(id).removeClass('open').addClass("close");
+													}
+												}
+											</script>
+											<div>
+												<a href="#!" onclick="modal_slide('#modal_slide_typea');" data-icon="open_in_new">slide modal</a>
+											</div>
+										</div>
+									</div>
+
 								</div>
 								<div>
 									<h5>Draggable elements</h5>
