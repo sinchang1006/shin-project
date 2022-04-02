@@ -453,7 +453,7 @@ adress p{text-align:center;color:#ab8db3;font-size:14px}
 .ipradiobox input{position:absolute;z-index:1;width:100%;height:24px;opacity:0}
 .ipradiobox label{display:inline-block;padding-left:24px;color:#000;vertical-align:top;font-weight:400;line-height:24px;transition:background-position .1s;text-align:left}
 .ipradiobox label:before,
-.ipradiobox label:after{content:'';position:absolute;top:0;left:0;display:block;width:22px;height:22px;background-image:url(../../../images/html/ex-radio.png?201611221);background-repeat:no-repeat;border-radius:22px;transition:opacity .5s}
+.ipradiobox label:after{content:'';position:absolute;top:0;left:0;display:block;width:22px;height:22px;background-image:url(../../../images/ex-radio.png?201611221);background-repeat:no-repeat;border-radius:22px;transition:opacity .5s}
 .ipradiobox label:after{opacity:0}
 .ipradiobox label:before{background-position:0 0}
 .ipradiobox input[type=radio]:not(old):checked+label:after{background-position:0 -38px;opacity:1;transition:opacity .5s}
@@ -761,12 +761,13 @@ input[type='search']::-webkit-search-decoration,input[type='search']::-webkit-se
 
 /* slick.js */
 .slicktimeslide h3{margin:10px 0;font-size:12px;color:#fff;text-align:center}
+.slicktimeslide h5{display:none}
 .slicktimeslide .sliderContainer{position:relative;width:100%;height:600px;overflow:hidden}
 .slicktimeslide .slider{width:100%;height:100%}
 .slicktimeslide .slick-slide{text-align:center}
 .slicktimeslide .slick-prev:before,.slick-next:before{color:black}
 .slicktimeslide .slick-dots{bottom:-30px}
-.slicktimeslide .progressBarContainer{position:absolute;display:block;bottom:258px;right:0;padding-right:20px;transform:translate(0, 0);text-align:right;font-size:0}
+.slicktimeslide .progressBarContainer{position:absolute;display:block;top: 0;right:0;padding-right:20px;transform:translate(0, 0);text-align:right;font-size:0}
 .slicktimeslide .progressBarContainer>div{display:inline-block;cursor:pointer;width:100px;color:white;margin-bottom:40px}
 .slicktimeslide .progressBarContainer div:last-child{margin-right:0}
 .slicktimeslide .progressBarContainer div span.progressBar{width:100%;height:1px;background-color:rgb(255 255 255 / 53%);display:block}
@@ -782,7 +783,7 @@ input[type='search']::-webkit-search-decoration,input[type='search']::-webkit-se
 .slicktimeslide .slick-loading .slick-track{visibility:hidden}
 .slicktimeslide .slick-slide{display:none;float:left;height:100%}
 [dir='rtl'] .slicktimeslide .slick-slide{float:right}
-.slicktimeslide .slick-slide img{display:block;position:absolute;top:50%;left:0;width:280%;height:auto;transform:translate(0, -50%)}
+.slicktimeslide .slick-slide img{display:block;position:absolute;top:50%;left:0;width: 100%;height:auto;transform:translate(0, -50%)}
 .slicktimeslide .slick-slide.slick-loading img{display:none}
 .slicktimeslide .slick-slide.dragging img{pointer-events:none}
 .slicktimeslide .slick-initialized .slick-slide{display:block}
@@ -908,8 +909,11 @@ body{overflow:auto;height:100%}}
 @media screen and (max-height:450px){
 .overlay{overflow-y:auto}.overlay a{font-size:20px}.overlay .closebtn{font-size:40px;top:15px;right:35px}}
 @media screen and (-webkit-min-device-pixel-ratio:0){}
-@media all and (max-width:2000px){}
+@media all and (max-width:1600px){
+  .slicktimeslide .sliderContainer{height:500px}
+}
 @media all and (max-width:1024px){
+  .slicktimeslide .sliderContainer{height:370px}
   .companyinfo .movie strong{font-size:20px}
   .companyinfo .movie li{width: 100%;padding: 20px 0;margin: 0;border-bottom: 1px solid #ccc}
   .companyinfo .movie li:before{display:none}
@@ -923,6 +927,8 @@ body{overflow:auto;height:100%}}
   .sidectt.ct>div:first-child, .sidectt.ct>div:last-child{width:100%}
 }
 @media all and (max-width:768px){
+  .container{margin-top:-150px}
+  .slicktimeslide .sliderContainer{height:280px}
   .sidectt>div:last-child{padding:0}
   body{overflow-x:hidden}
   header.pc h1,.topnav .depth-one{display:none}
@@ -942,6 +948,7 @@ body{overflow:auto;height:100%}}
   .companyinfo .movie li:before{display:none}
 }
 @media all and (max-width:640px){
+  .slicktimeslide .sliderContainer{height:240px}
   .overlay-content .collapsible-header{padding:10px;font-size:20px}
   .overlay-content .collapsible-body a{padding: 0 10px 10px 20px;font-size:16px}
   .parallaxcss h5{font-size:24px}
@@ -949,8 +956,13 @@ body{overflow:auto;height:100%}}
   .parallaxcss>div>div{padding:20px}
   .ftlink{margin-right:20px;margin-left:20px;padding:20px}
 }
-@media all and (max-width:533px){}
-@media all and (max-width:480px){}
+@media all and (max-width:533px){
+  .slicktimeslide .sliderContainer{height:200px}
+}
+@media all and (max-width:480px){
+  .slicktimeslide .sliderContainer{height:160px}
+  .container{margin-top:-100px}
+}
 @media all and (max-width:414px){}
 @media all and (max-width:375px){}
 @media all and (max-width:360px){}
