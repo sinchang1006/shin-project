@@ -254,35 +254,38 @@
 					</div>
 				</div>
 
-				<!-- slick slide -->
-				<div class="slicktimeslide">
-					<div class="sliderContainer">
-						<div class="slider single-item">
-							<div class="sda">
-								<h5>Slick.JS / Position Content NO!!!!</h5>
-								<img src="images/a1.png" />
+				<div id="parallaxbn">
+
+					<!-- slick slide -->
+					<div class="slicktimeslide">
+						<div class="sliderContainer">
+							<div class="slider single-item">
+								<div class="sda">
+									<h5>Slick.JS / Position Content NO!!!!</h5>
+									<img src="images/a1.png" />
+								</div>
+								<div class="sdb">
+									<h5>Slick.JS / Position Content NO!!!!</h5>
+									<img src="images/a2.png" />
+								</div>
+								<div class="sdc">
+									<h5>Slick.JS / Position Content NO!!!!</h5>
+									<img src="images/a3.png" />
+								</div>
 							</div>
-							<div class="sdb">
-								<h5>Slick.JS / Position Content NO!!!!</h5>
-								<img src="images/a2.png" />
-							</div>
-							<div class="sdc">
-								<h5>Slick.JS / Position Content NO!!!!</h5>
-								<img src="images/a3.png" />
-							</div>
-						</div>
-						<div class="progressBarContainer">
-							<div class="item">
-								<h3>Swiper Image A</h3>
-								<span data-slick-index="0" class="progressBar"></span>
-							</div>
-							<div class="item">
-								<h3>Swiper Image B</h3>
-								<span data-slick-index="1" class="progressBar"></span>
-							</div>
-							<div class="item">
-								<h3>Swiper Image C</h3>
-								<span data-slick-index="2" class="progressBar"></span>
+							<div class="progressBarContainer">
+								<div class="item">
+									<h3>Swiper Image A</h3>
+									<span data-slick-index="0" class="progressBar"></span>
+								</div>
+								<div class="item">
+									<h3>Swiper Image B</h3>
+									<span data-slick-index="1" class="progressBar"></span>
+								</div>
+								<div class="item">
+									<h3>Swiper Image C</h3>
+									<span data-slick-index="2" class="progressBar"></span>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -1194,6 +1197,28 @@
             $(function () {
                 $("#loading").delay("1000").fadeOut();
             });
+
+			// parallex
+			var ovf, slider;
+	
+			$(function() {
+				prover = this.getElementById("wrap"); //scroll시 반영 기점 id (parallaxbn)
+				prsld = this.getElementById("parallaxbn"); //스크롤 영역 태그 id (container)
+				winResize();
+				$(window).bind({
+					resize: winResize,
+					scroll: winScroll
+				});
+			});
+
+			function winResize() {
+				prover.style.top = prsld.offsetHeight + "px";
+			}
+
+			function winScroll() {
+				var op = 1 - (window.pageYOffset / prsld.offsetHeight);
+				prsld.style.opacity = op;
+			}
         </script>
 
 	</body>
