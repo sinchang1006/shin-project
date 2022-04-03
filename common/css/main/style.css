@@ -256,12 +256,12 @@ html.skrollr-mobile{overflow:inherit!important}
 .gridbox .boxa{grid-column:1/3;grid-row:1/3}
 .gridbox .boxc{grid-column:3/4;grid-row:2/4}
 .gridbox .boxf{grid-column:1/4}
-.gridbox .boxa a{background-image:url(../../../images/34.png)}
-.gridbox .boxb a{background-image:url(../../../images/1556789821892.jpg)}
-.gridbox .boxc a{background-image:url(../../../images/2615956-avengers_scan.jpg)}
-.gridbox .boxd a{background-image:url(../../../images/y880clzps12o76302is5.jpg)}
-.gridbox .boxe a{background-image:url(../../../images/d37d493243a6399ba0fd92a742f42537.jpg)}
-.gridbox .boxf a{background-image:url(../../../images/M2M8C2LZ90N9MU32G7I7.jpg)}
+.gridbox .boxa a{background-image:url(../../../Images/Autosizing/34.png)}
+.gridbox .boxb a{background-image:url(../../../Images/Autosizing/1556789821892.jpg)}
+.gridbox .boxc a{background-image:url(../../../Images/Autosizing/2615956-avengers_scan.jpg)}
+.gridbox .boxd a{background-image:url(../../../Images/Autosizing/y880clzps12o76302is5.jpg)}
+.gridbox .boxe a{background-image:url(../../../Images/Autosizing/d37d493243a6399ba0fd92a742f42537.jpg)}
+.gridbox .boxf a{background-image:url(../../../Images/Autosizing/M2M8C2LZ90N9MU32G7I7.jpg)}
 
 .txtslide a{position:relative;overflow:hidden}
 .txtslide span{position:absolute;bottom:-100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;padding:4px 10px;height:100%;width:100%;background-color:rgba(0,0,0,.5);text-align:center;color:#fff;-webkit-box-sizing:border-box;box-sizing:border-box;text-align:center;-webkit-transition:top .35s ease;-webkit-transition:bottom .35s ease;-o-transition:bottom .35s ease;transition:bottom .35s ease;font-size:11px}
@@ -289,7 +289,7 @@ html.skrollr-mobile{overflow:inherit!important}
 .flipbox .b h5{color:#b9f7ff}
 
 .parallaxcss{position:relative;margin:20px 0;height:200px}
-.parallaxcss>div{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;height:100%;width:100%;background-image:url(../../../images/84Reasons_marquee_5fe4f8b24adab8.16646860.jpg);background-size:cover;background-attachment:fixed;background-position:center center}
+.parallaxcss>div{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;height:100%;width:100%;background-image:url(../../../Images/AutoSizing/84Reasons_marquee_5fe4f8b24adab8.16646860.jpg);background-size:cover;background-attachment:fixed;background-position:center center}
 .parallaxcss>div>div{box-sizing:border-box;padding:30px 70px}
 .parallaxcss h5,.parallaxcss p{display:block;width:100%;text-align:center;text-shadow:0 0 3px #888}
 .parallaxcss h5{margin-top:0;color:#fff;font-size:40px}
@@ -453,7 +453,7 @@ adress p{text-align:center;color:#ab8db3;font-size:14px}
 .ipradiobox input{position:absolute;z-index:1;width:100%;height:24px;opacity:0}
 .ipradiobox label{display:inline-block;padding-left:24px;color:#000;vertical-align:top;font-weight:400;line-height:24px;transition:background-position .1s;text-align:left}
 .ipradiobox label:before,
-.ipradiobox label:after{content:'';position:absolute;top:0;left:0;display:block;width:22px;height:22px;background-image:url(../../../images/ex-radio.png?201611221);background-repeat:no-repeat;border-radius:22px;transition:opacity .5s}
+.ipradiobox label:after{content:'';position:absolute;top:0;left:0;display:block;width:22px;height:22px;background-image:url(../../../images/html/ex-radio.png?201611221);background-repeat:no-repeat;border-radius:22px;transition:opacity .5s}
 .ipradiobox label:after{opacity:0}
 .ipradiobox label:before{background-position:0 0}
 .ipradiobox input[type=radio]:not(old):checked+label:after{background-position:0 -38px;opacity:1;transition:opacity .5s}
@@ -801,6 +801,16 @@ input[type='search']::-webkit-search-decoration,input[type='search']::-webkit-se
 .syspopup:before{content:'';background-color:rgba(0,0,0,.5);position:fixed;left:0;top:0;z-index:0;width:100%;height:100%;opacity:0;transition:all .4s cubic-bezier(0,0,0.07,0.99)}
 .syspopup.open:before{opacity:1}
 .syspopup.close:before{opacity:0}
+
+/* loading */
+.loading{position:fixed;top:0;left:0;z-index:99999;width:100%;height:100%;background-color:rgba(19, 11, 31, 0.8)}
+.loading span{border:3px solid #f3f3f3;border-top:3px solid #40a3ff;border-radius:50%;width:60px;height:60px;-webkit-animation:spin 2s linear infinite;animation:spin 2s linear infinite;position:fixed;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}
+@-webkit-keyframes spin{
+    0%{-webkit-transform:translate(-50%,-50%) rotate(0deg);transform:translate(-50%,-50%) rotate(0deg)}
+    100%{-webkit-transform:translate(-50%,-50%) rotate(360deg);transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes spin{
+    0%{-webkit-transform:translate(-50%,-50%) rotate(0deg);transform:translate(-50%,-50%) rotate(0deg)}
+    100%{-webkit-transform:translate(-50%,-50%) rotate(360deg);transform:translate(-50%,-50%) rotate(360deg)}}
 
 @-webkit-keyframes bounce{
   0%,20%,53%,80%,100%{-webkit-transition-timing-function:cubic-bezier(0.215,0.61,0.355,1);transition-timing-function:cubic-bezier(0.215,0.61,0.355,1);-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}
