@@ -963,7 +963,7 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
 .parallax img{position:absolute;left:50%;bottom:0;min-width:100%;min-height:100%;filter:grayscale(1);transition:all .75s;transition-delay:.1s;}
 .parallax-container:hover img{filter:grayscale(0);transition:all .3s}
 @media screen and (max-width:768px){
-  .container .parallax-container{height:110vw;}
+  .container .parallax-container{height: 250vw;}
   .parallax h4{font-size:9vw;letter-spacing:0}
   .parallax p{font-size:11px;letter-spacing:1px}
 }
