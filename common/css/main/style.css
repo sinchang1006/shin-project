@@ -982,6 +982,9 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
 #toast.show{visibility:visible;animation:fadein 1.5s,fadeout .5s 2.5s;}
 @keyframes fadein{0%{bottom:0; opacity:0} 100%{bottom:50%; opacity:1}}
 @keyframes fadeout{0%{bottom:50%; opacity:1} 100%{bottom:0; opacity:0}}
+@media screen and (max-width:640px){
+  #toast{padding:20px 30px;font-size:16px}
+}
 
 /* MetarializeButtonEffect */
 .materializeiconstyle{padding-top:20px;text-align:left;font-size:0}
