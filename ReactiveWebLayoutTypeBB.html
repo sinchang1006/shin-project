@@ -1,0 +1,3448 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!-- Media Query를 활용하기 위해 꼭 들어가야 할 메타태그 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?1" /> <!-- favicon -->
+		<title>Javascript Jquery Css3 Example</title>
+		<link type="text/css" rel="stylesheet" href="TypeBB/Common/css/Reset.css" /> <!-- reset -->
+		<link type="text/css" rel="stylesheet" href="TypeBB/Common/css/style.css" /><!-- style -->
+		<script src="TypeBB/Common/js/jquery-3.5.1.min.js"></script> <!-- jquery.js -->
+		<script src="TypeBB/Common/js/materialize.min.js"></script> <!-- materialize js -->
+		
+		<!-- A tag Smooth Move  -->
+		<script>
+			$('a[href*=\\#]').on('click', function(event){
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+			});
+		</script>
+
+	</head>
+	<body id="top">
+
+		<!-- skip nav -->
+        <div id="skip_nav">
+            <ul>
+                <li><a href="#content">Top Move</a></li>
+                <li><a href="#header">MainMenu Move</a></li>
+            </ul>
+        </div>
+
+		<!-- PromotionBanner -->
+		<div id="promotionBanner" class="promotion-banner">
+			<div class="content">
+				<div class="banner"><img src="../../Common/Images/thumnail_G.png"></div>
+				<a href="#none" class="close-button"></a>
+				<div class="close-info">
+					<input type="checkbox" value="checkbox" name="chkbox" id="chkday"><label for="chkday">오늘 하루 그만보기</label> 
+				</div>
+			</div>
+		</div>
+		<script>
+			function setCookie( name, value, expiredays ) { 
+				var todayDate = new Date(); 
+				todayDate.setDate( todayDate.getDate() + expiredays ); 
+				document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";" 
+			}
+			$(document).ready(function(){
+				$("#promotionBanner .close-button").click(function(){
+					//cooki
+					if($("#chkday").is(':checked')){
+						//$.cookie('topPop','done',{expores:1, path:'/'});
+						setCookie( "topPop", "done" , 1 ); 
+					}
+					$('#promotionBanner').slideUp(100); 
+				});
+			});
+			//cookie check open/close check
+			cookiedata = document.cookie;    
+			if ( cookiedata.indexOf("topPop=done") < 0 ){      
+				document.all['promotionBanner'].style.display = "block";
+			} 
+			else {
+				document.all['promotionBanner'].style.display = "none"; 
+			}
+		</script>
+
+		<!-- FullAllMenu -->
+		<div id="myNav" class="navbtn overlay">
+            <div>
+                <h1></h1>
+                <a href="javascript:void(0)" class="closebtn" onclick="closeFullNav()"><ion-icon name="close-outline"></ion-icon></a>
+            </div>
+            <div class="overlay-content">
+                <ul class="collapsible">
+					<li class="active">
+						<a href="#!" class="collapsible-header" tabindex="0">
+							<ion-icon name="finger-print-outline"></ion-icon>
+							Materialize collapsible
+							<ion-icon name="chevron-up-outline"></ion-icon>
+						</a>
+						<div class="collapsible-body">
+							<ul class="collapsible">
+								<li class="active">
+									<a href="#!" class="collapsible-header" tabindex="0">
+										First
+										<ion-icon name="caret-up-outline"></ion-icon>
+									</a>
+									<div class="collapsible-body">
+										<a href="#!" onclick="closeNav()">Lorem ipsum dolor sit amet.</a>
+									</div>
+								</li>
+								<li>
+									<div class="collapsible-header" tabindex="0">
+										Second
+										<ion-icon name="caret-up-outline"></ion-icon>
+									</div>
+									<div class="collapsible-body">
+										<a href="#!" onclick="closeNav()">Lorem ipsum dolor sit amet.</a>
+									</div>
+								</li>
+								<li>
+									<div class="collapsible-header" tabindex="0">
+										Third
+										<ion-icon name="caret-up-outline"></ion-icon>
+									</div>
+									<div class="collapsible-body last">
+										<a href="#!" onclick="closeNav()">Lorem ipsum dolor sit amet.</a>
+										<a href="#!" onclick="closeNav()">Lorem ipsum dolor sit amet.</a>
+										<a href="#!" onclick="closeNav()">Lorem ipsum dolor sit amet.</a>
+										<a href="#!" onclick="closeNav()">Lorem ipsum dolor sit amet.</a>
+										<a href="#!" onclick="closeNav()">Lorem ipsum dolor sit amet.</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header" tabindex="0">
+							<ion-icon name="film-outline"></ion-icon>
+							Episode
+							<ion-icon name="chevron-up-outline"></ion-icon>
+						</div>
+						<div class="collapsible-body">
+							<span onclick="closeNav()">Lorem ipsum dolor sit amet.</span>
+						</div>
+					</li>
+					<li>
+						<div class="collapsible-header" tabindex="0">
+							<ion-icon name="layers-outline"></ion-icon>
+							Series list
+							<ion-icon name="chevron-up-outline"></ion-icon>
+						</div>
+						<div class="collapsible-body"><span onclick="closeNav()">Lorem ipsum dolor sit amet.</span></div></li>
+					<li>
+						<div class="collapsible-header" tabindex="0">
+							<ion-icon name="bluetooth-outline"></ion-icon>
+							Bluetooth
+							<ion-icon name="chevron-up-outline"></ion-icon>
+						</div>
+						<div class="collapsible-body"><span onclick="closeNav()">Lorem ipsum dolor sit amet.</span></div>
+					</li>
+					<li>
+						<div class="collapsible-header" tabindex="0">
+							<ion-icon name="game-controller-outline"></ion-icon>
+							Game
+							<ion-icon name="chevron-up-outline"></ion-icon>
+						</div>
+						<div class="collapsible-body"><span onclick="closeNav()">Lorem ipsum dolor sit amet.</span></div>
+					</li>
+					<li>
+						<div class="collapsible-header" tabindex="0">
+							<ion-icon name="aperture-outline"></ion-icon>
+							Splash page
+							<ion-icon name="chevron-up-outline"></ion-icon>
+						</div>
+						<div class="collapsible-body"><span onclick="closeNav()">Lorem ipsum dolor sit amet.</span></div>
+					</li>
+				</ul>
+            </div>
+        </div>
+		<script>
+			function openFullNav(){
+				document.getElementById("myNav").style.height = "100%";
+				document.getElementById("myNavSub").style.height = "100%";
+			}
+			function closeFullNav(){
+				document.getElementById("myNav").style.height = "0%";
+				document.getElementById("myNavSub").style.height = "0%";
+			}
+			function closeNav() {
+				document.getElementById("myNav").style.height = "0%";
+				document.getElementById("myNavSub").style.height = "0%";
+			}
+		</script>
+
+		<!-- SlidePopup -->
+		<div class="syspopup close" id="modal_slide_typea">
+			<div>
+				<a href="#!" onclick="modal_slide('#modal_slide_typea');">
+					<ion-icon name="thumbs-up-outline"></ion-icon>
+					<p>Close</p>
+				</a>
+			</div>
+			<script>
+				function modal_slide(id) {
+					if ($(id).hasClass('close')) {
+						$(id).removeClass('close').addClass("open");
+						$('html').css("overflow","hidden");
+					}
+					else {
+						$(id).removeClass('open').addClass("close");
+						$('html').css("overflow","auto");
+					}
+				}
+			</script>
+		</div>
+
+		<!-- ModalPopup -->
+		<div class="modal">
+			<div class="content">
+				<div class="mdphd">
+					<p>Modal Slide Popup Jquery, height responsive, Background Touch Close Popup</p>
+				</div>
+				<div class="element">
+					<p>Applied height-adaptive layout according to device</p>
+					<p>Detect abundance of content and generate vertical scrolling</p>
+					<p>Control body scrollbar after popup exposure</p>
+					<ul>
+						<li>$(".mlpopen").click(function(){</li>
+						<li><span class="emptyw one"></span>$(".modal").addClass("visible");</li>
+						<li class="txtblue"><span class="emptyw one"></span>$('body').css("overflow", "hidden");    // scroll hidden</li>
+						<li>});</li>
+						<li>$(".mlpclose").click(function(){</li>
+						<li><span class="emptyw one"></span>$(".modal").removeClass("visible");</li>
+						<li class="txtblue"><span class="emptyw one"></span>$('body').css("overflow", "scroll");    // scroll visible</li>
+						<li>});</li>
+						<li>$(document).click(function(event) {</li>
+						<li><span class="emptyw one"></span>if (!$(event.target).closest(".modal,.mlpopen").length) {</li>
+						<li><span class="emptyw two"></span>$("body").find(".modal").removeClass("visible");</li>
+						<li class="txtblue"><span class="emptyw two"></span>$('body').css("overflow", "scroll");    // scroll visible</li>
+						<li><span class="emptyw one"></span>}</li>
+						<li>});</li>
+					</ul>
+				</div>
+				<div class="button">
+					<ul>
+						<li><a href="#!">To Enter</a></li>
+						<li><a href="#!" class="mlpclose">Cancel</a></li>
+					</ul>
+				</div>
+				<a href="#!" class="mlpclose"></a>
+			</div>
+			<div class="opbg"></div>
+			<script>
+				$(document).ready(function(){
+					$(".mlpopen").click(function(){
+						$(".modal").addClass("visible");
+						$('body').css("overflow", "hidden");
+					});
+					$(".mlpclose").click(function(){
+						$(".modal").removeClass("visible");
+						$('body').css("overflow", "scroll");
+					});
+					$(document).click(function(event) {
+						if (!$(event.target).closest(".modal,.mlpopen").length) {
+							$("body").find(".modal").removeClass("visible");
+							$('body').css("overflow", "");    // scroll visible
+						}
+					});
+				});
+			</script>
+		</div>
+
+		<div class="loading" id="loading">
+            <span></span>
+        </div>
+		<script>
+			// loading
+            $(document).ready(function(){
+                $("#loading").delay("1500").fadeOut();
+            });
+		</script>
+
+		<header id="header">
+			<nav>
+                <div class="logo">
+                    <h1>Template Example</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="ReactiveWebLayoutTypeBB-SwiperPage.html" target="_blank">Swipe Paging</a></li>
+                    <li><a href="#!" target="_blank">vertical</a></li>
+                    <li><a href="#!" onclick="modal_slide('#modal_slide_typea');">ModalSlide</a></li> <!-- SlidePopup -->
+                    <li><a href="#!" class="mlpopen" data-icon="open_in_new">ModalPopup</a></li>
+                    <li><a href="#!" onclick="openFullNav()" class="overlaybtn">All Menu</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+				<div class="opacitybg"></div>
+            </nav>
+			<script>
+				$(document).ready(function(){
+					// Responsive navigation
+					const navSlide = () => {
+						const burger = document.querySelector('.burger');
+						const navbar = document.querySelector('.nav-links');
+						const opacitybg = document.querySelector('.opacitybg');
+						const navLinks = document.querySelectorAll('.nav-links li');
+						burger.addEventListener('click', () => {
+							//Toggle Nav
+							navbar.classList.toggle('nav-active');
+							//Animate Links
+							navLinks.forEach((link, index) => {
+								if(link.style.animation){
+									link.style.animation = '';
+								} else {
+									link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+								}
+							});
+							//burger animation
+							burger.classList.toggle('toggle');
+							opacitybg.classList.toggle('visible');
+							
+
+							// scrolloing 이벤트 수정 필요
+							// function disableScroll() { 
+							// 	document.body.classList.add("stopscrolling"); 
+							// }
+							// let stopScroll = disableScroll();
+
+						});
+					}
+					navSlide();
+				});
+
+				//Sticky Navigation
+				window.addEventListener("scroll", function() {
+					let navArea = document.getElementById("header");
+	
+					if (window.pageYOffset > 0) {
+						navArea.classList.add("sticky");
+					} else {
+						navArea.classList.remove("sticky");
+					}
+				});
+
+			</script>
+		</header>
+
+		<div class="wrap">
+			<div class="container" id="container">
+
+				<!-- Search Box Nomal -->
+				<div class="scbxnm">
+					<div class="search-input">
+						<input class="iptxt" type="text" placeholder="Search Ex.y*****" />
+						<ul class="autocom-box">
+							<li><span>Search Text Type A</span></li>
+							<li><span>Search Text Type B</span></li>
+							<li><span>Search Text Type C</span></li>
+							<li><span>Search Text Type D</span></li>
+							<li><span>Search Text Type E</span></li>
+						</ul>
+						<button class="icon"><ion-icon name="search-outline"></ion-icon></button>
+					</div>
+					<script>
+						const searchWrapper = document.querySelector(".search-input");
+						const inputBox = searchWrapper.querySelector(".iptxt");
+						const suggBox = searchWrapper.querySelector(".autocom-box");
+	
+						inputBox.onkeyup = (e)=>{
+							let userData = e.target.value;
+							let emptyArray = [];
+							if(userData){
+								emptyArray = suggestions.filter((data)=>{
+									return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+								});
+								emptyArray = emptyArray.map((data)=>{
+									return data = '<li><span>'+ data +'</span></li>';
+								});
+								console.log(emptyArray);
+								searchWrapper.classList.add("active");
+								showSuggestions(emptyArray);
+								let allList = suggBox.querySelectorAll("li");
+								for (let i = 0; i < allList.length; i++){
+									allList[i].setAttribute("onclick", "select(this)");
+								}
+							} else {
+								searchWrapper.classList.remove("active");
+							}
+						}
+	
+						function select(element){
+							let selectUserData = element.textContent;
+							inputBox.value = selectUserData;
+							searchWrapper.classList.remove("active");
+						}
+	
+						function showSuggestions(list){
+							let listData;
+							if(!list.length){
+								userValue = inputBox.value;
+								listData = '<li><span>'+userValue+'</span></li>';
+							} else {
+								listData = list.join('');
+							}
+							suggBox.innerHTML = listData;
+						}
+					</script>
+					<script src="TypeBB/Common/js/suggerstions.js"></script>
+				</div>
+
+				<!-- ScrollOpacity -->
+				<div class="scot">
+					<div id="prbn">
+						<h4>Scroll Opacity:Background-attachment:fixed</h4>
+						<div class="scrolldownout">
+							<div class="mousey">
+								<div class="scroller"></div>
+							</div>
+						</div>
+					</div>
+					<script>
+						$(document).ready(function(){
+							$(window).on('scroll', prbn)
+							function prbn(){
+								var s = $(window).scrollTop();
+								function pbg(e, t) {
+									$(e).css({
+										'background-position': 'center ' + -(s*t) + '(-20px - px)',
+									});
+								} 
+								function ptxt(e, t) {
+									$(e).css({
+										'position': 'relative',
+										'top': (s*t) + 'px',
+									});
+								} 
+								//backgrounds
+								pbg('#prbn h4', .9); 
+								ptxt('#prbn', .9);
+							}
+						});
+					</script>
+				</div>
+				
+				<!-- Receipt Top Bottom Background Style -->
+				<div class="rctbbs">
+					<div class="receiptbox">
+						<div>Receipt Paper Css3 Only</div>
+					</div>
+				</div>
+
+				<div class="box-column">
+					<!-- selector Box -->
+					<div class="sltbx" id="studya">
+						<div class="dropdown">
+							<div class="select" tabindex="0">
+								<div class="selected"><span>Select Box Design Program</span></div>
+								<div class="caret"></div>
+							</div>
+							<ul class="menu">
+								<li><a href="#">Framer</a></li>
+								<li><a href="#">sketch</a></li>
+								<li><a href="#">Invision Studio</a></li>
+								<li class="active"><a href="#">Figma</a></li>
+								<li><a href="#">Adobe XD</a></li>
+							</ul>
+						</div>
+						<script>
+							$(document).ready(function(){
+								const dropdowns = document.querySelectorAll('.dropdown');
+								dropdowns.forEach(dropdown => {
+									const select = dropdown.querySelector('.select');
+									const caret = dropdown.querySelector('.caret');
+									const menu = dropdown.querySelector('.menu');
+									const options = dropdown.querySelectorAll('.menu li');
+									const selected = dropdown.querySelector('.selected span');
+									select.addEventListener('click', (event) => {
+										select.classList.toggle('select-clicked');
+										caret.classList.toggle('caret-rotate');
+										menu.classList.toggle('menu-open');
+									});
+									options.forEach(option => {
+										option.addEventListener('click', (event) => {
+											selected.innerText = option.innerText;
+											select.classList.remove('select-clicked');
+											caret.classList.remove('caret-rotate');
+											menu.classList.remove('menu-open');
+											options.forEach(option => {
+												option.classList.remove('active');
+											});
+											option.classList.add('active');
+										});
+									});
+								});
+							});
+						</script>
+					</div>
+
+					<!-- Content open/close -->
+					<!-- https://ionic.io/ionicons/usage -->
+					<!-- html class="hydrated" class 생성 됨 -->
+					<div class="cttopcl" id="studyb">
+						<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+						<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+						<div class="card">
+							<div class="profile"><span><img src="TypeBB/images/profile_a.jpg" /></span>User Profile Card, Arrow Click</div>
+							<ul>
+								<li><ion-icon name="mail-unread-outline"></ion-icon>Today Message</li>
+								<li><ion-icon name="hand-right-outline"></ion-icon>Hand Style</li>
+								<li><ion-icon name="flower-outline"></ion-icon>Choice Flower</li>
+								<li><ion-icon name="fast-food-outline"></ion-icon>Food List</li>
+							</ul>
+							<div class="toggle" id="cardToggle" tabindex="0"><span class="seffect"><ion-icon name="chevron-up-outline"></ion-icon></span></div>
+						</div>
+						<script>
+							const card = document.querySelector('.card');
+							const cardtoggle = document.querySelector('.toggle');
+							cardtoggle.onclick = function(){
+								card.classList.toggle('active');
+							}
+						</script>
+					</div>
+				</div>
+
+				<!-- Position fixed sticky -->
+				<nav id="stickyline" class="sfatfn">
+					<!-- SuperFishAccessibilityTabFocusNav -->
+					<ul class="depth_one megamenu">
+						<li><a href="#!">VIDEOS</a></li>
+						<li>
+							<a href="#!">CHARACTERS</a>
+							<ul class="depth_two">
+								<li>
+									<a href="#!">MARVEL CHARACTERS</a>
+									<ul class="depth_three">
+										<li><a href="#!">WANDA MAXIMOFF</a></li>
+										<li><a href="#!">SPIDER-MAN</a></li>
+										<li><a href="#!">AGENT MOBIUS</a></li>
+									</ul>
+								</li>
+								<li><a href="#!">FEATURED CHARACTERS</a></li>
+								<li><a href="#!">CHARACTER SPOTLIGHT</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#!">COMIC</a>
+							<ul class="depth_two">
+								<li>
+									<a href="#!">The Vitals: True EMS Stories #0</a>
+									<ul class="depth_three">
+										<li>
+											<a href="#!">The Vitals: True EMS Stories #0</a>
+											<ul class="depth_four">
+												<li><a href="#!">Free Comic Book Day: Spider-Man/Venom #1</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li><a href="#!">ItemA</a></li>
+								<li><a href="#!">ItemA</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#!">NEWS</a>
+							<ul class="depth_two">
+								<li><a href="#!">ItemA</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#!">MORE</a>
+							<ul class="depth_two">
+								<li><a href="#!">ItemA</a></li>
+								<li><a href="#!">ItemA</a></li>
+								<li><a href="#!">ItemA</a></li>
+								<li><a href="#!">ItemA</a></li>
+							</ul>
+						</li>
+					</ul>
+					<script>
+						$(document).ready(function(){
+							$("ul.megamenu").superfish({
+								hoverClass:    'sfHover',  //       class
+								pathClass:     'overideThisToUse', //        class
+								pathLevels:    3,       //     
+								delay:         10,       //
+		
+								animation:     {opacity:'show'},
+								animationOut:  {opacity:'hide'},
+		
+								//animation: {opacity: 'show',height:'show'},
+								//animationOut: {opacity: 'hide'},
+		
+								speed:         'fast',    //normal,fast
+								speedOut:      'fast', 
+								dropShadows:   true,     //     ，   ‘false’
+								cssArrows:     true, 
+								onInit:        function(){},   //         
+								onBeforeShow:  function(){}, //           
+								onShow:        function(){},  //           
+								onHide:        function(){}   //           
+							});
+						});
+					</script>
+					<script src="TypeBB/Common/js/superfish.js"></script>
+				</nav>
+				<script>
+					$(window).scroll(function(){
+						//Header
+						if($(window).scrollTop()>= 890){
+							$('#stickyline').addClass('fixed');
+						}
+						else {
+							$('#stickyline').removeClass('fixed');
+						}
+						//Footer
+						var navpanel = $('.bottomnav');
+						var panelHeight = navpanel.height();
+						var footerHeight = $('.footer').height();
+						if( $(document).height() - panelHeight - footerHeight <= $(window).scrollTop() + $(window).height() ) {
+							navpanel.removeClass('fixed');
+						} 
+						else {
+							navpanel.addClass('fixed');
+						}
+					});
+				</script>
+				
+				<!-- Marquee Loop Text -->
+				<div class="mqltbox">
+					<div class="mqlt">
+						<span>Drawing Hand Digital 2022 to 2020 from Works</span>
+						<span>Drawing Hand Digital 2022 to 2020 from Works</span>
+						<span>Drawing Hand Digital 2022 to 2020 from Works</span>
+					</div>
+				</div>
+
+				<!-- Drawing -->
+				<div class="drawing">
+					<script src="TypeBB/Common/js/wow.js"></script> <!-- wow.js -->
+					<link type="text/css" rel="stylesheet" href="TypeBB/Common/css/animate.min.css" /><!-- animate.css -->
+					<ul>
+						<li class="box1 t"><div class="wow tada" data-wow-duration="2s" data-wow-delay="1s"><div><h4>Shinbi House</h4><p>Choi Kanglim</p></div></div></li>
+						<li class="box2 b"><div class="wow heartBeat" data-wow-duration="2s" data-wow-delay="1s"><div><h4>Shinbi House</h4><p>Guido Hyun</p></div></div></li>
+						<li class="box3 l"><div class="wow bounceInLeft" data-wow-duration="2s" data-wow-delay="1s"><div><h4>Brawl Stars</h4><p></p></div></div></li>
+						<li class="box4 r"><div class="wow bounceIn" data-wow-duration="2s" data-wow-delay="3s"><div><h4>Poppy Playtime</h4><p>Huggy Wuggy</p></div></div></li>
+						<li class="box5 t"><div class="wow bounceInRight" data-wow-duration="2s" data-wow-delay="1s"><div><h4>Your Throne</h4><p>Helio/Medeia</p></div></div></li>
+						<li class="box6 b"><div class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s"><div><h4>The Blood of the Butterfly</h4><p>Shin Ja young/white plum</p></div></div></li>
+						<li class="box7 l"><div class="wow fadeInDown" data-wow-duration="2s" data-wow-delay="1s"><div><h4>Shinbi House</h4><p>Ghost</p></div></div></li>
+						<li class="box8 r"><div class="wow fadeInLeft" data-wow-duration="2s" data-wow-delay="1s"><div><h4>Demon Slayer</h4><p>Tengen Uzui</p></div></div></li>
+						<li class="box9 t"><div class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="3s"><div><h4>Demon Slayer</h4><p>Nezuko Kamado</p></div></div></li>
+						<li class="box10 b"><div class="wow fadeInLeft" data-wow-duration="2s" data-wow-delay="3s"><div><h4>Shinbi House</h4><p>Characters</p></div></div></li>
+						<li class="box11 l"><div class="wow fadeInLeft" data-wow-duration="2s" data-wow-delay="3s"><div><h4>surplus commando</h4><p>Yuhwa(Red)</p></div></div></li>
+						<li class="box12 r"><div class="wow fadeInUp" data-wow-duration="2s" data-wow-delay="1s"><div><h4>surplus commando</h4><p>Jaehyun(White)</p></div></div></li>
+						<li class="box13 t"><div class="wow zoomInLeft" data-wow-duration="2s" data-wow-delay="1s"><div><h4>surplus commando</h4><p>Dalae(Lime)</p></div></div></li>
+						<li class="box14 b"><div class="wow zoomInRight" data-wow-duration="2s" data-wow-delay="1s"><div><h4>surplus commando</h4><p>Ari(Yellow)</p></div></div></li>
+						<li class="box15 l"><div class="wow zoomInUp" data-wow-duration="2s" data-wow-delay="1s"><div><h4>surplus commando</h4><p>Characters</p></div></div></li>
+						<li class="box16 r"><div class="wow flip" data-wow-duration="2s" data-wow-delay="1s"><div><h4>surplus commando</h4><p>Characters</p></div></div></li>
+						<li class="box17 t"><div class="wow flipInX" data-wow-duration="2s" data-wow-delay="1s"><div><h4>Demon Slayer</h4><p>Rengoku</p></div></div></li>
+						<li class="box18 b"><div class="wow jackInTheBox" data-wow-duration="2s" data-wow-delay="1s"><div><h4>surplus commando</h4><p>Yulseo(Maroon)</p></div></div></li>
+						<li class="box19 l"><div class="wow zoomIn" data-wow-duration="2s" data-wow-delay="1s"><div><h4>Demon Slayer</h4><p>Akaza/Rengoku</p></div></div></li>
+						<li class="box20 r"><div class="wow zoomInLeft" data-wow-duration="2s" data-wow-delay="1s"><div><h4>surplus commando</h4><p>Suhyeong/Yuhwa</p></div></div></li>
+					</ul>
+					<script>
+						wow = new WOW({
+							boxclass: 'wow',
+							mobile: true,
+							live: true
+						})
+						wow.init();
+					</script>
+				</div>
+
+				<!-- Marquee Loop Text -->
+				<div class="mqltbox right">
+					<div class="mqlt">
+						<span>Drawing Hand Digital 2022 to 2020 from Works</span>
+						<span>Drawing Hand Digital 2022 to 2020 from Works</span>
+						<span>Drawing Hand Digital 2022 to 2020 from Works</span>
+						<span>Drawing Hand Digital 2022 to 2020 from Works</span>
+					</div>
+				</div>
+
+				<!-- HorizontalGraph -->
+				<div class="hrztg">
+					<div>
+						<div>CheckBox</div>
+						<div>
+							<div style="width:20%">
+								<span>Text Name(Maximum Limit)</span>
+								<span>20%</span>
+							</div>
+							<div class="progress" style="width:20%"></div>
+						</div>
+					</div>
+					<div>
+						<div>CheckBox</div>
+						<div>
+							<div style="width:50.5%">
+								<span>Text Name(Maximum Limit)</span>
+								<span>50.5%</span>
+							</div>
+							<div class="progress" style="width:50.5%"></div>
+						</div>
+					</div>
+					<div class="selected">
+						<div>CheckBox</div>
+						<div>
+							<div style="width:100%">
+								<span>Text Name(Maximum Limit)</span>
+								<span>20%</span>
+							</div>
+							<div class="progress" style="width:100%"></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- App Navigation -->
+				<div class="angt">
+					<div class="appnav">
+						<ul class="navlist">
+							<li class="active">
+								<a href="#!">
+									<span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+									<span class="text">Home</span>
+									<div class="indicator"></div>
+								</a>
+							</li>
+							<li>
+								<a href="#!">
+									<span class="icon"><ion-icon name="information-outline"></ion-icon></span>
+									<span class="text">Info</span>
+									<div class="indicator"></div>
+								</a>
+							</li>
+							<li>
+								<a href="#!">
+									<span class="icon"><ion-icon name="chatbox-outline"></ion-icon></span>
+									<span class="text">Message</span>
+									<div class="indicator"></div>
+								</a>
+							</li>
+							<li>
+								<a href="#!">
+									<span class="icon"><ion-icon name="image-outline"></ion-icon></span>
+									<span class="text">Photo</span>
+									<div class="indicator"></div>
+								</a>
+							</li>
+							<li>
+								<a href="#!">
+									<span class="icon"><ion-icon name="aperture-outline"></ion-icon></span>
+									<span class="text">Setting</span>
+									<div class="indicator"></div>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<script>
+						$(document).ready(function(){
+							const list = document.querySelectorAll('.appnav li');
+							function appActiveLink(){
+								list.forEach((item) =>
+									item.classList.remove('active'));
+									this.classList.add('active');
+							}
+							list.forEach((item) =>
+							item.addEventListener('click',appActiveLink));
+						});
+					</script>
+				</div>
+
+				<!-- Parallax Bg -->
+				<div class="parallax-container">
+					<div class="parallax">
+						<div class="text">
+							<h4>Avengers:Endgame</h4>
+							<p>Endgame is a 2019 American superhero film based on the Marvel Comics superhero team the Avengers.</p>
+						</div>
+						<img src="TypeBB/images/sampleF.jpg" />
+					</div>
+					<script>
+						// Materialize - Parallax
+						$(document).ready(function(){
+							$('.parallax').parallax();
+						});
+					</script>
+				</div>
+
+				<!-- ToastMessage -->
+				<div class="toastmessage">
+					<button onclick="myFunction()"><span>Show toast</span></button>
+					<div id="toast" class="">Empty Message ... ??</div>
+					<script>
+						// toast message box
+						function myFunction() {
+							var x = document.getElementById("toast");
+							x.className = "show";
+							setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+						}
+					</script>
+				</div>
+
+				<!-- List MixItUp -->
+				<!-- https://www.kunkalabs.com/mixitup/ 리스트 구현 라이브러리 -->
+				<div class="listmixitup">
+					<div class="ctrloll">
+						<ul>
+							<li><button type="button" data-filter="all">All</button></li>
+							<li><button type="button" data-filter=".blue">blue</button></li>
+							<li><button type="button" data-filter=".green">green</button></li>
+							<li><button type="button" data-filter=".orange">orange</button></li>
+							<li><button type="button" data-filter=".pink">pink</button></li>
+							<li><button type="button" data-filter=".rebeccapurple">rebeccapurple</button></li>
+						</ul>
+						<ul class="itmsort">
+							<li><button type="button" data-sort="order:asc">Ascending</button></li>
+							<li><button type="button" data-sort="order:descending">Descending</button></li>
+							<li><button type="button" data-sort="random">Random</button></li>
+						</ul>
+					</div>
+					<div class="mix-wrapper">
+						<div class="blue" data-order="1">
+							<div>
+								<h4>Box 1</h4>
+								<p>MixItUp blue</p>
+							</div>
+						</div>
+						<div class="green" data-order="2">
+							<div>
+								<h4>Box 2</h4>
+								<p>MixItUp green</p>
+							</div>
+						</div>
+						<div class="orange" data-order="3">
+							<div>
+								<h4>Box 3</h4>
+								<p>MixItUp orange</p>
+							</div>
+						</div>
+						<div class="pink" data-order="4">
+							<div>
+								<h4>Box 4</h4>
+								<p>MixItUp Pink</p>
+							</div>
+						</div>
+						<div class="rebeccapurple" data-order="5">
+							<div>
+								<h4>Box 5</h4>
+								<p>MixItUp rebeccapurple</p>
+							</div>
+						</div>
+
+						<script src="TypeBB/Common/js/mixitup.min.js"></script><!-- mixitup.min.js -->
+						<script>
+							// var mixer = mixitup('.mix-wrapper');
+							let mixerFeatured = mixitup('.mix-wrapper', {
+								selectors:{
+									target:'.mix-wrapper>div'
+								},
+								animation:{
+									duration:300
+								}
+							});
+						</script>
+					</div>
+				</div>
+
+				<!-- Swiper bundle -->
+				<div>
+					<script src="TypeBB/Common/js/swiper-bundle.min.js"></script>
+					<link rel="stylesheet" href="TypeBB/Common/css/swiper-bundle.min.css" />
+
+					<div class="swiper cardslide">
+						<div class="swiper-wrapper">
+							<article class="swiper-slide a">
+								<div>
+									<div>
+										<h5>Rocket</h5>
+										<p>"I could lose a lot. Me personally, I could lose a lot..."</p>
+										<p>Bradley Cooper</p>
+									</div>
+									<img src="TypeBB/images/sampleA1.jpg" style="width:100%;height:auto" />
+									<svg viewBox="0 0 36 52" xmlns="http://www.w3.org/2000/svg">
+										<rect fill="#EC1D24" width="100%" height="100%"></rect>
+										<path fill="#FEFEFE" d="M31.5 48V4H21.291l-3.64 22.735L14.102 4H4v44h8V26.792L15.577 48h4.229l3.568-21.208V48z"></path>
+									</svg>
+								</div>
+							</article>
+							<article class="swiper-slide b">
+								<div>
+									<div>
+										<h5>Nebula</h5>
+										<p>"If he gets all the Infinity Stones, he can do it with the snap of his fingers."</p>
+										<p>Karen Gillan</p>
+									</div>
+									<img src="TypeBB/images/sampleA2.jpg" style="width:100%;height:auto" />
+									<svg viewBox="0 0 36 52" xmlns="http://www.w3.org/2000/svg">
+										<rect fill="#EC1D24" width="100%" height="100%"></rect>
+										<path fill="#FEFEFE" d="M31.5 48V4H21.291l-3.64 22.735L14.102 4H4v44h8V26.792L15.577 48h4.229l3.568-21.208V48z"></path>
+									</svg>
+								</div>
+							</article>
+							<article class="swiper-slide c">
+								<div>
+									<div>
+										<h5>War Machine</h5>
+										<p>"I'm Inevitable"</p>
+										<p>Don Cheadle</p>
+									</div>
+									<img src="TypeBB/images/sampleA3.jpg" style="width:100%;height:auto" />
+									<svg viewBox="0 0 36 52" xmlns="http://www.w3.org/2000/svg">
+										<rect fill="#EC1D24" width="100%" height="100%"></rect>
+										<path fill="#FEFEFE" d="M31.5 48V4H21.291l-3.64 22.735L14.102 4H4v44h8V26.792L15.577 48h4.229l3.568-21.208V48z"></path>
+									</svg>
+								</div>
+							</article>
+							<article class="swiper-slide d">
+								<div>
+									<div>
+										<h5>Black Widow</h5>
+										<p>"Live as the world wants. Live as yourself... I chose. I don't run away anymore."</p>
+										<p>Scarlett Johansson</p>
+									</div>
+									<img src="TypeBB/images/sampleA4.jpg" style="width:100%;height:auto" />
+									<svg viewBox="0 0 36 52" xmlns="http://www.w3.org/2000/svg">
+										<rect fill="#EC1D24" width="100%" height="100%"></rect>
+										<path fill="#FEFEFE" d="M31.5 48V4H21.291l-3.64 22.735L14.102 4H4v44h8V26.792L15.577 48h4.229l3.568-21.208V48z"></path>
+									</svg>
+								</div>
+							</article>
+							<article class="swiper-slide e">
+								<div>
+									<div>
+										<h5>Thor Odinson</h5>
+										<p>"A beacon of hope, shining out across the star"</p>
+										<p>Chris Hemsworth</p>
+									</div>
+									<img src="TypeBB/images/sampleA5.jpg" style="width:100%;height:auto" />
+									<svg viewBox="0 0 36 52" xmlns="http://www.w3.org/2000/svg">
+										<rect fill="#EC1D24" width="100%" height="100%"></rect>
+										<path fill="#FEFEFE" d="M31.5 48V4H21.291l-3.64 22.735L14.102 4H4v44h8V26.792L15.577 48h4.229l3.568-21.208V48z"></path>
+									</svg>
+								</div>
+							</article>
+							<article class="swiper-slide f">
+								<div>
+									<div>
+										<h5>Iron Man</h5>
+										<p>"The upgrade is over now."</p>
+										<p>Robert Downey Jr.</p>
+									</div>
+									<img src="TypeBB/images/sampleA6.jpg" style="width:100%;height:auto" />
+									<svg viewBox="0 0 36 52" xmlns="http://www.w3.org/2000/svg">
+										<rect fill="#EC1D24" width="100%" height="100%"></rect>
+										<path fill="#FEFEFE" d="M31.5 48V4H21.291l-3.64 22.735L14.102 4H4v44h8V26.792L15.577 48h4.229l3.568-21.208V48z"></path>
+									</svg>
+								</div>
+							</article>
+						</div>
+						<div class="swiper-pagination"></div>
+						<div class="next"><ion-icon name="arrow-forward-outline"></ion-icon></div>
+						<div class="prev"><ion-icon name="arrow-back-outline"></ion-icon></div>
+					</div>
+					<script>
+						// cardslide
+						let swiperPopular = new Swiper(".cardslide", {
+							slidesPerView :3, 
+							spaceBetween: 0,
+							loop: true,
+							initialSlide: 0,  //Start Position
+							loopFillGroupWithBlank: true,
+							grabCursor: true,
+							autoplayDisableOnInteraction:true,
+							autoHeight: true, //enable auto height
+							touchRatio: 0.3,
+							autoplay: {
+								delay:4000,
+								disableOnInteraction:false,
+							},
+							navigation: {
+								nextEl: '.next',
+								prevEl: '.prev',
+							},
+							// pagination: {
+							// 	el: ".cardslide .swiper-pagination",
+							// 	clickable: true,
+							// },
+							// breakpoints: {
+							// 	768: {
+							// 		slidesPerView: 1,
+							// 		spaceBetween: 20,
+							// 	},
+							// 	1024: {
+							// 		slidesPerView: 1,
+							// 		spaceBetween: 20,
+							// 	},
+							// 	1600: {
+							// 		slidesPerView: 1,
+							// 		spaceBetween: 20,
+							// 	},
+							// }
+						});
+						$(".cardslide").hover(function () {
+							(this).swiper.autoplay.stop();
+						}, function () {
+							(this).swiper.autoplay.start();
+						});
+					</script>
+
+					<!-- SideNav -->
+					<div class="sidenav">
+						<div class="sidnav"> <!-- header -->
+							<div class="logo">
+								<div class="title">
+									<ion-icon name="pencil-outline"></ion-icon>
+									<div class="text">Fish Book</div>
+								</div>
+								<a href="#!" class="sidclick"><ion-icon name="chevron-back-outline"></ion-icon></a>
+							</div>
+							<div class="depthlink">
+								<ul>
+									<li><a href="#!" title="Job History"><ion-icon name="git-merge-outline"></ion-icon><span>History</span></a></li>
+									<li><a href="#!" title="Skill"><ion-icon name="restaurant-outline"></ion-icon><span>Skill</span></a></li>
+									<li><a href="#!" title="Project List"><ion-icon name="code-working-outline"></ion-icon><span>Project</span></a></li>
+								</ul>
+								<ul>
+									<li><a href="#!" title="Contact Us"><ion-icon name="navigate-circle-outline"></ion-icon><span>Contact</span></a></li>
+									<li><a href="#!" title="SNS"><ion-icon name="paper-plane-outline"></ion-icon><span>SNS</span></a></li>
+									<li><a href="#!" title="QnA"><ion-icon name="happy-outline"></ion-icon><span>QnA</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="sidmain">
+							<h4>
+								<ion-icon name="fish-outline"></ion-icon>
+								<ion-icon class="c" name="airplane-outline"></ion-icon>
+								<ion-icon name="rocket-outline"></ion-icon>
+							</h4>
+						</div>
+						<script>
+							let menuClose = document.querySelector(".sidnav")
+							let closeBtn = document.querySelector(".sidclick")
+							closeBtn.addEventListener("click", () => {
+								menuClose.classList.toggle("sidclose");
+							})
+						</script>
+					</div>
+
+					<div class="swiper motionslide">
+						<div class="swiper-wrapper">
+							<article class="swiper-slide">
+								<div>
+									<div class="motionmove l"><ion-icon name="logo-android"></ion-icon></div>
+									<div class="motionmove r"><ion-icon name="logo-apple"></ion-icon></div>
+								</div>
+								<img src="TypeBB/images/sampleA7.jpg" style="width:100%;height:auto" />
+							</article>
+							<article class="swiper-slide">
+								<div>
+									<div class="anitxtbx">
+										<h5>Hulk</h5>
+										<p>"That's my secret, Cap. I'm always angry."</p>
+										<p>Bruce Banner/Mark Ruffalo</p>
+									</div>
+								</div>
+								<img src="TypeBB/images/sampleA8.jpg" style="width:100%;height:auto" />
+							</article>
+							<article class="swiper-slide">
+								<div>
+									<div class="anitxtbx">
+										<h5>Hawkeye</h5>
+										<p>"Better call it, Coulson. 'cause I'm starting to root for this guy."</p>
+										<p>Ronin/Jeremy Renner</p>
+									</div>
+								</div>
+								<img src="TypeBB/images/sampleA9.jpg" style="width:100%;height:auto" />
+							</article>
+							<article class="swiper-slide">
+								<div>
+									<div class="anitxtbx">
+										<h5>Ant-Man</h5>
+										<p>"I love you, Cassie."</p>
+										<p>Scott Edward Harris Lang/Paul Rudd</p>
+									</div>
+								</div>
+								<img src="TypeBB/images/sampleA10.jpg" style="width:100%;height:auto" />
+							</article>
+							<article class="swiper-slide">
+								<div>
+									<div class="anitxtbx">
+										<h5>Captain Marvel</h5>
+										<p>"Truth be told, I was ready to hang it up until I met you today."</p>
+										<p>Vers/Brie Larson</p>
+									</div>
+								</div>
+								<img src="TypeBB/images/sampleA11.jpg" style="width:100%;height:auto" />
+							</article>
+							<article class="swiper-slide">
+								<div>
+									<div class="anitxtbx">
+										<h5>Okoye</h5>
+										<p>"Wakanda Forever!!"</p>
+										<p>Danai Gurira</p>
+									</div>
+								</div>
+								<img src="TypeBB/images/sampleA12.jpg" style="width:100%;height:auto" />
+							</article>
+						</div>
+						<div class="swiper-pagination"></div>
+						<div class="next"><ion-icon name="chevron-forward-outline"></ion-icon></div>
+						<div class="prev"><ion-icon name="chevron-back-outline"></ion-icon></div>
+					</div>
+					<script>
+						// motionslide
+						let swiperMotion = new Swiper(".motionslide", {
+							slidesPerView :'auto', 
+							spaceBetween:0,
+							// slidesPerGroup: 2,
+							loop: true,
+							initialSlide: 0,
+							loopFillGroupWithBlank: true,
+							grabCursor: true,
+							autoplayDisableOnInteraction:true,
+							touchRatio: 0.1,
+							autoplay: {
+								delay:4000,
+								disableOnInteraction:false,
+							},
+							navigation: {
+								nextEl: '.next',
+								prevEl: '.prev',
+							},
+							pagination: {
+								el: ".motionslide .swiper-pagination",
+								// clickable: true,
+								type: "fraction",
+								renderBullet: function (index, className){
+									return '<li class="' + className + '">' + "<span>" + (index + 1) + "</span>" + "</li>";
+								},
+							},
+						});
+						$(".motionslide").hover(function () {
+							(this).swiper.autoplay.stop();
+						}, function () {
+							(this).swiper.autoplay.start();
+						});
+					</script>
+
+					<!-- Shape Background bulr -->
+					<div class="shapebg">
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<div></div>
+						<span>Shape Background Color</span>
+					</div>
+
+					<!-- SwiperControllButton -->
+					<div class="wrap-slide-box">
+						<div class="swiper-button-next"></div>
+						<div class="swiper-container aaaaaa">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide" tabindex="-1">
+								<h1><img src="TypeBB/images/sampleB1.jpg" /></h1>
+								<ul>
+									<li><a href="#!"><span>Push Button</span></a></li>
+								</ul>
+							</div>
+							<div class="swiper-slide" tabindex="-1">
+								<h1><img src="TypeBB/images/sampleB2.jpg" /></h1>
+								<ul>
+									<li><a href="#!"><span>Push Button</span></a></li>
+									<li><a href="#!"><span>Push Button</span></a></li>
+								</ul>
+							</div>
+							<div class="swiper-slide" tabindex="-1">
+								<h1><img src="TypeBB/images/sampleB3.jpg" /></h1>
+								<ul>
+									<li><a href="#!"><span>Push Button</span></a></li>
+									<li><a href="#!"><span>Push Button</span></a></li>
+									<li><a href="#!"><span>Push Button</span></a></li>
+								</ul>
+							</div>
+							<div class="swiper-slide" tabindex="-1">
+								<h1><img src="TypeBB/images/sampleB4.jpg" /></h1>
+								<ul>
+									<li><a href="#!"><span>Push Button</span></a></li>
+									<li><a href="#!"><span>Push Button</span></a></li>
+									<li><a href="#!"><span>Push Button</span></a></li>
+									<li><a href="#!"><span>Push Button</span></a></li>
+								</ul>
+							</div>
+							<div class="swiper-slide" tabindex="-1">
+								<h1><img src="TypeBB/images/sampleB5.jpg" /></h1>
+								<ul>
+									<li><a href="#!"><span>Push Button</span></a></li>
+									<li><a href="#!"><span>Push Button</span></a></li>
+									<li><a href="#!"><span>Push Button</span></a></li>
+									<li><a href="#!"><span>Push Button</span></a></li>
+									<li><a href="#!"><span>Push Button</span></a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="swiper-button-prev"></div>
+						<div class="swiper-pagination"></div>
+						<div class="wrap-autoplay-control">
+							<button aria-pressed="false" aria-label="Play Stop"></button>
+						</div>
+					</div>
+				  </div>
+				  <script>
+					  new Swiper('.aaaaaa', {
+						autoplay: {
+							delay:12000,
+							disableOnInteraction:false,
+						},
+						navigation: {
+							nextEl: '.wrap-slide-box .swiper-button-next',
+							prevEl: '.wrap-slide-box .swiper-button-prev',
+						},
+						pagination: {
+							el: ".swiper-pagination",
+						},
+						a11y: {
+							prevSlideMessage: '이전 슬라이드',
+							nextSlideMessage: '다음 슬라이드',
+							slideLabelMessage: '총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.',
+						},
+						on: {
+							init: function () {
+								thisSlide = this;
+								autoPlayBtn = document.querySelector('.wrap-autoplay-control > button');
+								autoPlayBtn.addEventListener('click', (e) => {
+									autoPlayState = autoPlayBtn.getAttribute('aria-pressed');
+									if (autoPlayState === 'false') {
+										autoPlayBtn.setAttribute('aria-pressed', 'true');
+										thisSlide.autoplay.stop();
+									} else if (autoPlayState === 'true') {
+										autoPlayBtn.setAttribute('aria-pressed', 'false');
+										thisSlide.autoplay.start();
+									};
+								});
+							},
+						},
+					})
+				  </script>
+					
+				</div>
+
+				<div class="box-column">
+					<!-- Aos.js -->
+					<script src="TypeBB/Common/js/aos.js"></script> <!-- wow.js -->
+					<link type="text/css" rel="stylesheet" href="TypeBB/Common/css/aos.css" /><!-- animate.css -->
+
+					<script>
+						AOS.init();
+					</script>
+
+					<!-- MetarializeButtonEffect -->
+					<div class="bttef" data-aos="fade-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+						<h5>Metarialize :active background-color effect</h5>
+						<p>nomal class setting : btn, secondary-content = delete</p>
+						<ul class="materializeiconstyle">
+							<li><a href="#!" class="waves-effect">Default</a></li>
+							<li><a href="#!" class="waves-effect waves-light">waves-light</a></li>
+							<li><a href="#!" class="waves-effect waves-red">waves-red</a></li>
+							<li><a href="#!" class="waves-effect waves-yellow">waves-yellow</a></li>
+							<li><a href="#!" class="waves-effect waves-orange">waves-orange</a></li>
+							<li><a href="#!" class="waves-effect waves-purple">waves-purple</a></li>
+							<li><a href="#!" class="waves-effect waves-green">waves-green</a></li>
+							<li><a href="#!" class="waves-effect waves-teal">waves-teal</a></li>
+						</ul>
+					</div>
+
+					<!-- ReadMore -->
+					<div class="readmore" data-aos="fade-down" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+						<h5>Read more text</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel
+							<span id="dots" style="display: inline-block;">...</span>
+							<span id="more" class="moretxt waves-effect waves-yellow" style="display: none;">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span>
+						</p>
+						<button onclick="readmoreFunction()" id="myBtn">More</button>
+						<script>
+							// read more
+							function readmoreFunction() {
+								var dots = document.getElementById("dots");
+								var moreText = document.getElementById("more");
+								var btnText = document.getElementById("myBtn");
+								if (dots.style.display === "none") {
+									dots.style.display = "inline-block";
+									btnText.innerHTML = "More";
+									moreText.style.display = "none";
+								} else {
+									dots.style.display = "none";
+									btnText.innerHTML = "Close";
+									moreText.style.display = "inline-block";
+								}
+							}
+						</script>
+
+						<h5 class="magt">Materialize Selector</h5>
+						<!-- MaterializeSelector -->
+						<div class="mtrlzslt">
+							<select>
+								<option value="/">Marvel Music</option>
+								<option value="/">Marvel Film Productions LLC</option>
+								<option value="/">MVL Development LLC</option>
+								<option value="/">MVL Productions LLC</option>
+								<option value="/">MVL Film Finance LLC</option>
+								<option value="/">MVL Rights, LLC</option>
+								<option value="/">Iron Works Productions LLC</option>
+								<option value="/">Incredible Production</option>
+								<option value="/">Asgard Productions LLC</option>
+							</select>
+							<script>
+								$(document).ready(function(){
+									$('select').formSelect();
+								});
+							</script>
+						</div>
+					</div>
+				</div>
+
+				<div class="box-column twothree">
+					
+					<!-- AccessibilityTabContent -->
+					<div class="tabnomal" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+						<div id="acboard" class="acboard">
+							<div class="tabox">
+								<div class="content a active">
+									<h4><a href="#!">Avengers</a></h4>
+									<div class="box">
+										<ul>
+											<li><a href="#!" title="">Marvel Studios' Avengers: Endgame | Official Trailer 1</a><span class="date">2022.05.27</span></li>
+											<li><a href="#!" title="">Part of the journey is the end</a><span class="date">2022.05.27</span></li>
+											<li><a href="#!" title="">Marvel Studios' The Avengers | Official Trailer #1</a><span class="date">2022.05.27</span></li>
+											<li><a href="#!" title="">Marvel Studios presents in association with Paramount Pictures "Marvel's The Avengers"--the super hero team up of a lifetime, featuring iconic Marvel super heroes Iron Man, the Incredible Hulk, Thor, Captain America, Hawkeye and Black Widow.</a><span class="date">2022.05.27</span></li>
+										</ul>
+										<a href="#!" title="more" class="morebtn"><ion-icon name="chevron-forward-outline"></ion-icon></a>
+									</div>
+								</div>
+								<div class="content b">
+									<h4><a href="#!">Thor</a></h4>
+									<div class="box">
+										<ul>
+											<li><a href="#!" title="">Marvel Studios' Avengers: Endgame | Official Trailer 1</a><span class="date">2022.05.27</span></li>
+											<li><a href="#!" title="">Part of the journey is the end</a><span class="date">2022.05.27</span></li>
+											<li><a href="#!" title="">Marvel Studios' The Avengers | Official Trailer #1</a><span class="date">2022.05.27</span></li>
+											<li><a href="#!" title="">Marvel Studios presents in association with Paramount Pictures "Marvel's The Avengers"--the super hero team up of a lifetime, featuring iconic Marvel super heroes Iron Man, the Incredible Hulk, Thor, Captain America, Hawkeye and Black Widow.</a><span class="date">2022.05.27</span></li>
+										</ul>
+										<a href="#!" title="more" class="morebtn"><ion-icon name="chevron-forward-outline"></ion-icon></a>
+									</div>
+								</div>
+								<div class="content c">
+									<h4><a href="#!">Iron Man</a></h4>
+									<div class="box">
+										<ul>
+											<li><a href="#!" title="">Marvel Studios' Avengers: Endgame | Official Trailer 1</a><span class="date">2022.05.27</span></li>
+											<li><a href="#!" title="">Part of the journey is the end</a><span class="date">2022.05.27</span></li>
+											<li><a href="#!" title="">Marvel Studios' The Avengers | Official Trailer #1</a><span class="date">2022.05.27</span></li>
+											<li><a href="#!" title="">Marvel Studios presents in association with Paramount Pictures "Marvel's The Avengers"--the super hero team up of a lifetime, featuring iconic Marvel super heroes Iron Man, the Incredible Hulk, Thor, Captain America, Hawkeye and Black Widow.</a><span class="date">2022.05.27</span></li>
+										</ul>
+										<a href="#!" title="more" class="morebtn"><ion-icon name="chevron-forward-outline"></ion-icon></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<script>
+							$(document).ready(function() {
+								$("#acboard .tabox h4 a").click(function() {
+									$("#acboard .tabox .content").removeClass("active");
+									$(this).parent().parent().addClass("active");
+								});
+							});
+						</script>
+					</div>
+
+					<!-- TimeLine -->
+					<div class="timeline">
+<section class="cd-horizontal-timeline">
+  <div class="timeline">
+    <div class="events-wrapper">
+      <div class="events">
+        <ol>
+          <li><a href="#0" data-date="16/01/2014" class="selected">16 Jan</a></li>
+          <li><a href="#0" data-date="28/02/2014">28 Feb</a></li>
+          <li><a href="#0" data-date="20/04/2014">20 Mar</a></li>
+          <li><a href="#0" data-date="20/05/2014">20 May</a></li>
+          <li><a href="#0" data-date="09/07/2014">09 Jul</a></li>
+          <li><a href="#0" data-date="30/08/2014">30 Aug</a></li>
+          <li><a href="#0" data-date="15/09/2014">15 Sep</a></li>
+          <li><a href="#0" data-date="01/11/2014">01 Nov</a></li>
+          <li><a href="#0" data-date="10/12/2014">10 Dec</a></li>
+          <li><a href="#0" data-date="19/01/2015">29 Jan</a></li>
+          <li><a href="#0" data-date="03/03/2015">3 Mar</a></li>
+        </ol>
+        <span class="filling-line" aria-hidden="true"></span>
+      </div> <!-- .events -->
+	  <ul class="cd-timeline-navigation">
+		<li><a href="#0" class="prev inactive">Prev</a></li>
+		<li><a href="#0" class="next">Next</a></li>
+	  </ul> <!-- .cd-timeline-navigation -->
+    </div> <!-- .events-wrapper -->
+  </div> <!-- .timeline -->
+
+  <div class="events-content">
+	
+    <ol>
+      <li class="selected" data-date="16/01/2014">
+        <h2>Horizontal Timeline</h2>
+        <em>January 16th, 2014</em>
+        <p> 
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+        </p>
+      </li>
+
+      <li data-date="28/02/2014">
+        <h2>Event title here</h2>
+        <em>February 28th, 2014</em>
+        <p> 
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+        </p>
+      </li>
+
+      <li data-date="20/04/2014">
+        <h2>Event title here</h2>
+        <em>March 20th, 2014</em>
+        <p> 
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+        </p>
+      </li>
+
+      <li data-date="20/05/2014">
+        <h2>Event title here</h2>
+        <em>May 20th, 2014</em>
+        <p> 
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+        </p>
+      </li>
+
+      <li data-date="09/07/2014">
+        <h2>Event title here</h2>
+        <em>July 9th, 2014</em>
+        <p> 
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+        </p>
+      </li>
+
+      <li data-date="30/08/2014">
+        <h2>Event title here</h2>
+        <em>August 30th, 2014</em>
+        <p> 
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+        </p>
+      </li>
+
+      <li data-date="15/09/2014">
+        <h2>Event title here</h2>
+        <em>September 15th, 2014</em>
+        <p> 
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+        </p>
+      </li>
+
+      <li data-date="01/11/2014">
+        <h2>Event title here</h2>
+        <em>November 1st, 2014</em>
+        <p> 
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+        </p>
+      </li>
+
+      <li data-date="10/12/2014">
+        <h2>Event title here</h2>
+        <em>December 10th, 2014</em>
+        <p> 
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+        </p>
+      </li>
+
+      <li data-date="19/01/2015">
+        <h2>Event title here</h2>
+        <em>January 19th, 2015</em>
+        <p> 
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+        </p>
+      </li>
+
+      <li data-date="03/03/2015">
+        <h2>Event title here</h2>
+        <em>March 3rd, 2015</em>
+        <p> 
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.
+        </p>
+      </li>
+    </ol>
+  </div> <!-- .events-content -->
+</section>
+						<script>
+							jQuery(document).ready(function($){
+  var timelines = $('.cd-horizontal-timeline'),
+    eventsMinDistance = 60;
+
+  (timelines.length > 0) && initTimeline(timelines);
+
+  function initTimeline(timelines) {
+    timelines.each(function(){
+      var timeline = $(this),
+        timelineComponents = {};
+      //cache timeline components 
+      timelineComponents['timelineWrapper'] = timeline.find('.events-wrapper');
+      timelineComponents['eventsWrapper'] = timelineComponents['timelineWrapper'].children('.events');
+      timelineComponents['fillingLine'] = timelineComponents['eventsWrapper'].children('.filling-line');
+      timelineComponents['timelineEvents'] = timelineComponents['eventsWrapper'].find('a');
+      timelineComponents['timelineDates'] = parseDate(timelineComponents['timelineEvents']);
+      timelineComponents['eventsMinLapse'] = minLapse(timelineComponents['timelineDates']);
+      timelineComponents['timelineNavigation'] = timeline.find('.cd-timeline-navigation');
+      timelineComponents['eventsContent'] = timeline.children('.events-content');
+
+      //assign a left postion to the single events along the timeline
+      setDatePosition(timelineComponents, eventsMinDistance);
+      //assign a width to the timeline
+      var timelineTotWidth = setTimelineWidth(timelineComponents, eventsMinDistance);
+      //the timeline has been initialize - show it
+      timeline.addClass('loaded');
+
+      //detect click on the next arrow
+      timelineComponents['timelineNavigation'].on('click', '.next', function(event){
+        event.preventDefault();
+        updateSlide(timelineComponents, timelineTotWidth, 'next');
+      });
+      //detect click on the prev arrow
+      timelineComponents['timelineNavigation'].on('click', '.prev', function(event){
+        event.preventDefault();
+        updateSlide(timelineComponents, timelineTotWidth, 'prev');
+      });
+      //detect click on the a single event - show new event content
+      timelineComponents['eventsWrapper'].on('click', 'a', function(event){
+        event.preventDefault();
+        timelineComponents['timelineEvents'].removeClass('selected');
+        $(this).addClass('selected');
+        updateOlderEvents($(this));
+        updateFilling($(this), timelineComponents['fillingLine'], timelineTotWidth);
+        updateVisibleContent($(this), timelineComponents['eventsContent']);
+      });
+
+      //on swipe, show next/prev event content
+      timelineComponents['eventsContent'].on('swipeleft', function(){
+        var mq = checkMQ();
+        ( mq == 'mobile' ) && showNewContent(timelineComponents, timelineTotWidth, 'next');
+      });
+      timelineComponents['eventsContent'].on('swiperight', function(){
+        var mq = checkMQ();
+        ( mq == 'mobile' ) && showNewContent(timelineComponents, timelineTotWidth, 'prev');
+      });
+
+      //keyboard navigation
+      $(document).keyup(function(event){
+        if(event.which=='37' && elementInViewport(timeline.get(0)) ) {
+          showNewContent(timelineComponents, timelineTotWidth, 'prev');
+        } else if( event.which=='39' && elementInViewport(timeline.get(0))) {
+          showNewContent(timelineComponents, timelineTotWidth, 'next');
+        }
+      });
+    });
+  }
+
+  function updateSlide(timelineComponents, timelineTotWidth, string) {
+    //retrieve translateX value of timelineComponents['eventsWrapper']
+    var translateValue = getTranslateValue(timelineComponents['eventsWrapper']),
+      wrapperWidth = Number(timelineComponents['timelineWrapper'].css('width').replace('px', ''));
+    //translate the timeline to the left('next')/right('prev') 
+    (string == 'next') 
+      ? translateTimeline(timelineComponents, translateValue - wrapperWidth + eventsMinDistance, wrapperWidth - timelineTotWidth)
+      : translateTimeline(timelineComponents, translateValue + wrapperWidth - eventsMinDistance);
+  }
+
+  function showNewContent(timelineComponents, timelineTotWidth, string) {
+    //go from one event to the next/previous one
+    var visibleContent =  timelineComponents['eventsContent'].find('.selected'),
+      newContent = ( string == 'next' ) ? visibleContent.next() : visibleContent.prev();
+
+    if ( newContent.length > 0 ) { //if there's a next/prev event - show it
+      var selectedDate = timelineComponents['eventsWrapper'].find('.selected'),
+        newEvent = ( string == 'next' ) ? selectedDate.parent('li').next('li').children('a') : selectedDate.parent('li').prev('li').children('a');
+      
+      updateFilling(newEvent, timelineComponents['fillingLine'], timelineTotWidth);
+      updateVisibleContent(newEvent, timelineComponents['eventsContent']);
+      newEvent.addClass('selected');
+      selectedDate.removeClass('selected');
+      updateOlderEvents(newEvent);
+      updateTimelinePosition(string, newEvent, timelineComponents, timelineTotWidth);
+    }
+  }
+
+  function updateTimelinePosition(string, event, timelineComponents, timelineTotWidth) {
+    //translate timeline to the left/right according to the position of the selected event
+    var eventStyle = window.getComputedStyle(event.get(0), null),
+      eventLeft = Number(eventStyle.getPropertyValue("left").replace('px', '')),
+      timelineWidth = Number(timelineComponents['timelineWrapper'].css('width').replace('px', '')),
+      timelineTotWidth = Number(timelineComponents['eventsWrapper'].css('width').replace('px', ''));
+    var timelineTranslate = getTranslateValue(timelineComponents['eventsWrapper']);
+
+        if( (string == 'next' && eventLeft > timelineWidth - timelineTranslate) || (string == 'prev' && eventLeft < - timelineTranslate) ) {
+          translateTimeline(timelineComponents, - eventLeft + timelineWidth/2, timelineWidth - timelineTotWidth);
+        }
+  }
+
+  function translateTimeline(timelineComponents, value, totWidth) {
+    var eventsWrapper = timelineComponents['eventsWrapper'].get(0);
+    value = (value > 0) ? 0 : value; //only negative translate value
+    value = ( !(typeof totWidth === 'undefined') &&  value < totWidth ) ? totWidth : value; //do not translate more than timeline width
+    setTransformValue(eventsWrapper, 'translateX', value+'px');
+    //update navigation arrows visibility
+    (value == 0 ) ? timelineComponents['timelineNavigation'].find('.prev').addClass('inactive') : timelineComponents['timelineNavigation'].find('.prev').removeClass('inactive');
+    (value == totWidth ) ? timelineComponents['timelineNavigation'].find('.next').addClass('inactive') : timelineComponents['timelineNavigation'].find('.next').removeClass('inactive');
+  }
+
+  function updateFilling(selectedEvent, filling, totWidth) {
+    //change .filling-line length according to the selected event
+    var eventStyle = window.getComputedStyle(selectedEvent.get(0), null),
+      eventLeft = eventStyle.getPropertyValue("left"),
+      eventWidth = eventStyle.getPropertyValue("width");
+    eventLeft = Number(eventLeft.replace('px', '')) + Number(eventWidth.replace('px', ''))/2;
+    var scaleValue = eventLeft/totWidth;
+    setTransformValue(filling.get(0), 'scaleX', scaleValue);
+  }
+
+  function setDatePosition(timelineComponents, min) {
+    for (i = 0; i < timelineComponents['timelineDates'].length; i++) { 
+        var distance = daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][i]),
+          distanceNorm = Math.round(distance/timelineComponents['eventsMinLapse']) + 2;
+        timelineComponents['timelineEvents'].eq(i).css('left', distanceNorm*min+'px');
+    }
+  }
+
+  function setTimelineWidth(timelineComponents, width) {
+    var timeSpan = daydiff(timelineComponents['timelineDates'][0], timelineComponents['timelineDates'][timelineComponents['timelineDates'].length-1]),
+      timeSpanNorm = timeSpan/timelineComponents['eventsMinLapse'],
+      timeSpanNorm = Math.round(timeSpanNorm) + 4,
+      totalWidth = timeSpanNorm*width;
+    timelineComponents['eventsWrapper'].css('width', totalWidth+'px');
+    updateFilling(timelineComponents['timelineEvents'].eq(0), timelineComponents['fillingLine'], totalWidth);
+  
+    return totalWidth;
+  }
+
+  function updateVisibleContent(event, eventsContent) {
+    var eventDate = event.data('date'),
+      visibleContent = eventsContent.find('.selected'),
+      selectedContent = eventsContent.find('[data-date="'+ eventDate +'"]'),
+      selectedContentHeight = selectedContent.height();
+
+    if (selectedContent.index() > visibleContent.index()) {
+      var classEnetering = 'selected enter-right',
+        classLeaving = 'leave-left';
+    } else {
+      var classEnetering = 'selected enter-left',
+        classLeaving = 'leave-right';
+    }
+
+    selectedContent.attr('class', classEnetering);
+    visibleContent.attr('class', classLeaving).one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(){
+      visibleContent.removeClass('leave-right leave-left');
+      selectedContent.removeClass('enter-left enter-right');
+    });
+    eventsContent.css('height', selectedContentHeight+'px');
+  }
+
+  function updateOlderEvents(event) {
+    event.parent('li').prevAll('li').children('a').addClass('older-event').end().end().nextAll('li').children('a').removeClass('older-event');
+  }
+
+  function getTranslateValue(timeline) {
+    var timelineStyle = window.getComputedStyle(timeline.get(0), null),
+      timelineTranslate = timelineStyle.getPropertyValue("-webkit-transform") ||
+            timelineStyle.getPropertyValue("-moz-transform") ||
+            timelineStyle.getPropertyValue("-ms-transform") ||
+            timelineStyle.getPropertyValue("-o-transform") ||
+            timelineStyle.getPropertyValue("transform");
+
+        if( timelineTranslate.indexOf('(') >=0 ) {
+          var timelineTranslate = timelineTranslate.split('(')[1];
+        timelineTranslate = timelineTranslate.split(')')[0];
+        timelineTranslate = timelineTranslate.split(',');
+        var translateValue = timelineTranslate[4];
+        } else {
+          var translateValue = 0;
+        }
+
+        return Number(translateValue);
+  }
+
+  function setTransformValue(element, property, value) {
+    element.style["-webkit-transform"] = property+"("+value+")";
+    element.style["-moz-transform"] = property+"("+value+")";
+    element.style["-ms-transform"] = property+"("+value+")";
+    element.style["-o-transform"] = property+"("+value+")";
+    element.style["transform"] = property+"("+value+")";
+  }
+
+  //based on http://stackoverflow.com/questions/542938/how-do-i-get-the-number-of-days-between-two-dates-in-javascript
+  function parseDate(events) {
+    var dateArrays = [];
+    events.each(function(){
+      var dateComp = $(this).data('date').split('/'),
+        newDate = new Date(dateComp[2], dateComp[1]-1, dateComp[0]);
+      dateArrays.push(newDate);
+    });
+      return dateArrays;
+  }
+
+  function parseDate2(events) {
+    var dateArrays = [];
+    events.each(function(){
+      var singleDate = $(this),
+        dateComp = singleDate.data('date').split('T');
+      if( dateComp.length > 1 ) { //both DD/MM/YEAR and time are provided
+        var dayComp = dateComp[0].split('/'),
+          timeComp = dateComp[1].split(':');
+      } else if( dateComp[0].indexOf(':') >=0 ) { //only time is provide
+        var dayComp = ["2000", "0", "0"],
+          timeComp = dateComp[0].split(':');
+      } else { //only DD/MM/YEAR
+        var dayComp = dateComp[0].split('/'),
+          timeComp = ["0", "0"];
+      }
+      var newDate = new Date(dayComp[2], dayComp[1]-1, dayComp[0], timeComp[0], timeComp[1]);
+      dateArrays.push(newDate);
+    });
+      return dateArrays;
+  }
+
+  function daydiff(first, second) {
+      return Math.round((second-first));
+  }
+
+  function minLapse(dates) {
+    //determine the minimum distance among events
+    var dateDistances = [];
+    for (i = 1; i < dates.length; i++) { 
+        var distance = daydiff(dates[i-1], dates[i]);
+        dateDistances.push(distance);
+    }
+    return Math.min.apply(null, dateDistances);
+  }
+
+  /*
+    How to tell if a DOM element is visible in the current viewport?
+    http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+  */
+  function elementInViewport(el) {
+    var top = el.offsetTop;
+    var left = el.offsetLeft;
+    var width = el.offsetWidth;
+    var height = el.offsetHeight;
+
+    while(el.offsetParent) {
+        el = el.offsetParent;
+        top += el.offsetTop;
+        left += el.offsetLeft;
+    }
+
+    return (
+        top < (window.pageYOffset + window.innerHeight) &&
+        left < (window.pageXOffset + window.innerWidth) &&
+        (top + height) > window.pageYOffset &&
+        (left + width) > window.pageXOffset
+    );
+  }
+
+  function checkMQ() {
+    //check if mobile or desktop device
+    return window.getComputedStyle(document.querySelector('.cd-horizontal-timeline'), '::before').getPropertyValue('content').replace(/'/g, "").replace(/"/g, "");
+  }
+});
+						</script>
+					</div>
+
+				</div>
+
+				<div class="box-column">
+
+					<!-- KeyboardLayout -->
+					<div class="kbdpad" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+						<div id="keyboard" class="keyboard">
+							<div class="tabox">
+								<div class="content a active">
+									<h4><a href="#!">Kr</a></h4>
+									<div class="box">
+										<ul class="pad typeA">
+											<li>
+												<button data-original-title="" title="">`</button>
+												<button data-original-title="" title="">1</button>
+												<button data-original-title="" title="">2</button>
+												<button data-original-title="" title="">3</button>
+												<button data-original-title="" title="">4</button>
+												<button data-original-title="" title="">5</button>
+												<button data-original-title="" title="">6</button>
+												<button data-original-title="" title="">7</button>
+												<button data-original-title="" title="">8</button>
+												<button data-original-title="" title="">9</button>
+												<button data-original-title="" title="">0</button>
+												<button data-original-title="" title="">-</button>
+												<button data-original-title="" title="">=</button>
+											</li>
+											<li>
+												<button data-original-title="" title="">ㅂ</button>
+												<button data-original-title="" title="">ㅈ</button>
+												<button data-original-title="" title="">ㄷ</button>
+												<button data-original-title="" title="">ㄱ</button>
+												<button data-original-title="" title="">ㅅ</button>
+												<button data-original-title="" title="">ㅛ</button>
+												<button data-original-title="" title="">ㅕ</button>
+												<button data-original-title="" title="">ㅑ</button>
+												<button data-original-title="" title="">ㅐ</button>
+												<button data-original-title="" title="">ㅔ</button>
+												<button data-original-title="" title="">[</button>
+												<button data-original-title="" title="">]</button>
+												<button data-original-title="" title="">\</button>
+											</li>
+											<li>
+												<button data-original-title="" title="">ㅁ</button>
+												<button data-original-title="" title="">ㄴ</button>
+												<button data-original-title="" title="">ㅇ</button>
+												<button data-original-title="" title="">ㄹ</button>
+												<button data-original-title="" title="">ㅎ</button>
+												<button data-original-title="" title="">ㅗ</button>
+												<button data-original-title="" title="">ㅓ</button>
+												<button data-original-title="" title="">ㅏ</button>
+												<button data-original-title="" title="">ㅣ</button>
+												<button data-original-title="" title="">;</button>
+												<button data-original-title="" title="">'</button>
+												<button data-original-title="" title="">.</button>
+												<button data-original-title="" title="">,</button>
+											</li>
+											<li>
+												<button class="sft" data-original-title="" title="">Shift</button>
+												<button data-original-title="" title="">ㅋ</button>
+												<button data-original-title="" title="">ㅌ</button>
+												<button data-original-title="" title="">ㅊ</button>
+												<button data-original-title="" title="">ㅍ</button>
+												<button data-original-title="" title="">ㅠ</button>
+												<button data-original-title="" title="">ㅜ</button>
+												<button data-original-title="" title="">ㅡ</button>
+												<button data-original-title="" title="">/</button>
+												<button class="back" data-original-title="" title=""><ion-icon name="backspace"></ion-icon></button>
+											</li>
+											<li>
+												<button data-original-title="" title="">한/영</button>
+												<button class="space" data-original-title="" title="">Space</button>
+												<button data-original-title="" title="">Search</button>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="content b">
+									<h4><a href="#!">En</a></h4>
+									<div class="box">
+										<ul class="pad typeA">
+											<li>
+												<button data-original-title="" title="">`</button>
+												<button data-original-title="" title="">1</button>
+												<button data-original-title="" title="">2</button>
+												<button data-original-title="" title="">3</button>
+												<button data-original-title="" title="">4</button>
+												<button data-original-title="" title="">5</button>
+												<button data-original-title="" title="">6</button>
+												<button data-original-title="" title="">7</button>
+												<button data-original-title="" title="">8</button>
+												<button data-original-title="" title="">9</button>
+												<button data-original-title="" title="">0</button>
+												<button data-original-title="" title="">-</button>
+												<button data-original-title="" title="">=</button>
+											</li>
+											<li>
+												<button data-original-title="" title="">q</button>
+												<button data-original-title="" title="">w</button>
+												<button data-original-title="" title="">e</button>
+												<button data-original-title="" title="">r</button>
+												<button data-original-title="" title="">t</button>
+												<button data-original-title="" title="">y</button>
+												<button data-original-title="" title="">u</button>
+												<button data-original-title="" title="">i</button>
+												<button data-original-title="" title="">o</button>
+												<button data-original-title="" title="">p</button>
+												<button data-original-title="" title="">[</button>
+												<button data-original-title="" title="">]</button>
+												<button data-original-title="" title="">\</button>
+											</li>
+											<li>
+												<button data-original-title="" title="">a</button>
+												<button data-original-title="" title="">s</button>
+												<button data-original-title="" title="">d</button>
+												<button data-original-title="" title="">f</button>
+												<button data-original-title="" title="">g</button>
+												<button data-original-title="" title="">h</button>
+												<button data-original-title="" title="">j</button>
+												<button data-original-title="" title="">k</button>
+												<button data-original-title="" title="">l</button>
+												<button data-original-title="" title="">;</button>
+												<button data-original-title="" title="">'</button>
+												<button data-original-title="" title="">.</button>
+												<button data-original-title="" title="">,</button>
+											</li>
+											<li>
+												<button class="sft" data-original-title="" title="">Shift</button>
+												<button data-original-title="" title="">z</button>
+												<button data-original-title="" title="">x</button>
+												<button data-original-title="" title="">c</button>
+												<button data-original-title="" title="">v</button>
+												<button data-original-title="" title="">b</button>
+												<button data-original-title="" title="">n</button>
+												<button data-original-title="" title="">m</button>
+												<button data-original-title="" title="">/</button>
+												<button class="back" data-original-title="" title=""><ion-icon name="backspace"></ion-icon></button>
+											</li>
+											<li>
+												<button data-original-title="" title="">한/영</button>
+												<button class="space" data-original-title="" title="">Space</button>
+												<button data-original-title="" title="">Search</button>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="content c">
+									<h4><a href="#!">Kr(s)</a></h4>
+									<div class="box">
+										<ul class="pad typeA">
+											<li>
+												<button data-original-title="" title="">~</button>
+												<button data-original-title="" title="">!</button>
+												<button data-original-title="" title="">@</button>
+												<button data-original-title="" title="">#</button>
+												<button data-original-title="" title="">$</button>
+												<button data-original-title="" title="">%</button>
+												<button data-original-title="" title="">^</button>
+												<button data-original-title="" title="">&amp;</button>
+												<button data-original-title="" title="">*</button>
+												<button data-original-title="" title="">(</button>
+												<button data-original-title="" title="">)</button>
+												<button data-original-title="" title="">_</button>
+												<button data-original-title="" title="">+</button>
+											</li>
+											<li>
+												<button data-original-title="" title="">ㅃ</button>
+												<button data-original-title="" title="">ㅉ</button>
+												<button data-original-title="" title="">ㄸ</button>
+												<button data-original-title="" title="">ㄲ</button>
+												<button data-original-title="" title="">ㅆ</button>
+												<button data-original-title="" title="">ㅛ</button>
+												<button data-original-title="" title="">ㅕ</button>
+												<button data-original-title="" title="">ㅑ</button>
+												<button data-original-title="" title="">ㅒ</button>
+												<button data-original-title="" title="">ㅖ</button>
+												<button data-original-title="" title="">[</button>
+												<button data-original-title="" title="">]</button>
+												<button data-original-title="" title="">\</button>
+											</li>
+											<li>
+												<button data-original-title="" title="">ㅁ</button>
+												<button data-original-title="" title="">ㄴ</button>
+												<button data-original-title="" title="">ㅇ</button>
+												<button data-original-title="" title="">ㄹ</button>
+												<button data-original-title="" title="">ㅎ</button>
+												<button data-original-title="" title="">ㅗ</button>
+												<button data-original-title="" title="">ㅓ</button>
+												<button data-original-title="" title="">ㅏ</button>
+												<button data-original-title="" title="">ㅣ</button>
+												<button data-original-title="" title="">:</button>
+												<button data-original-title="" title="">"</button>
+												<button data-original-title="" title="">&lt;</button>
+												<button data-original-title="" title="">&gt;</button>
+											</li>
+											<li>
+												<button class="sft active" data-original-title="" title="">Shift</button>
+												<button data-original-title="" title="">ㅋ</button>
+												<button data-original-title="" title="">ㅌ</button>
+												<button data-original-title="" title="">ㅊ</button>
+												<button data-original-title="" title="">ㅍ</button>
+												<button data-original-title="" title="">ㅠ</button>
+												<button data-original-title="" title="">ㅜ</button>
+												<button data-original-title="" title="">ㅡ</button>
+												<button data-original-title="" title="">?</button>
+												<button class="back" data-original-title="" title=""><ion-icon name="backspace"></ion-icon></button>
+											</li>
+											<li>
+												<button data-original-title="" title="">한/영</button>
+												<button class="space" data-original-title="" title="">Space</button>
+												<button data-original-title="" title="">Search</button>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="content d">
+									<h4><a href="#!">En(s)</a></h4>
+									<div class="box">
+										<ul class="pad typeA">
+											<li>
+												<button data-original-title="" title="">~</button>
+												<button data-original-title="" title="">!</button>
+												<button data-original-title="" title="">@</button>
+												<button data-original-title="" title="">#</button>
+												<button data-original-title="" title="">$</button>
+												<button data-original-title="" title="">%</button>
+												<button data-original-title="" title="">^</button>
+												<button data-original-title="" title="">&amp;</button>
+												<button data-original-title="" title="">*</button>
+												<button data-original-title="" title="">(</button>
+												<button data-original-title="" title="">)</button>
+												<button data-original-title="" title="">_</button>
+												<button data-original-title="" title="">+</button>
+											</li>
+											<li>
+												<button data-original-title="" title="">Q</button>
+												<button data-original-title="" title="">W</button>
+												<button data-original-title="" title="">E</button>
+												<button data-original-title="" title="">R</button>
+												<button data-original-title="" title="">T</button>
+												<button data-original-title="" title="">Y</button>
+												<button data-original-title="" title="">U</button>
+												<button data-original-title="" title="">I</button>
+												<button data-original-title="" title="">O</button>
+												<button data-original-title="" title="">P</button>
+												<button data-original-title="" title="">{</button>
+												<button data-original-title="" title="">}</button>
+												<button data-original-title="" title="">|</button>
+											</li>
+											<li>
+												<button data-original-title="" title="">A</button>
+												<button data-original-title="" title="">S</button>
+												<button data-original-title="" title="">D</button>
+												<button data-original-title="" title="">F</button>
+												<button data-original-title="" title="">G</button>
+												<button data-original-title="" title="">H</button>
+												<button data-original-title="" title="">J</button>
+												<button data-original-title="" title="">K</button>
+												<button data-original-title="" title="">L</button>
+												<button data-original-title="" title="">:</button>
+												<button data-original-title="" title="">"</button>
+												<button data-original-title="" title="">&lt;</button>
+												<button data-original-title="" title="">&gt;</button>
+											</li>
+											<li>
+												<button class="sft active" data-original-title="" title="">Shift</button>
+												<button data-original-title="" title="">Z</button>
+												<button data-original-title="" title="">X</button>
+												<button data-original-title="" title="">C</button>
+												<button data-original-title="" title="">V</button>
+												<button data-original-title="" title="">B</button>
+												<button data-original-title="" title="">N</button>
+												<button data-original-title="" title="">M</button>
+												<button data-original-title="" title="">?</button>
+												<button class="back" data-original-title="" title=""><ion-icon name="backspace"></ion-icon></button>
+											</li>
+											<li>
+												<button data-original-title="" title="">한/영</button>
+												<button class="space" data-original-title="" title="">Space</button>
+												<button data-original-title="" title="">Search</button>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<script>
+								$(document).ready(function() {
+									$("#keyboard .tabox h4 a").click(function() {
+										$("#keyboard .tabox .content").removeClass("active");
+										$(this).parent().parent().addClass("active");
+									});
+								});
+							</script>
+						</div>
+						
+						<!-- TypingText -->
+						<div class="tptext">
+							<div class="tptt"><h1>and Marvel Comics Group</h1></div>
+							<div class="tptt a"><h1>Marvel Studios' Avengers: Endgame | Official Trailer 1</h1></div>
+							<div class="tptt b"><h1>Marvel Studios presents in association with Paramount Pictures "Marv</h1></div>
+							<div class="tptt c"><h1>Marvel Studios' The Avengers | Official Trailer #1</h1></div>
+						</div>
+					</div>
+
+					<!-- StoreItemList -->
+					<div class="stit" data-aos="fade-left" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+						<div class="side-item">
+							<div class="item-top">
+								<h5>Market Store Name</h5>
+								<ul class="tab">
+									<li><a href="#!" title="" class="waves-effect waves-teal">ItemA</a></li>
+									<li><a href="#!" title="" class="waves-effect waves-teal">ItemB</a></li>
+									<li><a href="#!"  class="on waves-effect waves-teal" title="" class="hit">ItemC</a></li>
+								</ul>
+							</div>
+							<div class="biglink">
+								<ul>
+									<li><a href="#">Video</a></li>
+									<li><a href="#">Book</a></li>
+									<li><a href="#">Store</a></li>
+									<li><a href="#">Audio</a></li>
+									<li><a href="#">Categori</a></li>
+									<li><a href="#">Hat</a></li>
+									<li><a href="#">Hand</a></li>
+									<li><a href="#">Original</a></li>
+									<li><a href="#">IceCream</a></li>
+									<li><a href="#">Cloud</a></li>
+									<li><a href="#">Pencel</a></li>
+									<li><a href="#">Movement</a></li>
+								</ul>
+							</div>
+							<div class="list">
+								<ul>
+									<li>
+										<a href="#">
+											<div class="thum">
+												<img src="TypeBB/images/sampleA2.jpg" />
+											</div>
+											<div class="title">
+												<p>and Marvel Comics Group</p>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="thum">
+												<img src="TypeBB/images/sampleA3.jpg" />
+											</div>
+											<div class="title">
+												<p>In 2009, The Walt Disney Company acquired Marvel Entertainment, Marvel Worldwide's parent company.</p>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="thum">
+												<img src="TypeBB/images/sampleA4.jpg" />
+											</div>
+											<div class="title">
+												<p>Marvel was started in 1939 by Martin Goodman as Timely Comics,[3] and by 1951 had generally become known as Atlas Comics. The Marvel era began in 1961, the year that the company launched The Fantastic Four and other superhero titles created by Stan Lee, Jack Kirby, Steve Ditko and many others. The Marvel brand, which had been used over the years, was solidified as the company's primary brand.</p>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="thum">
+												<img src="TypeBB/images/sampleA5.jpg" />
+											</div>
+											<div class="title">
+												<p>Marvel counts among its characters such well-known superheroes as Spider-Man, Iron Man, Captain America, Thor, Hulk, Wolverine, and Captain Marvel, as well as popular superhero teams such as the Avengers,</p>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="thum">
+												<img src="TypeBB/images/sampleA6.jpg" />
+											</div>
+											<div class="title">
+												<p>the X-Men, the Fantastic Four, and the Guardians of the Galaxy. Its stable of well-known supervillains includes the likes of Doctor Doom, Magneto, Ultron, Thanos, Green Goblin, and Kingpin.</p>
+											</div>
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											<div class="thum">
+												<img src="TypeBB/images/sampleA7.jpg" />
+											</div>
+											<div class="title">
+												<p>Most of Marvel's fictional characters operate in a single reality known as the Marvel Universe, with most locations mirroring real-life places</p>
+											</div>
+										</a>
+									</li>
+								</ul>
+			
+								<div class="number-box">
+									<div class="btn">
+										<a href="#!"><ion-icon name="arrow-back-circle"></ion-icon></a>
+										<div class="num"><em>2</em> / 3</div>
+										<a href="#!"><ion-icon name="arrow-forward-circle"></ion-icon></a>
+									</div>
+								</div>
+			
+							</div>
+			
+						</div>
+					</div>
+				</div>
+
+				<div class="box-column">
+
+					<!-- FileUploadIN -->
+					<div class="ipmultipleremovename" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+						<h5>file upload multiple(image, name)</h5>
+						<ul>
+							<li>Uploadable file : jpg, png, gif</li>
+							<li>Maximum files 10, 300 KB for each</li>
+						</ul>
+						<span class="btn">
+							<label for="files" data-icon="file_upload">Select Attachment</label>
+							<input type="file" name="files[]" id="files" multiple accept="image/jpeg, image/png, image/gif,">
+						</span>
+						<div id="Filelist"></div>
+						<script>
+							document.addEventListener("DOMContentLoaded", init, false);
+							var AttachmentArray = [];
+							var arrCounter = 0;
+							var filesCounterAlertStatus = false;
+							var ul = document.createElement("ul");
+							ul.className = "thumb-Images";
+							ul.id = "imgList";
+							function init() {
+								document
+								.querySelector("#files")
+								.addEventListener("change", handleFileSelect, false);
+							}
+							function handleFileSelect(e) {
+								if (!e.target.files) return;
+								var files = e.target.files;
+								for (var i = 0, f; (f = files[i]); i++) {
+									var fileReader = new FileReader();
+									fileReader.onload = (function(readerEvt) {
+										return function(e) {
+												ApplyFileValidationRules(readerEvt);
+												RenderThumbnail(e, readerEvt);
+												FillAttachmentArray(e, readerEvt);
+										};
+									})(f);
+									fileReader.readAsDataURL(f);
+								}
+								document
+								.getElementById("files")
+								.addEventListener("change", handleFileSelect, false);
+							}
+							jQuery(function($) {
+								$("div").on("click", ".img-wrap .close", function() {
+									var id = $(this)
+									.closest(".img-wrap")
+									.find("img")
+									.data("id");
+									var elementPos = AttachmentArray.map(function(x) {
+										return x.FileName;
+									}).indexOf(id);
+									if (elementPos !== -1) {
+										AttachmentArray.splice(elementPos, 1);
+									}
+									$(this)
+									.parent()
+									.find("img")
+									.not()
+									.remove();
+									$(this)
+									.parent()
+									.find("div")
+									.not()
+									.remove();
+									$(this)
+									.parent()
+									.parent()
+									.find("div")
+									.not()
+									.remove();
+									var lis = document.querySelectorAll("#imgList li");
+									for (var i = 0; (li = lis[i]); i++) {
+										if (li.innerHTML == "") {
+												li.parentNode.removeChild(li);
+										}
+									}
+								});
+							});
+							function ApplyFileValidationRules(readerEvt) {
+								if (CheckFileType(readerEvt.type) == false) {
+									alert(
+										"The file (" +
+										readerEvt.name +
+										") does not match the upload conditions, You can only upload jpg/png/gif files"
+									);
+									e.preventDefault();
+									return;
+								}
+								if (CheckFileSize(readerEvt.size) == false) {
+									alert(
+										"The file (" +
+										readerEvt.name +
+										") does not match the upload conditions, The maximum file size for uploads should not exceed 300 KB"
+									);
+									e.preventDefault();
+									return;
+								}
+								if (CheckFilesCount(AttachmentArray) == false) {
+									if (!filesCounterAlertStatus) {
+										filesCounterAlertStatus = true;
+										alert(
+												"You have added more than 10 files. According to upload conditions you can upload 10 files maximum"
+										);
+									}
+									e.preventDefault();
+									return;
+								}
+							}
+							function CheckFileType(fileType) {
+								if (fileType == "image/jpeg") {
+									return true;
+								} else if (fileType == "image/png") {
+									return true;
+								} else if (fileType == "image/gif") {
+									return true;
+								} else {
+									return false;
+								}
+								return true;
+							}
+							function CheckFileSize(fileSize) {
+								if (fileSize < 300000) {
+									return true;
+								} else {
+									return false;
+								}
+								return true;
+							}
+							function CheckFilesCount(AttachmentArray) {
+								var len = 0;
+								for (var i = 0; i < AttachmentArray.length; i++) {
+									if (AttachmentArray[i] !== undefined) {
+										len++;
+									}
+								}
+								if (len > 9) {
+									return false;
+								} else {
+									return true;
+								}
+							}
+							function RenderThumbnail(e, readerEvt) {
+								var li = document.createElement("li");
+								ul.appendChild(li);
+								li.innerHTML = [
+									'<div class="img-wrap"> <span class="close">&times;</span>' +
+									'<img class="thumb" src="',
+									e.target.result,
+									'" title="',
+									escape(readerEvt.name),
+									'" data-id="',
+									readerEvt.name,
+									'"/>' + "</div>"
+								].join("");
+								var div = document.createElement("div");
+								div.className = "filenamecaption";
+								li.appendChild(div);
+								div.innerHTML = [readerEvt.name].join("");
+								document.getElementById("Filelist").insertBefore(ul, null);
+							}
+							function FillAttachmentArray(e, readerEvt) {
+								AttachmentArray[arrCounter] = {
+									AttachmentType: 1,
+									ObjectType: 1,
+									FileName: readerEvt.name,
+									FileDescription: "Attachment",
+									NoteText: "",
+									MimeType: readerEvt.type,
+									Content: e.target.result.split("base64,")[1],
+									FileSizeInBytes: readerEvt.size
+								};
+								arrCounter = arrCounter + 1;
+							}
+						</script>
+					</div>
+
+					<!-- FileUploadI -->
+					<div class="ipmultipleremove" data-aos="fade-left" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+						<h5>file upload multiple(image)</h5>
+						<div class="file-page">
+							<div class="buttons">
+								<button class="btn browse" data-icon="file_upload">Select mutiple file upload</button>
+							</div>
+							<div class="inputs">
+								<input type="file" class="hidden file-input" multiple accept="image/*capture=camera" id="Image" />
+								<input type="file" class="hidden file-input" multiple accept="image/*capture=camera" capture="environment" id="PhotoImage" />
+								<input type="file" class="hidden file-input" multiple accept="image/*" class="file-test" />
+								<input type="text" class="hidden files-text">
+							</div>
+							<div class="images"></div>
+						</div>
+						<script>
+							$(document).ready(function(){
+								var imageId = 0;
+								var baseFiles = [];
+								$(".browse").on("click", () => {
+									$("#Image").click();
+								});
+								$(".capture").on("click", () => {
+									$("#PhotoImage").click();
+								});
+								$('.file-input').change(function (e) {
+									var input = e.target;
+									var files = input.files;
+									var images = $('.images');
+									for (var i = 0; i < files.length; i++) {
+										imageId++;
+										((file) => {
+											var reader = new FileReader();
+											var fileName = file.name.replace(/\.[^.]*$/, ''); // without file extension
+											var fileId = file.size + imageId;
+											var baseFile = '';
+											reader.onload = (e) => {
+													var preview = '<div class="image image_' + i + '" data-id="' + fileId + '">' +
+													'<div class="img"><img src="' + e.target.result + '"></div>' +
+													'<span class="btn remove"><ion-icon name="trash-outline"></ion-icon></span>' +
+													'</div>';
+													images.append(preview);
+													baseFile = reader.result;
+													baseFiles.push({
+														id: fileId,
+														name: file.name,
+														file: baseFile,
+														uploaded: 0
+													});
+											}
+											reader.readAsDataURL(file);
+										})(files[i]);
+									}
+									console.log('after upload :>> ', baseFiles);
+								});
+								$(document).on('click', '.remove', function (e) {
+									e.preventDefault();
+									var parent = $(this).parent();
+									var id = parent.data('id');
+									var removeIndex = baseFiles.map(function (item) {
+										return item.id;
+									}).indexOf(id);
+									baseFiles.splice(removeIndex, 1);
+									parent.remove();
+									console.log('after remove :>> ', baseFiles);
+								});
+							});
+						</script>
+					</div>
+						
+				</div>
+
+				<!-- InputAutoLineDelete -->
+				<div class="box-column">
+					<div class="iald" data-aos="zoom-in-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+						<h5>Input :Active Line Animation</h5>
+						<p>Line Color Black</p>
+						<div class="autoline">
+							<input type="text" class="textdt" title="texttext...." placeholder="input text line animate" id="" autocomplete="off" required="">
+							<label for=""></label>
+							<button class = "erase" onclick="clearInput()"><ion-icon name="close-outline"></ion-icon></button>
+						</div>
+						<script>
+							function clearInput(){
+								var el = document.getElementsByClassName('textdt');
+								for(var i=0; i<el.length; i++){
+									el[i].value = '';
+								}
+								/* checkbox delete
+								var el = document.getElementsByClassName('input-radio');
+								for(var i=0; i<el.length; i++){
+									el[i].checked = false;
+								} */	
+							}
+						</script>
+					</div>
+					
+					<div class="iald" data-aos="zoom-in-down" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+						<h5>Input Css :Active Title Top Animation</h5>
+						<p>Active title visible, Disable title hidden</p>
+						<section class="ipctin">
+							<label>
+								<input type="text" placeholder="Input title hidden/visible" name="name">
+								<span>Title</span>
+							</label>
+						</section>
+						<script>
+							function clearInputa(){
+								var el = document.getElementsByClassName('textdtb');
+								for(var i=0; i<el.length; i++){
+									el[i].value = '';
+								}
+								/* checkbox redio delete
+								var el = document.getElementsByClassName('input-radio');
+								for(var i=0; i<el.length; i++){
+									el[i].checked = false;
+								} */	
+							}
+						</script>
+					</div>
+					
+				</div>
+				
+				<!-- InputAutoLineDelete -->
+				<div class="box-column">
+
+					<!-- PaginationTypeA -->
+					<div class="pagination a" data-aos="zoom-out" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+						<h5>Pagination one middle pages</h5>
+						<p>The form in which the middle page can be seen</p>
+						<div class="pfntl" data-pagination="">
+							<a href="#" disabled=""><ion-icon name="chevron-back-outline"></ion-icon></a>
+							<ul>
+								<li class="current"><a href="#1">1</a>
+								</li><li><a href="#2">2</a>
+								</li><li><a href="#3">3</a>
+								</li><li><a href="#4">4</a>
+								</li><li><a href="#5">5</a>
+								</li><li><a href="#6">6</a>
+								</li><li><a href="#7">7</a>
+								</li><li><a href="#8">8</a>
+								</li><li><a href="#9">9</a>
+								</li><li><a href="#10">…</a>
+								</li><li><a href="#41">41</a>
+								</li>
+							</ul>
+							<a href="#2"><ion-icon name="chevron-forward-outline"></ion-icon></a>
+						</div>
+					</div>
+
+					<!-- PaginationTypeB -->
+					<div class="pagination b" data-aos="zoom-out-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+						<h5>Pagination two middle pages - javascript</h5>
+						<p>A form that shows two middle pages</p>
+						<div id="pagination" class="pfntlb"></div>
+						<script>
+							let pages = 25;
+							document.getElementById('pagination').innerHTML = createPagination(pages, 12);
+							function createPagination(pages, page) {
+								let str = '<ul>';
+								let active;
+								let pageCutLow = page - 1;
+								let pageCutHigh = page + 1;
+								if (page > 1) {
+									str += '<li class="page-item previous no"><a href="#!" onclick="createPagination(pages, '+(page-1)+')"><ion-icon name="chevron-back-outline"></ion-icon></a></li>';
+								}
+								if (pages < 6) {
+									for (let p = 1; p <= pages; p++) {
+										active = page == p ? "active" : "no";
+										str += '<li class="'+active+'"><a href="#!" onclick="createPagination(pages, '+p+')">'+ p +'</a></li>';
+									}
+								}
+								else {
+									if (page > 2) {
+										str += '<li class="no page-item"><a href="#!" onclick="createPagination(pages, 1)">1</a></li>';
+										if (page > 3) {
+											str += '<li class="out-of-range"><a href="#!" onclick="createPagination(pages,'+(page-2)+')">...</a></li>';
+										}
+									}
+									if (page === 1) {
+										pageCutHigh += 2;
+									} else if (page === 2) {
+										pageCutHigh += 1;
+									}
+									if (page === pages) {
+										pageCutLow -= 2;
+									} else if (page === pages-1) {
+										pageCutLow -= 1;
+									}
+									for (let p = pageCutLow; p <= pageCutHigh; p++) {
+										if (p === 0) {
+											p += 1;
+										}
+										if (p > pages) {
+											continue
+										}
+										active = page == p ? "active" : "no";
+										str += '<li class="page-item '+active+'"><a href="#!" onclick="createPagination(pages, '+p+')">'+ p +'</a></li>';
+									}
+									if (page < pages-1) {
+										if (page < pages-2) {
+											str += '<li class="out-of-range"><a href="#!" onclick="createPagination(pages,'+(page+2)+')">...</a></li>';
+										}
+										str += '<li class="page-item no"><a href="#!" onclick="createPagination(pages, pages)">'+pages+'</a></li>';
+									}
+								}
+								if (page < pages) {
+									str += '<li class="page-item next no"><a href="#!" onclick="createPagination(pages, '+(page+1)+')"><ion-icon name="chevron-forward-outline"></ion-icon></a></li>';
+								}
+								str += '</ul>';
+								document.getElementById('pagination').innerHTML = str;
+								return str;
+							}
+						</script>
+					</div>
+				</div>
+
+				<!-- EllipsisContent -->
+				<div class="box-column elss">
+					<div class="ellipsisa" data-aos="fade-left" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+						<h5>Post Two Line Limit</h5>
+						<p>maximum 2 lines limit</p>
+						<ul>
+							<li class="notice">
+								<a href="#!">
+									<p class="els-text"><i class="notice">Notice</i><i class="new">N</i>The Portal to the Multiverse is now open, and Marvel Studios' Doctor Strange in the Multiverse of Madness is officially in theaters! </p>
+									<span class="reply">12</span>
+								</a>
+							</li>
+							<li class="notice">
+								<a href="#!">
+									<p class="els-text"><i class="notice">Notice</i>With the Multiverse unlocked, master of the mystic arts Doctor Strange journeys into the unknown with mystical allies both old and new. One of those allies is fellow Avenger, Wanda Maximoff / Scarlet Witch.</p>
+									<span class="reply">212</span>
+								</a>
+							</li>
+							<li>
+								<a href="#!">
+									<p class="els-text"><i class="new">N</i>Coming off the heels of last year's hit sensation, Marvel Studios' WandaVision, actress Elizabeth Olsen can't help but be in awe of the woman Wanda Maximoff is now. At a press conference for Doctor Strange in the Multiverse of Madness earlier this week, Olsen commented, "In the previous films before WandaVision, I took up a lane for storytelling that was more grounded in sincerity, love, loss, grief. And with WandaVision, I got to become anything and everything, and really, really grow [Wanda] into a woman."</p>
+									<span class="reply">3345</span>
+								</a>
+							</li>
+							<li>
+								<a href="#!">
+									<p class="els-text">"And leading her to [accept] that she is this mythic woman," continued Olsen. "That is her destiny. And I hope that in this film people see that continuation of her acceptance of who she is, the journey that she has taken to get to this moment. I feel like she has way more clarity now than ever in this film.”</p>
+									<span class="reply">423</span>
+								</a>
+							</li>
+							<li>
+								<a href="#!">
+									<p class="els-text">When posed with the scenario of who would win in a battle between the two sorcerers, Doctor Strange or Scarlet Witch, Olsen cheekily responded, "Well... I think we all know who would win."</p>
+									<span class="reply">52</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div class="ellipsisb" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+						<h5>Post One Line Limit</h5>
+						<p>maximum 1 lines limit</p>
+						<ul>
+							<li class="notice">
+								<a href="#!">
+									<p class="els-text">Titular star Benedict Cumberbatch, who plays Doctor Strange, chimed in, "She's pretty all-powerful, let's be honest," before adding, "Oh, I've got an id. I have humility. I can accept that."</p>
+									<span class="reply">12</span>
+								</a>
+							</li>
+							<li class="notice">
+								<a href="#!">
+									<p class="els-text">Will it all come to a head in Doctor Strange in the Multiverse of Madness? Head to the theaters and find out now!</p>
+									<span class="reply">212</span>
+								</a>
+							</li>
+							<li>
+								<a href="#!">
+									<p class="els-text"><i class="new">N</i>In Doctor Strange in the Multiverse of Madness, the MCU unlocks the Multiverse and pushes its boundaries further than ever before. Journey into the unknown with Doctor Strange, who, with the help of mystical allies both old and new, traverses the mind-bending and dangerous alternate realities of the Multiverse to confront a mysterious new adversary.</p>
+									<span class="reply">3345</span>
+								</a>
+							</li>
+							<li>
+								<a href="#!">
+									<p class="els-text">Doctor Strange in the Multiverse of Madness is NOW in theaters. Tickets now available!</p>
+									<span class="reply">423</span>
+								</a>
+							</li>
+							<li>
+								<a href="#!">
+									<p class="els-text">Make sure to follow @DrStrange on Twitter and @DoctorStrangeOfficial on Instagram, and like "Doctor Strange" on Facebook for all the latest news and updates.</p>
+									<span class="reply">52</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="box-column pwhfl">
+
+					<!-- PassWordHidden -->
+					<div class="passwordhidden" data-aos="fade-left" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+						<h5>Password Hidden or Show</h5>
+						<p>checkbox click &gt; input type="password" &gt; type="text" change</p>
+						<p>i tag : Metarilize Icon = inline / data-icon="visibility", visibility = icon name</p>
+						<div>
+							<input type="password" placeholder="password ..."  tabindex="1" value="tyujrt67y4w56rthj" id="myInput">
+							<span>
+								<input type="checkbox" name="passwordinput" value=""  tabindex="0" onclick="passwordFunction()">
+								<strong class="eyes" data-icon="visibility"><ion-icon name="eye-outline"></ion-icon></strong>
+							</span>
+						</div>
+						<script>
+							function passwordFunction() {
+								var x = document.getElementById("myInput");
+								if (x.type === "password") {
+									x.type = "text";
+								} else {
+									x.type = "password";
+								}
+							}
+						</script>
+					</div>
+
+					<!-- NoticeIcon -->
+					<div class="nti" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+						<h5>:Hover :Active Animation Bell</h5>
+						<p>checkbox click &gt; input type="password" &gt; type="text" change</p>
+						<ul class="noticeicon">
+							<li><a href="#!"><span><ion-icon name="alarm-outline"></ion-icon><i>23</i></span></a>  </li>
+							<li><a href="#!"><span><ion-icon name="bag-check-outline"></ion-icon><i class="big swing">7</i></span></a>  </li>
+							<li><a href="#!"><span><ion-icon name="ear-outline"></ion-icon><i class="rubberBand">99</i></span></a></li>
+							<li><a href="#!"><span><ion-icon name="golf-outline"></ion-icon><i class="green wobble">99+</i></span></a></li>      
+							<li><a href="#!"><span><ion-icon name="notifications-outline"></ion-icon><i class="blue tada">13</i></span></a></li>        
+						</ul>
+					</div>
+
+				</div>
+
+				<div class="box-column">
+
+					<!-- FixedLayout -->
+					<div class="hdbtfixed" data-aos="fade-left" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+						<h5>Header Bottom Fixed Layout</h5>
+						<p>position:absolute &gt; header, footer, content layout</p>
+						<div>
+							<div class="pstcontent">
+								<div class="header">Header</div>
+								<div class="ctt">
+									<div>Content</div>
+								</div>
+								<div class="footer">Footer</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- FlipTransform -->
+					<div class="flipbox" data-aos="fade-left" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+						<div class="panel">
+							<div class="f">
+								<h5>Front Image</h5>
+								<img src="TypeBB/images/sampleMy12.jpg" />
+							</div>
+							<div class="b">
+								<h5>Back Image</h5>
+								<img src="TypeBB/images/sampleMy21.jpg" />
+							</div>
+						</div>
+						<div class="panel y">
+							<div class="f">
+								<h5>Front Image</h5>
+								<img src="TypeBB/images/sampleMy15.jpg" />
+							</div>
+							<div class="b">
+								<h5>Back Image</h5>
+								<img src="TypeBB/images/sampleMy16.jpg" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="box-column" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+
+					<!-- MetarializeCollapasibleMenu -->
+					<div class="mtrlclpsbmn">
+						<ul class="collapsible">
+							<li class="active">
+								<a href="#!" class="collapsible-header" tabindex="0">
+									<ion-icon name="finger-print-outline"></ion-icon>
+									Materialize collapsible
+									<ion-icon name="chevron-up-outline"></ion-icon>
+								</a>
+								<div class="collapsible-body">
+									<ul class="collapsible">
+										<li class="active">
+											<a href="#!" class="collapsible-header" tabindex="0">
+												First
+												<ion-icon name="caret-up-outline"></ion-icon>
+											</a>
+											<div class="collapsible-body">
+												<a href="#!">Lorem ipsum dolor sit amet.</a>
+											</div>
+										</li>
+										<li>
+											<div class="collapsible-header" tabindex="0">
+												Second
+												<ion-icon name="caret-up-outline"></ion-icon>
+											</div>
+											<div class="collapsible-body">
+												<a href="#!">Lorem ipsum dolor sit amet.</a>
+											</div>
+										</li>
+										<li>
+											<div class="collapsible-header" tabindex="0">
+												Third
+												<ion-icon name="caret-up-outline"></ion-icon>
+											</div>
+											<div class="collapsible-body last">
+												<a href="#!">Lorem ipsum dolor sit amet.</a>
+												<a href="#!">Lorem ipsum dolor sit amet.</a>
+												<a href="#!">Lorem ipsum dolor sit amet.</a>
+												<a href="#!">Lorem ipsum dolor sit amet.</a>
+												<a href="#!">Lorem ipsum dolor sit amet.</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<div class="collapsible-header" tabindex="0">
+									<ion-icon name="film-outline"></ion-icon>
+									Episode
+									<ion-icon name="chevron-up-outline"></ion-icon>
+								</div>
+								<div class="collapsible-body">
+									<span>Lorem ipsum dolor sit amet.</span>
+								</div>
+							</li>
+							<li>
+								<div class="collapsible-header" tabindex="0">
+									<ion-icon name="layers-outline"></ion-icon>
+									Series list
+									<ion-icon name="chevron-up-outline"></ion-icon>
+								</div>
+								<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div></li>
+							<li>
+								<div class="collapsible-header" tabindex="0">
+									<ion-icon name="bluetooth-outline"></ion-icon>
+									Bluetooth
+									<ion-icon name="chevron-up-outline"></ion-icon>
+								</div>
+								<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+							</li>
+							<li>
+								<div class="collapsible-header" tabindex="0">
+									<ion-icon name="game-controller-outline"></ion-icon>
+									Game
+									<ion-icon name="chevron-up-outline"></ion-icon>
+								</div>
+								<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+							</li>
+							<li>
+								<div class="collapsible-header" tabindex="0">
+									<ion-icon name="aperture-outline"></ion-icon>
+									Splash page
+									<ion-icon name="chevron-up-outline"></ion-icon>
+								</div>
+								<div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+							</li>
+						</ul>
+						<script>
+							$(document).ready(function(){
+								$('.collapsible').collapsible();
+							});
+						</script>
+					</div>
+
+					<!-- ProfileCard -->
+					<div class="prfcd">
+						<div class="navcard active">
+							<div class="userpr">
+								<div class="primg">
+									<img src="TypeBB/images/profile_a.jpg" />
+								</div>
+								<p class="prname">Profile Name</p>
+							</div>
+							<div class="menutoggle"></div>
+							<ul>
+								<li><a href="#!"><ion-icon name="barbell-outline"></ion-icon>Sports</a></li>
+								<li><a href="#!"><ion-icon name="bicycle-outline"></ion-icon>My Bicycle</a></li>
+								<li><a href="#!"><ion-icon name="business-outline"></ion-icon>Business List</a></li>
+								<li><a href="#!"><ion-icon name="pizza-outline"></ion-icon>Favorites Pizza</a></li>
+								<li><a href="#!"><ion-icon name="qr-code-outline"></ion-icon>Qr Code</a></li>
+							</ul>
+						</div>
+						<script>
+							let menuToggle = document.querySelector('.menutoggle');
+							let navCard = document.querySelector('.navcard');
+							menuToggle.onclick = function(){
+								navCard.classList.toggle('active')
+							}
+						</script>
+					</div>
+
+				</div>
+
+				<!-- Tab Content -->
+				<!-- All Menu -->
+
+				<!-- Parallax Scrolling -->
+				<!-- Parallax Skrollr -->
+				<!-- Slick -->
+				<!-- Superfish -->
+				<!-- Aos Animation -->
+				<!-- FakeLoader -->
+				<!-- FullPage -->
+				<!-- Paroller -->
+				<!-- Particles -->
+				<!-- Skrollr -->
+				<!-- Slickjs -->
+				<!-- TimelineJS -->
+				<!-- UIkit -->
+				<!-- Wow js Animate -->
+				<!-- Materialize -->
+				<!-- File upload -->
+				<!-- Toast Message -->
+				<!-- Read More Text -->
+
+				<!-- ColorSet -->
+				<div class="colorset" data-aos="zoom-out-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<ul class="textcr">
+						<li class="txtred">Red</li>
+						<li class="txtorange">Orange</li>
+						<li class="txtyellow">Yellow</li>
+						<li class="txtgreen">Green</li>
+						<li class="txtblue">Blue</li>
+						<li class="txtpurple">Purple</li>
+						<li class="txtwhite">White</li>
+						<li class="txtgray">Gray</li>
+						<li class="txtblack">Black</li>
+						<li class="txtredp">Red</li>
+						<li class="txtorangep">Orange</li>
+						<li class="txtyellowp">Yellow</li>
+						<li class="txtgreenp">Green</li>
+						<li class="txtbluep">Blue</li>
+						<li class="txtpurplep">Purple</li>
+						<li class="txtwhitep">White</li>
+						<li class="txtgrayp">Gray</li>
+						<li class="txtblackp">Black</li>
+					</ul>
+					<ul class="backgroundcr">
+						<li class="bgcred txtwhite">Red</li>
+						<li class="bgcorange txtwhite">Orange</li>
+						<li class="bgcyellow txtwhite">Yellow</li>
+						<li class="bgcgreen txtwhite">Green</li>
+						<li class="bgcblue txtwhite">Blue</li>
+						<li class="bgcpurple txtwhite">Purple</li>
+						<li class="bgcwhite">White</li>
+						<li class="bgcgray">Gray</li>
+						<li class="bgcblack txtwhite">Black</li>
+						<li class="bgcredp txtwhite">Red</li>
+						<li class="bgcorangep txtwhite">Orange</li>
+						<li class="bgcyellowp txtwhite">Yellow</li>
+						<li class="bgcgreenp txtwhite">Green</li>
+						<li class="bgcbluep txtwhite">Blue</li>
+						<li class="bgcpurplep txtwhite">Purple</li>
+						<li class="bgcwhitep">White</li>
+						<li class="bgcgrayp">Gray</li>
+						<li class="bgcblackp txtwhite">Black</li>
+					</ul>
+				</div>
+
+				<!-- ClipPath : https://www.cssportal.com/css-clip-path-generator/ -->
+				<div class="cppt flxlayout" data-aos="zoom-out-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<ul>
+						<li class="sw1"><span><img src="TypeBB/images/sampleA1.jpg" /></span></li>
+						<li class="sw2"><span><img src="TypeBB/images/sampleA2.jpg" /></span></li>
+						<li class="sw3"><span><img src="TypeBB/images/sampleA3.jpg" /></span></li>
+						<li class="sw4"><span><img src="TypeBB/images/sampleA4.jpg" /></span></li>
+						<li class="sw5"><span><img src="TypeBB/images/sampleA5.jpg" /></span></li>
+						<li class="sw6"><span><img src="TypeBB/images/sampleA6.jpg" /></span></li>
+						<li class="sw7"><span><img src="TypeBB/images/sampleA7.jpg" /></span></li>
+						<li class="sw8"><span><img src="TypeBB/images/sampleA8.jpg" /></span></li>
+						<li class="sw9"><span><img src="TypeBB/images/sampleA9.jpg" /></span></li>
+						<li class="sw10"><span><img src="TypeBB/images/sampleA10.jpg" /></span></li>
+					</ul>
+				</div>
+
+				<!-- BoxShadowStyle -->
+				<div class="bsws flxlayout" data-aos="zoom-out-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<ul>
+						<li class="sw1"><span class="waves-effect waves-teal">Shadow All</span></li>
+						<li class="sw2"><span class="waves-effect waves-teal">Shadow LRB</span></li>
+						<li class="sw3"><span class="waves-effect waves-teal">Shadow RB</span></li>
+						<li class="sw4"><span class="waves-effect waves-teal">Shadow B</span></li>
+						<li class="sw5"><span class="waves-effect waves-teal">Shadow Border All</span></li>
+						<li class="sw6"><span class="waves-effect waves-teal">Shadow LRB</span></li>
+						<li class="sw7"><span>.bsws>.sw7>span</span></li>
+						<li class="sw8"><span class="waves-effect">.bsws>.sw8>span</span></li>
+						<li class="sw9"><span class="waves-effect">.bsws>.sw9>span</span></li>
+						<li class="sw10"><span class="waves-effect">.bsws>.sw10>span</span></li>
+					</ul>
+				</div>
+
+				<!-- BorderStyleButton -->
+				<div class="bdstbt flxlayout" data-aos="zoom-out-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<ul>
+						<li class="sw1"><span><i>Button</i></span></li>
+						<li class="sw2"><span><i>Button</i></span></li>
+						<li class="sw3"><span>Button</span></li>
+						<li class="sw4"><span>Button</span></li>
+						<li class="sw5"><span></span><span></span></li>
+					</ul>
+				</div>
+
+				<div class="cbxs flxlayout" data-aos="zoom-out-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<ul>
+						<!-- CheckBoxStyleA -->
+						<li class="cb1">
+							<div>
+								<input type="checkbox"/>
+								<label>
+									<i><ion-icon name="folder-outline"></ion-icon></i>
+									<i><ion-icon name="folder-open-outline"></ion-icon></i>
+								</label>
+							</div>
+						</li>
+						<li>
+							<!-- CheckBoxStyleB -->
+							<div class="ipcheckbox">
+								<label class="chbicon">
+									<input type="checkbox" name="name" data-onoff="toggle">
+									<span></span>
+								</label>
+								<label class="chbicon">
+									<input type="checkbox" checked="checked" name="name" data-onoff="toggle" disabled>
+									<span></span>
+								</label>
+							</div>
+						</li>
+						<li>
+							<a href="#!" class="animationupdown">
+								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="-275 398.7 44.2 44.2">
+									<path fill="#000" d="M-275 420.8c0-12.2 9.9-22.1 22.1-22.1s22.1 9.9 22.1 22.1c0 12.2-9.9 22.1-22.1 22.1s-22.1-9.9-22.1-22.1zm42.7 0c0-11.4-9.2-20.6-20.6-20.6-11.4 0-20.6 9.2-20.6 20.6 0 11.4 9.2 20.6 20.6 20.6 11.4 0 20.6-9.3 20.6-20.6zM-260.6 418c0-.2.1-.4.2-.5.3-.3.8-.3 1.1 0l6.8 6.8 6.8-6.8c.3-.3.8-.3 1.1 0 .3.3.3.8 0 1.1l-7.3 7.3c-.3.3-.8.3-1.1 0l-7.3-7.3c-.3-.2-.3-.4-.3-.6z" />
+								  </svg>
+							</a>
+						</li>
+						<li>
+							<div class="scrolldownwhite">
+								<div class="mousey">
+									<div class="scroller"></div>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div class="anitable">
+								<div class="wline">
+									<div class="line l"></div>
+									<div class="line r"></div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<!-- ReplyTypeA -->
+				<div class="rpta">
+					<div class="replyA">
+						<div class="replylogin a"><a href="#!">After logging in, you can write a post. <span>log-in</span></a></div>
+						<div class="replylogin b">
+							<div>
+								<div><textarea placeholder="write your comments."></textarea></div>
+								<div><span>Send</span></div>
+							</div>
+						</div>
+						<div class="reply-controll">
+							<ul>
+								<li><button class="active"><span>Like</span></button></li>
+								<li><button><span>Dislike</span></button></li>
+								<li><button><span>New</span></button></li>
+								<li><button><span>Past</span></button></li>
+							</ul>
+							<button id="refreshbtn" class="seffect"><ion-icon name="refresh-outline"></ion-icon><span>Refresh</span></button>
+						</div>
+						
+						<ul class="reply one">
+							<!-- one depth -->
+							<li>
+								<div class="reply-content">
+									<div class="userphoto">
+										<span><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4QEdRXhpZgAASUkqAAgAAAACAA4BAgDvAAAAJgAAABIBAwABAAAAAQAAAAAAAABXRVNUV09PRCwgQ0EgLSBBVUdVU1QgMDQ6ICBBY3RyZXNzIFNjYXJsZXR0IEpvaGFuc3NvbiBhcnJpdmVzIGF0IHRoZSBwcmVtaWVyZSBvZiBXZWluc3RlaW4gQ29tcGFueSdzICJWaWNreSBDcmlzdGluYSBCYXJjZWxvbmEiIGF0IHRoZSBNYW5uIFZpbGxhZ2UgVGhlYXRlciBvbiBBdWd1c3QgNCwgMjAwOCBpbiBXZXN0d29vZCwgQ2FsaWZvcm5pYS4gIChQaG90byBieSBNaWNoYWVsIEJ1Y2tuZXIvR2V0dHkgSW1hZ2VzKf/tATZQaG90b3Nob3AgMy4wADhCSU0EBAAAAAABGRwCUAAPTWljaGFlbCBCdWNrbmVyHAJ4AO9XRVNUV09PRCwgQ0EgLSBBVUdVU1QgMDQ6ICBBY3RyZXNzIFNjYXJsZXR0IEpvaGFuc3NvbiBhcnJpdmVzIGF0IHRoZSBwcmVtaWVyZSBvZiBXZWluc3RlaW4gQ29tcGFueSdzICJWaWNreSBDcmlzdGluYSBCYXJjZWxvbmEiIGF0IHRoZSBNYW5uIFZpbGxhZ2UgVGhlYXRlciBvbiBBdWd1c3QgNCwgMjAwOCBpbiBXZXN0d29vZCwgQ2FsaWZvcm5pYS4gIChQaG90byBieSBNaWNoYWVsIEJ1Y2tuZXIvR2V0dHkgSW1hZ2VzKRwCbgAMR2V0dHkgSW1hZ2VzAP/hA9hodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvAAk8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgoJCTxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnBob3Rvc2hvcD0iaHR0cDovL25zLmFkb2JlLmNvbS9waG90b3Nob3AvMS4wLyIgeG1sbnM6SXB0YzR4bXBDb3JlPSJodHRwOi8vaXB0Yy5vcmcvc3RkL0lwdGM0eG1wQ29yZS8xLjAveG1sbnMvIiB4bWxuczpHZXR0eUltYWdlc0dJRlQ9Imh0dHA6Ly94bXAuZ2V0dHlpbWFnZXMuY29tL2dpZnQvMS4wLyIgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIiB4bWxuczpwbHVzPSJodHRwOi8vbnMudXNlcGx1cy5vcmcvbGRmL3htcC8xLjAvIiB4bWxuczppcHRjRXh0PSJodHRwOi8vaXB0Yy5vcmcvc3RkL0lwdGM0eG1wRXh0LzIwMDgtMDItMjkvIiBwaG90b3Nob3A6Q3JlZGl0PSJHZXR0eSBJbWFnZXMiIEdldHR5SW1hZ2VzR0lGVDpBc3NldElEPSI4MjE3ODUxOCIgPgo8ZGM6Y3JlYXRvcj48cmRmOlNlcT48cmRmOmxpPk1pY2hhZWwgQnVja25lcjwvcmRmOmxpPjwvcmRmOlNlcT48L2RjOmNyZWF0b3I+PGRjOmRlc2NyaXB0aW9uPjxyZGY6QWx0PjxyZGY6bGkgeG1sOmxhbmc9IngtZGVmYXVsdCI+V0VTVFdPT0QsIENBIC0gQVVHVVNUIDA0OiAgQWN0cmVzcyBTY2FybGV0dCBKb2hhbnNzb24gYXJyaXZlcyBhdCB0aGUgcHJlbWllcmUgb2YgV2VpbnN0ZWluIENvbXBhbnkmYXBvcztzICZxdW90O1ZpY2t5IENyaXN0aW5hIEJhcmNlbG9uYSZxdW90OyBhdCB0aGUgTWFubiBWaWxsYWdlIFRoZWF0ZXIgb24gQXVndXN0IDQsIDIwMDggaW4gV2VzdHdvb2QsIENhbGlmb3JuaWEuICAoUGhvdG8gYnkgTWljaGFlbCBCdWNrbmVyL0dldHR5IEltYWdlcyk8L3JkZjpsaT48L3JkZjpBbHQ+PC9kYzpkZXNjcmlwdGlvbj4KCQk8L3JkZjpEZXNjcmlwdGlvbj4KCTwvcmRmOlJERj4K/9sAhAAJBgcIBwYJCAcICgoJCw0WDw0MDA0bFBUQFiAdIiIgHR8fJCg0LCQmMScfHy09LTE1Nzo6OiMrP0Q/OEM0OTo3AQoKCg0MDRoPDxo3JR8lNzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzf/wAARCABkAGQDASIAAhEBAxEB/8QAHAAAAgMBAQEBAAAAAAAAAAAABQYABAcDAQII/8QAOhAAAgECBAMFBgQFBAMAAAAAAQIDAAQFERIhBjFBEyJRYXEygZGhsfAUQlLBIzNy0eEHFaKyFiRi/8QAGQEBAQEBAQEAAAAAAAAAAAAABAMCAQAF/8QAIxEAAgICAgICAwEAAAAAAAAAAAECEQMhBDESQSJRMmGRE//aAAwDAQACEQMRAD8A0y7uY7SBppmCqozJNKV7jJuZGJJCjpn7I8PWveM7t5LtbVD/AA4UEjjoWJ2BpdEcgRUJOonc+f3maxkn6RSMPsuviLMG0HRENiR1rtYf+0j3Nw5W2j2AH5vSl+6czXlvh8Oxfdv/AJX7+hohNO8tzDh9qdCKOY/Ko5n1/c0ZyZdROt28l9KAyEKvsRA91R5+ddu0WxTsoVD3T9cvZ+/vwrresmHwgKv8Q/Lyq9w3hTlvxl0CZJN1B6CseXr2VjC9+genDEuIKXuSAW/M41Ze7Pn619Hg2K3snSLJ5TybQBT2kQAFfRiGVaVo00jN7VZrBHgchgB3kI/vv99KaOFeJ4b5vwU0mci7KzHf0P8AeuuP4Mt/AWiyS4TdG8/CsjxZLzCsU7eDXDPG+48D4HyrcMrUiWTCnHR+gqlAeC+IE4hwdZyNNzF3J06hvH30fpqaatAmqdM8qV7UrpwzrEZBLcu7b9pIWJ8hsPmarMqmOSTpkfgP8D51Ue4aQZ9Mgc/Vs/rXuJTG2wyRfzaVj5/EffjRJfYiPdFHAImnlusRkGRbVp8lFFuGLUTT3V4Rn3tK+ikj/sW+AqYVELawKfoXv7dctR+TUY4ctjbYErOO+Y9R/qIBP/JjUJlolaG0W8v+0l7yIdgepprt07oyoLh8LIAfGjls6qFJPurEFXYiWtIsgZdK6qNqisjrnXG4xGztIy9xMsajmWNVJbZ9SpSR/qJg8VzYG8CgSwjvkfmTz9OdHTxXZXMpjsIprhh1AyHzqpi1z/uOG3VrPaywSSwuoDZFTmD1H71yVNG1a7Fr/TGZrPF2t5D/ADYtOf6wN1PqN/jWqVj/AAM7XN1h10ueesA+hGZrYBypHGbcHYTkxSnolSpUpAYxuK5W1vWtpsih+9qs48mq2jdDnGZ0ZiOmZH+aAcRI2865+zqBHTKumD4uJrMQXJ7sq5Z+dEu9Cq9jLbqXhvIgNyHHxVP2Io/jR/B8LTsJOy7nt/p8/hQXhy5S4YRTECZe64HXLr8D9PCifG1vNdcISWkAzndQo8zy/apS7KQ7SEI4nh7uQcYuFYbgtOqD3aiKs4fjd1a3Gj/cZpAO8FkGepfEHPIjzBNDMD4dv45kX8C0JGzOuoHLLI8uYPmad7vBIppTeTwqkjHN0jXJWPjlvkfMHM9c644x9MVGUk/khn4cvhiUGpWB26UD4vdIQ7SwGYg5Ku+RNceEHNhdtAp7pPKm68tY72FomAzzzDdRXmrVHL8ZWZTBi+MrO0FtBHCQQAjydmdzltkhA95pj4Ixy6xq1k/Fwyq8b6c3XIH38j7qJR8FWvas8hDaualdv7Ufs7CGwtxFAgVBvXWlWkZTdu3YmcD2Rsb+e0I/kXsoX+nLb5GtF7Xak61yh4mu9I/msr+/SAaYNb59aTxvxYLk/mEO2HjXtDw5651KQHMsx+1YYQqaf4sw2HXKlcQmDuDfs1AI8Gz+/jTlPM91evyLbqmQ2QDlVCXBmEZVBmTmWb1oKd2LeqBSX80KRXELaZom1IfTVt6aQK0PBMaXFLCORtwTnv06EfGs7xG3NvCFUHWeWkcum1E+HLoWCLbMe/mXYZ+yCeVTyCcK8pGqW4Qx93LOuGKx5QljsoG9DMPxNTpIbplzr6x2ea+sXjt3CllIU+B6V1NFZQpgfDXWTEwVOSjr40+Jsqv02BrKJ4OIjdRiytEAUZbMM2Pl0+NO+GWWK3NrA17cNayBxqRQCSB0PPnXjzj+xoi7OZdSMDXG9kCRECuTR9g7SxkhTzFUbq4MvcXma9KVKjMI7sq2ltHJiazv7WRA365UcEe1AoJUEoMTBwGzBHXemZMnUMOozq/GlpoDyV8rK3ZipVrR5VKUGMruYRZapeROZz+v0qzgF2s8JdwD28mldumeX7V9cSAvAmj9UnvHOh3DqMYDDGf4kEheMdSM+VfPqhgK46xFrSQrhsa5dr2T3Gx0NlyHn5/Cg+A27PvqOsnMsTmSat8UWc9jdtmhazuxkfIjce8Gq+DziF1zI86w9oVhdDbZQTRx6tZ7tE7rGrLDraNr2ZYtQ2B5n0HWqFneoGC5gq1dccw6zxOOON1GsL3T5eVcSotdv5FX/wA1tklD2lszhN9UraQfduavpx0xKukNugY56XkJJPrt9KWYuGLyMkW/YTx/pdF1fPnRfCuG793KMIbNG9po4wpP361OTyXo+rjhwVC5V/WNuCcQtjBZGtJIsti+YKH0NErpFghkmA3VSa4YXYwYbZiC35DdmPNjVXG8QEVvoz3Y7Ct3SuR8jK4ub/zWijZHse6TtGmR9adcMOuxiJ56aRLbU4OZ7zbkU+YapSziU8wKvxHbYHk6SLOVe15XtNBma35AggcjMBhn9P3oVJBLZ3aXVpvJEwzX9S9Pvzq+syXETwat173urilzk4aSMlQNL6eeXUH6g0GehkNhrEYLLG8IMsBCTAZtE6jZvEeB8xWN3OvDsWngfVkG3DfWtdmQR2xZG1EjOOQcnHh/j4VmPGKCTEop1U6iNLeJy8al5bpl4Ktot2eIBowM+8ORprwi+hvI41k9pDkazmHUnKiVnetA4bMg+IrN0LryRr9jZRhswcwdwaNxWUWkHLes4wHilY9KSyKV8jy93OnO1x1J1UQhpTl+QE1WMokZ45IuYkyWtqzeApB/GyYhcm4I2/IvRRTpfGWezuGK99oyqr4bUJwbhuTSpunyXqqDL51OeOWR1Eypxxq5HXh+zaWXtGHdG5NOkQ0xqPKqtrapCipGoVBVwU/FjWONHzsuTzlZ7UqVKqSMRN3LbtG8ZGqSdUbPwJ5Ucj7rPlzRWIOXh0qVKDMZAM2cK5Pbb9k0PaaeeRPh5Ui45bRyrJK2eqJhpy86lSoPtF4ewTd28Ztu105OOoqhpBI6VKle9C49h/ArKF5lZlzIPWtTwyFI7VQgyGVSpXomcz0W7dQzopGxbeiyoqjYCpUp3H6Z83k9o+69qVKuFJUqVK8eP//Z"><em>1</em></span>
+									</div>
+									<div class="reply-info">
+										<div class="user">
+											<a href="#!">BlackWidow</a>
+											<span>2020.03.03 22:22:22</span>
+										</div>
+										<div class="textinfo">'Doctor Strange in the Multiverse of Madness' Original Motion Picture Soundtrack Available Now on ATMOS</div>
+										<div class="replyedit">
+											<div>
+												<button class="replybtn"><span>1Reply(1)</span></button>
+											</div>
+											<div>
+												<button class="like on seffect"><ion-icon name="thumbs-up-outline"></ion-icon><span>23467</span></button>
+												<button class="no seffect"><ion-icon name="thumbs-down-outline"></ion-icon><span>0</span></button>
+											</div>
+										</div>
+										<div class="tool">
+											<a href="#!" title="option" class="rpoption"></a>
+											<div class="rplist">
+												<a href="#!" class="warning">Report it</a>
+												<a href="#!" class="share">Share</a>
+												<a href="#!" class="modify">Modify</a>
+											</div>
+										</div>
+									</div>
+								</div>
+		
+								<!-- two depth -->
+								<ul class="reply two" id="replayTwo">
+									<li>
+										<div class="reply-controll">
+											<ul>
+												<li><button><span>Like</span></button></li>
+												<li><button class="active"><span>Dislike</span></button></li>
+												<li><button><span>New</span></button></li>
+												<li><button><span>Past</span></button></li>
+											</ul>
+										</div>
+										<div class="replylogin a"><a href="#!">After logging in, you can write a post. <span>log-in</span></a></div>
+										<div class="replylogin b">
+											<div>
+												<div><textarea placeholder="write your comments."></textarea></div>
+												<div><span>Send</span></div>
+											</div>
+										</div>
+										<ul>
+											<li>
+												<div class="reply-content">
+													<div class="userphoto"><span><img src="data:image/jpeg;base64,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"><em>1</em></span></div>
+													<div class="reply-info">
+														<div class="user">
+															<a href="#!">Loki</a>
+															<span>2020.03.03 22:22:22</span>
+														</div>
+														<div class="textinfo">Get your popcorn out. It's time for the story of the Space Viking, Thor Odinson. He was no ordinary man — he was a god. After saving planet Earth for the 500th time, Thor set off on a new journey where he got in shape. He went from dad bod to god bod! And after all that he reclaimed his title as the one and only Thor...
+															But, is he? Is he the one and only Thor?															
+															The latest trailer for Mrvel Studios' Thor: Love and Thunder has arrived revealing new details about the God of Thunder’s latest adventure — including a trek to Olympus where Zeus (Russell Crowe) reigns supreme.
+														</div>
+														<div class="replyedit">
+															<div>
+																<button class="like on seffect"><ion-icon name="thumbs-up-outline"></ion-icon><span>23467</span></button>
+																<button class="no seffect"><ion-icon name="thumbs-down-outline"></ion-icon><span>0</span></button>
+															</div>
+														</div>
+														<div class="tool">
+															<a href="#!" title="option" class="rpoption"></a>
+															<div class="rplist">
+																<a href="#!" class="warning">Report it</a>
+																<a href="#!" class="share">Share</a>
+																<a href="#!" class="modify">Modify</a>
+															</div>
+														</div>
+														<div class="reply-write">
+															<div>
+																<div><textarea placeholder="edit post"></textarea></div>
+																<div><span>Send</span></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												
+												<!-- three depth -->
+												<ul class="reply three" style="display:none">
+													<li>
+														<ul>
+															<li>
+																<div class="reply-content">
+																	<div class="userphoto"><span><img src="../Common/Images/smaple_photo_1.jpg"><em>1</em></span></div>
+																	<div class="reply-info">
+																		<div class="user">
+																			<a href="#!">AdminGeust</a>
+																			<span>2020.03.03 22:22:22</span>
+																		</div>
+																		<div class="textinfo"> 나올 부분 입니다.여기를 글이 나올 부분 입니다.
+																		ㄷ가홍ㄹ화ㅓㄴㅇㅀ dfgjkdlfgd
+																		T^$%&amp;^$%^&amp;
+																		546urtyj 567 546 767 5467 5
+																		
+																		나올 부분 입니다.여기를 글이 나올 부분 입니다.sewatgertyrtyertyertyertyretyh rty rht565467657867897689gh
+		
+																		<img src="../Common/Images/smaple_photo_1.jpg">
+																		</div>
+																		<div class="replyedit" style="display:none">
+																			<div>
+																				<button class="replybtn"><span>댓글(1)</span></button>
+																				<button class="edit"><span>글수정</span></button>
+																			</div>
+																			<div>
+																				<button class="like on seffect"><span>2</span></button>
+																				<button class="no seffect"><span>0</span></button>
+																			</div>
+																		</div>
+																		<div class="tool">
+																			<a href="#!" title="옵션" class="rpoption on"></a>
+																			<div class="rplist">
+																				<a href="#!" class="warning">신고</a>
+																				<a href="#!" class="share"> 공유</a>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</li>
+															<li>
+																<div class="reply-content">
+																	<div class="userphoto"><span><img src="../Common/Images/smaple_photo_2.jpg"><em>1</em></span></div>
+																	<div class="reply-info">
+																		<div class="user">
+																			<a href="#!">AdminGeust</a>
+																			<span>2020.03.03 22:22:22</span>
+																		</div>
+																		<div class="textinfo">여기를 글이 나올 부분 입니다.</div>
+																		<div class="replyedit" style="display:none">
+																			<div>
+																				<button class="replybtn"><span>댓글(1)</span></button>
+																				<button class="edit"><span>글수정</span></button>
+																			</div>
+																			<div>
+																				<button class="like seffect"><span>2</span></button>
+																				<button class="no on seffect"><span>230</span></button>
+																			</div>
+																		</div>
+																		<div class="tool">
+																			<a href="#!" title="옵션" class="rpoption on"></a>
+																			<div class="rplist">
+																				<a href="#!" class="warning">신고</a>
+																				<a href="#!" class="share"> 공유</a>
+																			</div>
+																		</div>
+																		<div class="reply-write" style="display:none">
+																			<div>
+																				<div><textarea placeholder="write your comments."></textarea></div>
+																				<div><span>Send</span></div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</li>
+														</ul>
+														<div class="morebtn" id="moreBtn"><button class="seffect"><span><ion-icon name="chevron-up-outline"></ion-icon>hidden</span></button></div>
+													</li>
+												</ul>
+		
+											</li>
+											<li>
+												<div class="reply-content">
+													<div class="userphoto"><span><img src="data:image/jpeg;base64,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"><em>1</em></span></div>
+													<div class="reply-info">
+														<div class="user">
+															<a href="#!">WhitneyFrost</a>
+															<span>2020.03.03 22:22:22</span>
+														</div>
+														<div class="textinfo">Stephen Strange’s Hello and Goodbye to the Love of His Life, Christine Palmer
+															In ‘Doctor Strange in the Multiverse of Madness,’ Stephen must let go of one great love in preparation of meeting the other.</div>
+														<div class="replyedit">
+															<div>
+																<button class="like on seffect"><ion-icon name="thumbs-up-outline"></ion-icon><span>23467</span></button>
+																<button class="no seffect"><ion-icon name="thumbs-down-outline"></ion-icon><span>0</span></button>
+															</div>
+														</div>
+														<div class="tool">
+															<a href="#!" title="option" class="rpoption"></a>
+															<div class="rplist">
+																<a href="#!" class="warning">Report it</a>
+																<a href="#!" class="share">Share</a>
+																<a href="#!" class="modify">Modify</a>
+															</div>
+														</div>
+														<div class="reply-write" style="display:none">
+															<div>
+																<div><textarea placeholder="edit post"></textarea></div>
+																<div><span>Send</span></div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="reply-write">
+													<div>
+														<div><textarea placeholder="write your comments."></textarea></div>
+														<div><span>Send</span></div>
+													</div>
+												</div>
+												<div class="morebtn" id="moreBtn"><button class="seffect"><span><ion-icon name="chevron-up-outline"></ion-icon>hidden</span></button></div>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								
+								<script>
+									$(document).ready(function(){
+										$(".morebtn,.replybtn").click(function(){
+											$(".reply.two").toggle();
+										});
+									});
+								</script>
+								
+							</li>
+		
+							<!-- one depth -->
+							<li>
+								<div class="reply-content">
+									<div class="userphoto"><span><img src="data:image/jpeg;base64,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"><em>1</em></span></div>
+									<div class="reply-info">
+										<div class="user">
+											<a href="#!">CaptainAmerica</a>
+											<span>2020.03.03 22:22:22</span>
+										</div>
+										<div class="textinfo">Marvel Studios' Doctor Strange in the Multiverse of Madness arrives exclusively in theaters in one week, starting May 6. Tickets are now on sale!
+											In the latest brand-new featurette, seen above, Marvel Studios president Kevin Feige, film stars Elizabeth Olsen, Benedict Cumberbatch, and director Sam Raimi reveal how the infinite possibilities of the Multiverse affect Wanda Maximoff / The Scarlet Witch as she returns following the events of Marvel Studios' WandaVision.											
+											The featurette opens with Vision's poignant line from WandaVision, "What is grief, if not love persevering?"											
+											"Part of the Madness of the Multiverse is we get to see different realities," explains Feige. "And we see different versions, primarily of Doctor Strange, but we do see other versions of Wanda Maximoff."											
+											"WandaVision was this journey of her, for the first time, taking her own life into her own hands, and it was fun transitioning from her experience to this movie," adds Olsen.
+										</div>
+										<div class="replyedit">
+											<div>
+												<button class="replybtn"><span>Reply(1)</span></button>
+											</div>
+											<div>
+												<button class="like on seffect"><ion-icon name="thumbs-up-outline"></ion-icon><span>23467</span></button>
+												<button class="no seffect"><ion-icon name="thumbs-down-outline"></ion-icon><span>0</span></button>
+											</div>
+										</div>
+										<div class="tool">
+											<a href="#!" title="option" class="rpoption"></a>
+											<div class="rplist">
+												<a href="#!" class="warning">Report it</a>
+												<a href="#!" class="share">Share</a>
+												<a href="#!" class="modify">Modify</a>
+											</div>
+										</div>
+										<div class="reply-write">
+											<div>
+												<div><textarea placeholder="edit post"></textarea></div>
+												<div><span>Send</span></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+
+							<!-- one depth -->
+							<li>
+								<div class="reply-content">
+									<div class="userphoto"><span><img src="data:image/jpeg;base64,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"><em>1</em></span></div>
+									<div class="reply-info">
+										<div class="user">
+											<a href="#!">IronMan</a>
+											<span>2020.03.03 22:22:22</span>
+										</div>
+										<div class="textinfo">In two weeks, get ready to witness Marvel Cinematic Universe newcomer Xochitl Gomez punch star-shaped holes in reality and travel through the Multiverse when Marvel Studios’ Doctor Strange in the Multiverse of Madness opens exclusively in theaters on May 6.
+											Gomez began her trek into the MCU back in February 2020 when she was only 13 years old auditioning for an unknown role. Her second audition came six months later where she deduced the project was related to Doctor Strange because the term ‘sorcerer’ was referenced in the audition script.
+										</div>
+										<div class="replyedit">
+											<div>
+												<button class="replybtn"><span>Reply(1)</span></button>
+											</div>
+											<div>
+												<button class="like seffect"><ion-icon name="thumbs-up-outline"></ion-icon><span>56</span></button>
+												<button class="no on seffect"><ion-icon name="thumbs-down-outline"></ion-icon><span>4563</span></button>
+											</div>
+										</div>
+										<div class="tool">
+											<a href="#!" title="option" class="rpoption"></a>
+											<div class="rplist">
+												<a href="#!" class="warning">Report it</a>
+												<a href="#!" class="share">Share</a>
+												<a href="#!" class="modify">Modify</a>
+											</div>
+										</div>
+										<div class="reply-write">
+											<div>
+												<div><textarea placeholder="edit post"></textarea></div>
+												<div><span>Send</span></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<script>
+						$(document).ready(function(){
+							$(".rpoption").click(function(){ 
+								$(".rpoption,.rplist").addClass("visible");
+							});
+							$(document).click(function(event) {
+								if (!$(event.target).closest(".rpoption,.rplist").length) {
+									$("body").find(".rpoption").removeClass("visible");
+									$("body").find(".rplist").removeClass("visible");
+								}
+							});
+						});
+					</script>
+				</div>
+
+				<!-- TextShadowStyle -->
+				<div class="tsws">
+					<ul>
+						<li class="tw1"><span><i>A</i><i>v</i><i>e</i><i>n</i><i>g</i><i>e</i><i>r</i><i>'</i><i>s</i></span></li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="bottomnav fixed">
+			<ul>
+				<li><a href="#!"><ion-icon name="chatbox-ellipses-outline"></ion-icon><span>Message</span></a></li>
+				<li><a href="#!"><ion-icon name="bookmarks-outline"></ion-icon><span>Favorites</span></a></li>
+				<li><a href="#!"><ion-icon name="ticket-outline"></ion-icon><span>Ticket</span></a></li>
+				<li><a href="#!"><ion-icon name="heart-outline"></ion-icon><span>Love Character</span></a></li>
+				<li><a href="#!"><ion-icon name="qr-code-outline"></ion-icon><span>Qr Code</span></a></li>
+			</ul>
+		</div>
+		<footer id="#footer" class="footer">
+			<h6>
+				<svg viewBox="0 0 36 52" xmlns="http://www.w3.org/2000/svg">
+					<rect fill="#EC1D24" width="100%" height="100%"></rect>
+					<path fill="#FEFEFE" d="M31.5 48V4H21.291l-3.64 22.735L14.102 4H4v44h8V26.792L15.577 48h4.229l3.568-21.208V48z"></path>
+				</svg>
+			</h6>
+			<div class="marvelinfo">
+				<ul>
+					<li><span>Budget.</span>$356 million</li>
+					<li><span>Box office.</span>$2.798 billion</li>
+					<li><span>Produced by.</span>Kevin Feige</li>
+					<li><span>Production company.</span>Marvel Studios</li>
+				</ul>
+			</div>
+			<div class="snsicon">
+				<ul>
+					<li><ion-icon name="logo-facebook"></ion-icon><span>FaceBook</span></li>
+					<li><ion-icon name="logo-twitter"></ion-icon><span>Twitter</span></li>
+					<li><ion-icon name="logo-instagram"></ion-icon><span>instagram</span></li>
+					<li><ion-icon name="logo-youtube"></ion-icon><span>youtube</span></li>
+					<li><ion-icon name="logo-snapchat"></ion-icon><span>snapchat</span></li>
+					<li><ion-icon name="logo-pinterest"></ion-icon><span>pinterest</span></li>
+				</ul>
+			</div>
+			<p>©2022 MARVEL</p>
+		</footer>
+
+		<!-- Loading Bar -->
+		<div class="loading" id="loading" style="display:none"><span></span></div>
+		<script>
+			$(function () {
+				$("#loading").delay("2000").fadeOut();
+			});
+		</script>
+
+		<!-- Top Bottom Move -->
+		<div>
+			<ul class="topbottommove">
+				<li><span id="topbtn"><ion-icon name="arrow-up-outline"></ion-icon></span></li>
+				<li><span id="bottmbtn"><ion-icon name="arrow-down-outline"></ion-icon></span></li>
+			</ul>
+			<script>
+				$(function() {
+					$(window).scroll(function() {
+						if ($(this).scrollTop() > 600) {
+							$('.topbottommove').fadeIn();
+						} else {
+							$('.topbottommove').fadeOut();
+						}
+					});
+					$("#topbtn").click(function() {
+						$('html').animate({scrollTop : 0}, 100);
+					});
+					$("#bottmbtn").click(function() {
+						$('html').animate({scrollTop : ($('footer').offset().top)}, 20);
+					});
+				});
+
+			</script>
+		</div>
+		<!-- Progress -->
+		<div class="progress-container"><div class="progress-bar" id="toplinebar"></div></div>
+		<script>
+			window.onscroll = function () { toplinebar() };
+			function toplinebar() {
+				var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+				var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+				var scrolled = (winScroll / height) * 100;
+				document.getElementById("toplinebar").style.width = scrolled + "%";
+			}
+		</script>
+	</body>
+</html>
