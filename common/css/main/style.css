@@ -75,7 +75,10 @@ input:-moz-input-placeholder{color:#bbb;font-weight:300}
   .scot>h4{color:#000}
   .scot>div{background-size:auto 100%}}
 @media screen and (max-width:640px){
-  .scot>div h4{background-size:230% auto;}}
+  .scot>div h4{background-size:230% auto;}
+  .scot>div h4,
+  .scot>h4{font-size:12px;}
+}
 @media screen and (max-width:420px){
   .scot>div h4{background-size:350% auto;}}
 
@@ -212,7 +215,7 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
 .bottomnav a:hover ion-icon{color:#fff;transition:color .5s}
 .bottomnav.fixed a{position:relative;display:flex;align-items:center;justify-content:center;height:100%;color:#ffffff;transition:bottom .5s, opacity .5s;}
 .bottomnav.fixed:hover a{height:120px}
-.bottomnav.fixed ul{padding:0 30%;width:100%;}
+.bottomnav.fixed ul{padding: 0 25%;width:100%;}
 .bottomnav.fixed li{width:20%;vertical-align:top;}
 .bottomnav.fixed ion-icon{position:absolute;top:16px;transition:top .5s, transform .5s, color .25s;color:#ffffff;}
 .bottomnav.fixed:hover a ion-icon{top:44px}
@@ -230,7 +233,11 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
   .bottomnav a ion-icon{vertical-align:middle;}
   .bottomnav.fixed ul{padding:0 15%;}}
 @media screen and (max-width:640px){
-  .bottomnav li{width:50%;}}
+  .bottomnav li{width:50%;}
+  .bottomnav.fixed ul{padding:0 6%}
+  .bottomnav a span,
+  .bottomnav.fixed a span,
+  .bottomnav.fixed a:hover span{font-size:11px}}
 
 /* SideNav */
 .sidenav{position:relative;width:100%;height:500px;}
@@ -406,6 +413,9 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
 .card li:hover ion-icon{color:#000}
 @media screen and (max-width:768px){
   .card{width:100%}}
+@media screen and (max-width:640px){
+  .card .profile{font-size:12px}
+}
 
 /* stickylinke */
 #stickyline{position:relative;top:0;z-index:1;display:table;width:100%;background-color:#eee}
@@ -604,6 +614,7 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
     @media screen and (max-width:768px){
       .motionslide .prev{left:15px;}
       .motionslide .next{right:15px;}
+      .motionslide .swiper-slide{height:300px}
    }
         /* Motion Left Right */
         .motionmove{position:absolute;width:50%;height:100%;-webkit-box-sizing:border-box;box-sizing:border-box;opacity:0}
@@ -665,7 +676,9 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
     .wrap-slide-box .swiper-slide li a:hover span{color:#fff;transition-delay:0.75s;}
     .wrap-slide-box .swiper-slide li a:hover span:after{transform:translate3d(110%, 0, 0);transition:transform 0.75s cubic-bezier(0.7, 0, 0.3, 1) 0.2s;}
     @media screen and (max-width:768px){
-      .wrap-slide-box .swiper-slide.swiper-slide-active ul{transform:scale(.8)}
+      .wrap-slide-box .swiper-slide ul{bottom:40px}
+      .wrap-slide-box .swiper-slide.swiper-slide-active ul{transform:scale(.8);bottom: 40px;}
+      .wrap-slide-box{height:220px}
    }
 
 /* shape background bulr */
@@ -754,6 +767,7 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
 .hrztg .selected .progress{background:linear-gradient(90deg, rgb(16 109 255) 0%, rgb(155 51 255) 50%, rgb(38 37 129) 100%);}
 @media screen and (max-width:640px){
   .hrztg{padding-right:20px;padding-left:20px;}
+  .hrztg>div>div:last-child>div:first-child span:first-child{padding-right:5px;padding-left:5px;}
 }
 
 /* CheckBoxStyleA */
@@ -1413,7 +1427,9 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
 .pfntlb .previous a,
 .pfntlb .next a{color:#000;background-color:transparent}
 @media screen and (max-width:640px){
-  .pfntlb ul{padding:10px}}
+  .pfntlb ul{padding:10px;}}
+@media screen and (max-width:360px){
+  .pfntlb a{padding:10px 5px}}
 
 /* FullAllMenu */
 .overlay{height:0%;width:100%;position:fixed;z-index:99999;top:0;left:0;background-color:rgb(34 23 51 / 90%);overflow-y:hidden;transition:0.5s;}
@@ -1580,6 +1596,9 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
   .item-top li:first-child a{padding-left:10px}
   .item-top a{border:0 none;margin-bottom:0;padding:10px 20px;font-size:14px;}
   .box-column>div.stit{width:100%}}
+@media screen and (max-width:640px){
+  .side-item .list{padding-right:0;padding-left:0}
+}
 
 /* PromotionBanner */
 .promotion-banner{position:fixed;top:0;left:0;z-index:99999;width:100%;height:100%;background-color:#000000;}
