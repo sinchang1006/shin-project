@@ -147,7 +147,7 @@ footer>p{color:#222222;font-size:11px;letter-spacing:4px;text-align:center}
 .nav-links{position:absolute;top:0;right:0;display:flex;justify-content:space-between;align-items:center;width:56%;height:80px;transition:all .5s;}
 .nav-links li{display:inline-block;height:100%;vertical-align:top;line-height:80px;}
 .sticky .nav-links li{line-height:50px}
-.nav-links a{position:relative;display:block;padding:0 10px;color:#ffffff;text-decoration:none;letter-spacing:1px;font-weight:400;font-size:12px;transition:all .5s;}
+.nav-links a{position:relative;display:block;padding:0 10px;color:#ffffff;text-decoration:none;letter-spacing:1px;font-weight: 700;font-size:12px;transition:all .5s;}
 .nav-links a:before,
 .nav-links a:after{content:'';position:absolute;bottom:10px;left:50%;transform:translateX(-50%);display:block;width:0%;height:1px;opacity:0;transition:all .2s}
 .nav-links a:hover:before{z-index:0;opacity:1;width:100%;background-color:#27bfda;transition:all .25s}
@@ -229,7 +229,7 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
 .bottomnav.fixed:hover a ion-icon{top:44px}
 .bottomnav.fixed a span{position:absolute;bottom:0;left:50%;width:0;opacity:0;margin-left:0;font-size:12px;font-weight:200;color:#fff;transform:translateX(-50%);letter-spacing:1px;}
 .bottomnav.fixed a:hover span{width:100%;font-weight:400;font-size:14px;opacity:1;bottom:28px;text-align:center;transition:bottom .5s, transform .25s, opacity .5s}
-.bottomnav.fixed a:hover ion-icon{top:16px;font-size:50px;color:#ffc800;transform:rotate(10deg);transition:color .5s, transform .25s, top .25s, font-size .6s}
+.bottomnav.fixed a:hover ion-icon{top:16px;font-size:50px;color:#ffc800;transform:rotate(20deg);transition:color .5s, transform .25s, top .25s, font-size .6s}
 @media screen and (max-width:1024px){
   .bottomnav ul{width:700px}}
 @media screen and (max-width:768px){
@@ -426,15 +426,20 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
 }
 
 /* StickyLinke */
-#stickyline{position:relative;top:0;z-index:1;display:table;width:100%;background-color:#eee}
+#stickyline{
+    background: linear-gradient(90deg, rgb(42 176 250) 0%, rgb(69 41 171) 50%, rgb(20 49 98) 100%);
+}
 #stickyline.fixed{position:fixed;top:50px;z-index:100;background:linear-gradient(90deg, rgb(15 109 255) 0%, rgb(95 64 209) 50%, rgb(149 33 206) 100%);box-shadow:0 0 10px rgba(0,0,0,.5);}
-.gnb{position:relative;width:100%;height:50px;border:1px solid #000}
-.gnb>ul>li{float: left;width:160px;height:50px;position:relative;}
-.gnb>ul>li>a{display:block;}
-.gnb>ul>li div{position:absolute;top:0;left:0;display:none;width:300px}
-.gnb>ul>li div.focus{display:block;}
-.gnb div li{float:left;background-color:#aaa;margin-right:10px}
-.gnb div li a{display:block;padding:10px}
+.gnb>ul{text-align: center;font-size: 0;}
+.gnb{position:relative;width:100%;height:50px;z-index: 1;}
+.gnb>ul>li{display: inline-block;vertical-align: top;width: 25%;height:50px;position:relative;}
+.gnb>ul>li>a{width: 100%;display: flex;align-items: center;padding: 0 30px;justify-content: center;height: 50px;font-size: 12px;font-weight: 700;color: #ffffff54;box-sizing: border-box;transition:all .25s}
+.gnb>ul>li:hover>a{background-color:#352285;box-shadow:2px 12px 10px rgba(0,0,0,.4);color:#fff}
+.gnb>ul>li div{position: absolute;top: 50px;left:0;display: block;height:0;width: 100%;visibility:hidden;}
+.gnb>ul>li div.focus{visibility:visible;height:100%;}
+.gnb div ul{box-shadow:2px 12px 10px rgba(0,0,0,.4)}
+.gnb div li a{display:block;padding:20px 15px;background-color: #352285;color: #c0b2ff;transition:color .25s, background-color .15s}
+.gnb div li a:hover{background-color: #3a268f;color:#fff}
 
 
 /* Search Box Nomal */
