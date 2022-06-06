@@ -58,7 +58,7 @@ input:-moz-input-placeholder{color:#bbb;font-weight:300}
   .box-column>div,
   .box-column.twothree>div:first-child{display:block;width:100%;padding:30px;}
   .box-column>div:first-child{padding:30px;}
-  .box-column>div:last-child{padding:30px}}
+  .box-column>div:last-child{padding: 30px;}}
 
 /* ScrollOpacity */
 .scot{position:relative;z-index:0;background-color:#000;overflow:hidden;margin-top:-100px;}
@@ -425,34 +425,17 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
   .card .profile{font-size:12px}
 }
 
-/* stickylinke */
+/* StickyLinke */
 #stickyline{position:relative;top:0;z-index:1;display:table;width:100%;background-color:#eee}
 #stickyline.fixed{position:fixed;top:50px;z-index:100;background:linear-gradient(90deg, rgb(15 109 255) 0%, rgb(95 64 209) 50%, rgb(149 33 206) 100%);box-shadow:0 0 10px rgba(0,0,0,.5);}
-.fixed.sfatfn .depth_one>li>a{color:rgba(255,255,255,.4)}
-.sfatfn>ul{display:flex;width:100%;justify-content:space-evenly;}
-  /* SuperFishAccessibilityTabFocusNav */
-  .sfatfn .depth_one>li{display:block;width:100%;}
-/*   .sfatfn .depth_one>li.sfHover:before{content:'';position:fixed;top:0;left:0;display:block;height:100%;width:100%;background-color:rgba(0,0,0,.4);} */
-  .sfatfn .depth_one>li>a{display:block;padding: 0 10px;box-sizing:border-box;color:#000;height:80px;line-height:80px;font-weight:700;font-size:12px;text-align:center;}
-  .sfatfn .depth_two{position:absolute;top:79px;left:0;width:100%;background-color:#f9f9f9;border-bottom: 1px solid #000;box-sizing:border-box;box-shadow: 0 0 8px rgb(187 187 187 / 40%);}
-  .sfatfn .depth_two>li{position:relative;display:inline-block;}
-  .sfatfn .depth_two>li:last-child{border-bottom:0 none}
-  .sfatfn .depth_two{height:auto;opacity:1}
-  .sfatfn .depth_three,
-  .sfatfn .depth_four{position:absolute;left:0;height:auto;display:inline-block;background-color: #f9f9f9;}
-  .sfatfn .depth_three,
-  .sfatfn .depth_four{width:200px;top:42px;box-shadow: 0 0 6px rgb(0 0 0 / 17%);}
-  .sfatfn .depth_four{left: 200px;top: 0px;}
-  .sfatfn .depth_three>li>a,
-  .sfatfn .depth_four>li>a{display:inline-block;padding:15px;color:#888;text-align:left;box-sizing:border-box;}
-  .sfatfn .depth_two .sfHover{color:#000;background-color:#f6f6f6}
-  .sfatfn .depth_four>li>a{color:#000;font-weight:400}
-  .sfatfn .depth_two>li>a{padding:15px;display:inline-block;font-size:12px;font-weight:400;color:#888888;box-sizing:border-box;}
-  .sfatfn .depth_two>li>a:hover,
-  .sfatfn .depth_three>li>a:hover,
-  .sfatfn .depth_four>li>a:hover{text-decoration:underline;color:#000}
-  .sfatfn .depth_one>li>a{position: relative;z-index: 1;height:40px;line-height:40px;color:#000;}
-  .sfatfn .depth_two{top:38px}
+.gnb{position:relative;width:100%;height:50px;border:1px solid #000}
+.gnb>ul>li{float: left;width:160px;height:50px;position:relative;}
+.gnb>ul>li>a{display:block;}
+.gnb>ul>li div{position:absolute;top:0;left:0;display:none;width:300px}
+.gnb>ul>li div.focus{display:block;}
+.gnb div li{float:left;background-color:#aaa;margin-right:10px}
+.gnb div li a{display:block;padding:10px}
+
 
 /* Search Box Nomal */
 .scbxnm{position:relative;z-index:1;padding: 20px 25vw 0 25vw;background-color:#292437;text-align:center}
@@ -1594,10 +1577,10 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
 .number-box .btn a:hover{opacity:1}
 .list .number-box{text-align:center}
 .list .number-box .num{padding:0 20px;display:inline-block;}
-.side-item .list{position:relative;display:inline-block;padding:30px 20px;border-top:1px solid #eeeeee;background-color:#ffffff;}
+.side-item .list{position:relative;display:inline-block;padding: 30px 0;border-top:1px solid #eeeeee;background-color:#ffffff;}
 .side-item .list ul{font-size:0;text-align:left}
 .side-item .list li{display:inline-block;margin-bottom:30px;width:33.3334%;box-sizing:border-box;vertical-align:top;}
-.side-item .list li a{padding-left:10px;padding-right:10px;}
+.side-item .list li a{padding-left: 20px;padding-right: 20px;}
 .side-item .list>ul>li>a{display:block;height:100%;}
 .list .thum{position:relative;top:0;left:0;height:16vw;overflow:hidden;transition:all .25s;border-radius:10px;}
 .list .thum:hover{top:-10px;left:-10px;box-shadow:6px 14px 1px rgba(0,0,0,.1)}
@@ -1615,6 +1598,7 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
   .box-column>div.stit{width:100%}}
 @media screen and (max-width:640px){
   .side-item .list{padding-right:0;padding-left:0}
+  .side-item .list li a{padding-right:10px;padding-left:10px}
 }
 
 /* PromotionBanner */
@@ -1651,7 +1635,9 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
   from, to{border-color:transparent}50%{border-color:#ff0000}}
 
 /* TimeLine */
+.box-column>div.timeline{padding:0}
 .cd-horizontal-timeline {
+  padding: 30px 50px;
   opacity: 0;
   transition: opacity 0.2s;
 }
@@ -1680,17 +1666,18 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
   z-index: 2;
   top: 0;
   height: 100%;
-  width: 20px;
+  width: 40px;
+  pointer-events: none;
 }
 .cd-horizontal-timeline .events-wrapper::before {
   left: 0;
-  background-image: -webkit-linear-gradient( left , #f8f8f8, rgba(248, 248, 248, 0));
-  background-image: linear-gradient(to right, #f8f8f8, rgba(248, 248, 248, 0));
+  background-image: linear-gradient(to right, #ffffff, rgba(248, 248, 248, 0));
+  background-image: linear-gradient(to right, #ffffff, rgba(248, 248, 248, 0));
 }
 .cd-horizontal-timeline .events-wrapper::after {
   right: 0;
-  background-image: -webkit-linear-gradient( right , #f8f8f8, rgba(248, 248, 248, 0));
-  background-image: linear-gradient(to left, #f8f8f8, rgba(248, 248, 248, 0));
+  background-image: linear-gradient(to left, #ffffff, rgba(248, 248, 248, 0));
+  background-image: linear-gradient(to left, #ffffff, rgba(248, 248, 248, 0));
 }
 .cd-horizontal-timeline .events {
   /* this is the grey line/timeline */
@@ -1713,7 +1700,7 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
   top: 0;
   height: 100%;
   width: 100%;
-  background-color: #000000;
+  background-color: #4f49da;
   -webkit-transform: scaleX(0);
   -moz-transform: scaleX(0);
   -ms-transform: scaleX(0);
@@ -1733,9 +1720,9 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
   bottom: 0;
   z-index: 2;
   text-align: center;
-  font-size: 1.3rem;
-  padding-bottom: 15px;
-  color: #383838;
+  font-size: 14px;
+  padding-bottom: 24px;
+  color: #000000;
   /* fix bug on Safari - text flickering while timeline translates */
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
@@ -1754,15 +1741,13 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
   transform: translateX(-50%);
-  bottom: -7px;
-  height: 12px;
-  width: 12px;
+  bottom: -4px;
+  height: 5px;
+  width: 5px;
   border-radius: 50%;
   border: 2px solid #e9e9e9;
   background-color: #e9e9e9;
-  -webkit-transition: background-color 0.3s, border-color 0.3s;
-  -moz-transition: background-color 0.3s, border-color 0.3s;
-  transition: background-color 0.3s, border-color 0.3s;
+  transition: background-color 0.3s, border-color 0.3s, width .25s, height .25s, bottom .25s;
 }
 .no-touch .cd-horizontal-timeline .events a:hover::after {
   background-color: #7b9d6f;
@@ -1775,10 +1760,14 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
 }
 .cd-horizontal-timeline .events a.older-event.selected::after,
 .cd-horizontal-timeline .events a.selected::after {
+  bottom: -10px;
+  width: 18px;
+  height: 18px;
   background-color: #4f49da;
   border-color: #d0ceff;
+  transition: background-color 0.3s, border-color 0.3s, width .25s, height .25s, bottom .25s;
 }
-.cd-horizontal-timeline .events a.older-event::after {color: #000;background-color: #000;}
+.cd-horizontal-timeline .events a.older-event::after {background-color: #4f49da;border-color: #4f49da;}
 @media only screen and (min-width: 1100px) {
   .cd-horizontal-timeline::before {
     /* never visible - this is used in jQuery to check the current MQ */
@@ -1787,23 +1776,14 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
 }
 .cd-horizontal-timeline .events-content .cd-timeline-navigation li{opacity:1;}
 .cd-timeline-navigation a {
-  /* these are the left/right arrows to navigate the timeline */
-  position: absolute;
-  z-index: 1;
   display: block;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 34px;
-  width: 34px;
-  border-radius: 50%;
-  background-color: #ff0000;
-  border: 2px solid #dfdfdf;
+  height: 50px;
+  width: 50px;
+  color: #454cbe;
+  
   /* replace text with an icon */
   overflow: hidden;
-  color: transparent;
-  text-indent: 100%;
-  white-space: nowrap;
-  transition: border-color 0.3s;
+  font-size: 28px;
 }
 .cd-timeline-navigation a::after {
   /* arrow icon */
@@ -1819,7 +1799,6 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
 }
 .cd-timeline-navigation a.prev {
   left:0;
-  transform: translateY(-50%) rotate(180deg);
 }
 .cd-timeline-navigation a.pre {
   left: 0;
@@ -1830,12 +1809,15 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
 .no-touch .cd-timeline-navigation a:hover {
   border-color: #7b9d6f;
 }
-.cd-timeline-navigation{position: relative;z-index: 123123;}
-.cd-timeline-navigation a.inactive {
+.cd-timeline-navigation{position: absolute;width: 100%;height: 100%;z-index: 1;}
+.cd-timeline-navigation button{position:absolute;top:0;display: flex;align-items: center;justify-content: center;width: 50px;height: 100%;font-size: 30px;text-align: center;background-color: #fff;cursor: pointer;}
+.cd-timeline-navigation .prev{left:0}
+.cd-timeline-navigation .next{right:0}
+.cd-timeline-navigation .inactive {
   cursor: not-allowed;
-  background-color: #eee;
+  color: #ccc;
 }
-.no-touch .cd-timeline-navigation a.inactive:hover {
+.no-touch .cd-timeline-navigation .inactive:hover {
   border-color: #dfdfdf;
 }
 
@@ -1843,10 +1825,10 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
   position: relative;
   width: 100%;
   overflow: hidden;
-  -webkit-transition: height 0.4s;
-  -moz-transition: height 0.4s;
   transition: height 0.4s;
+  padding-bottom:30px;
 }
+.cd-horizontal-timeline .events-content ol{position: relative;z-index: 0;padding: 0 70px;}
 .cd-horizontal-timeline .events-content li {
   position: absolute;
   z-index: 1;
@@ -1885,13 +1867,15 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
   animation-direction: reverse;
 }
 .cd-horizontal-timeline .events-content h2 {
-  font-weight: 700;
-  font-size: 60px;
-  line-height: 100%;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 32px;
+  letter-spacing: -1px;
+  text-align: left;
 }
 .cd-horizontal-timeline .events-content em {
   display: block;
-  margin: 10px auto;
+  margin: 10px 0 24px 0;
 }
 .cd-horizontal-timeline .events-content em::before {
   content: '- ';
@@ -1902,8 +1886,11 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
 }
 .cd-horizontal-timeline .events-content em,
 .cd-horizontal-timeline .events-content p {
-  font-size: 16px;}
-.cd-horizontal-timeline .events-content p{font-size: 14px;line-height: 22px;font-weight: 300;}
+  font-size: 16px;
+  color: #000;
+  font-weight: 300;
+  }
+.cd-horizontal-timeline .events-content p{margin: 0;font-size: 14px;line-height: 20px;font-weight: 300;word-break: keep-all;text-align: left;}
 
 @-webkit-keyframes cd-enter-right {
   0% {
@@ -1980,6 +1967,12 @@ clip-path:polygon(0% 0%, 0% 100%, 35% 100%, 35% 35%, 65% 35%, 65% 65%, 35% 65%, 
     -o-transform: translateX(0%);
     transform: translateX(0%);
   }
+}
+@media screen and (max-width:640px){
+  .cd-horizontal-timeline .events-content{padding-bottom: 100px;}
+  .cd-horizontal-timeline .events-content h2{font-size: 24px;}
+  .cd-horizontal-timeline .events-content em{font-size:14px;margin-top: 20px;}
+  .cd-horizontal-timeline .events-content p{font-size:12px}
 }
 
 /* Animation item */
