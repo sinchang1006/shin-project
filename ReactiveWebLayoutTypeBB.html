@@ -85,20 +85,11 @@
 							<ul class="collapsible">
 								<li class="active">
 									<a href="#!" class="collapsible-header" tabindex="0">
-										First
+										Swipe Paging
 										<ion-icon name="caret-up-outline"></ion-icon>
 									</a>
 									<div class="collapsible-body">
-										<a href="#!" onclick="closeNav()">Lorem ipsum dolor sit amet.</a>
-									</div>
-								</li>
-								<li>
-									<div class="collapsible-header" tabindex="0">
-										Second
-										<ion-icon name="caret-up-outline"></ion-icon>
-									</div>
-									<div class="collapsible-body">
-										<a href="#!" onclick="closeNav()">Lorem ipsum dolor sit amet.</a>
+										<a href="ReactiveWebLayoutTypeBB-SwiperPage.html" target="_blank" tabindex="0">Lorem ipsum dolor sit amet.</a>
 									</div>
 								</li>
 								<li>
@@ -131,29 +122,6 @@
 						<div class="collapsible-header" tabindex="0">
 							<ion-icon name="layers-outline"></ion-icon>
 							Series list
-							<ion-icon name="chevron-up-outline"></ion-icon>
-						</div>
-						<div class="collapsible-body"><span onclick="closeNav()">Lorem ipsum dolor sit amet.</span></div></li>
-					<li>
-						<div class="collapsible-header" tabindex="0">
-							<ion-icon name="bluetooth-outline"></ion-icon>
-							Bluetooth
-							<ion-icon name="chevron-up-outline"></ion-icon>
-						</div>
-						<div class="collapsible-body"><span onclick="closeNav()">Lorem ipsum dolor sit amet.</span></div>
-					</li>
-					<li>
-						<div class="collapsible-header" tabindex="0">
-							<ion-icon name="game-controller-outline"></ion-icon>
-							Game
-							<ion-icon name="chevron-up-outline"></ion-icon>
-						</div>
-						<div class="collapsible-body"><span onclick="closeNav()">Lorem ipsum dolor sit amet.</span></div>
-					</li>
-					<li>
-						<div class="collapsible-header" tabindex="0">
-							<ion-icon name="aperture-outline"></ion-icon>
-							Splash page
 							<ion-icon name="chevron-up-outline"></ion-icon>
 						</div>
 						<div class="collapsible-body"><span onclick="closeNav()">Lorem ipsum dolor sit amet.</span></div>
@@ -271,7 +239,6 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="ReactiveWebLayoutTypeBB-SwiperPage.html" target="_blank">Swipe Paging</a></li>
-                    <li><a href="#!" target="_blank">vertical</a></li>
                     <li><a href="#!" onclick="modal_slide('#modal_slide_typea');">ModalSlide</a></li> <!-- SlidePopup -->
                     <li><a href="#!" class="mlpopen" data-icon="open_in_new">ModalPopup</a></li>
                     <li><a href="#!" onclick="openFullNav()" class="overlaybtn">All Menu</a></li>
@@ -1348,9 +1315,9 @@
 
 					<!-- TimeLine -->
 					<div class="timeline">
-						<section class="cd-horizontal-timeline">
+						<section class="hrztl-tl">
 							<div class="timeline">
-								<div class="events-wrapper">
+								<div class="evt-wrpp">
 									<div class="events">
 										<ol>
 										<li><a href="#!" data-date="16/01/2014" class="selected">2014.01.16</a></li>
@@ -1365,14 +1332,14 @@
 										<li><a href="#!" data-date="19/01/2015">2015.01.19</a></li>
 										<li><a href="#!" data-date="03/03/2015">03.03</a></li>
 										</ol>
-										<span class="filling-line" aria-hidden="true"></span>
+										<span class="fl-line" aria-hidden="true"></span>
 									</div>
 									
 								</div>
 							</div>
 
-							<div class="events-content">
-								<div class="cd-timeline-navigation">
+							<div class="evt-ctt">
+								<div class="tl-nav">
 									<button class="prev inactive"><ion-icon name="arrow-back-circle-outline"></ion-icon></button>
 									<button class="next"><ion-icon name="arrow-forward-circle-outline"></ion-icon></button>
 								</div>
@@ -1437,21 +1404,21 @@
 						</section>
 						<script>
 							jQuery(document).ready(function($) {
-								var timelines = $('.cd-horizontal-timeline'),
+								var timelines = $('.hrztl-tl'),
 									eventsMinDistance = 60;
 								(timelines.length > 0) && initTimeline(timelines);
 								function initTimeline(timelines) {
 									timelines.each(function() {
 										var timeline = $(this),
 											timelineComponents = {};
-										timelineComponents['timelineWrapper'] = timeline.find('.events-wrapper');
-										timelineComponents['eventsWrapper'] = timelineComponents['timelineWrapper'].children('.events');
-										timelineComponents['fillingLine'] = timelineComponents['eventsWrapper'].children('.filling-line');
-										timelineComponents['timelineEvents'] = timelineComponents['eventsWrapper'].find('a');
+										timelineComponents['tmlnWrp'] = timeline.find('.evt-wrpp');
+										timelineComponents['evtWpp'] = timelineComponents['tmlnWrp'].children('.events');
+										timelineComponents['flLn'] = timelineComponents['evtWpp'].children('.fl-line');
+										timelineComponents['timelineEvents'] = timelineComponents['evtWpp'].find('a');
 										timelineComponents['timelineDates'] = parseDate(timelineComponents['timelineEvents']);
 										timelineComponents['eventsMinLapse'] = minLapse(timelineComponents['timelineDates']);
-										timelineComponents['timelineNavigation'] = timeline.find('.cd-timeline-navigation');
-										timelineComponents['eventsContent'] = timeline.children('.events-content');
+										timelineComponents['timelineNavigation'] = timeline.find('.tl-nav');
+										timelineComponents['eventsContent'] = timeline.children('.evt-ctt');
 										setDatePosition(timelineComponents, eventsMinDistance);
 										var timelineTotWidth = setTimelineWidth(timelineComponents, eventsMinDistance);
 										timeline.addClass('loaded');
@@ -1463,12 +1430,12 @@
 											event.preventDefault();
 											updateSlide(timelineComponents, timelineTotWidth, 'prev');
 										});
-										timelineComponents['eventsWrapper'].on('click', 'a', function(event) {
+										timelineComponents['evtWpp'].on('click', 'a', function(event) {
 											event.preventDefault();
 											timelineComponents['timelineEvents'].removeClass('selected');
 											$(this).addClass('selected');
 											updateOlderEvents($(this));
-											updateFilling($(this), timelineComponents['fillingLine'], timelineTotWidth);
+											updateFilling($(this), timelineComponents['flLn'], timelineTotWidth);
 											updateVisibleContent($(this), timelineComponents['eventsContent']);
 										});
 										timelineComponents['eventsContent'].on('swipeleft', function() {
@@ -1489,8 +1456,8 @@
 									});
 								}
 								function updateSlide(timelineComponents, timelineTotWidth, string) {
-									var translateValue = getTranslateValue(timelineComponents['eventsWrapper']),
-										wrapperWidth = Number(timelineComponents['timelineWrapper'].css('width').replace('px', ''));
+									var translateValue = getTranslateValue(timelineComponents['evtWpp']),
+										wrapperWidth = Number(timelineComponents['tmlnWrp'].css('width').replace('px', ''));
 									(string == 'next') ?
 									translateTimeline(timelineComponents, translateValue - wrapperWidth + eventsMinDistance, wrapperWidth - timelineTotWidth): translateTimeline(timelineComponents, translateValue + wrapperWidth - eventsMinDistance);
 								}
@@ -1498,9 +1465,9 @@
 									var visibleContent = timelineComponents['eventsContent'].find('.selected'),
 										newContent = (string == 'next') ? visibleContent.next() : visibleContent.prev();
 									if (newContent.length > 0) {
-										var selectedDate = timelineComponents['eventsWrapper'].find('.selected'),
+										var selectedDate = timelineComponents['evtWpp'].find('.selected'),
 											newEvent = (string == 'next') ? selectedDate.parent('li').next('li').children('a') : selectedDate.parent('li').prev('li').children('a');
-										updateFilling(newEvent, timelineComponents['fillingLine'], timelineTotWidth);
+										updateFilling(newEvent, timelineComponents['flLn'], timelineTotWidth);
 										updateVisibleContent(newEvent, timelineComponents['eventsContent']);
 										newEvent.addClass('selected');
 										selectedDate.removeClass('selected');
@@ -1511,18 +1478,18 @@
 								function updateTimelinePosition(string, event, timelineComponents, timelineTotWidth) {
 									var eventStyle = window.getComputedStyle(event.get(0), null),
 										eventLeft = Number(eventStyle.getPropertyValue("left").replace('px', '')),
-										timelineWidth = Number(timelineComponents['timelineWrapper'].css('width').replace('px', '')),
-										timelineTotWidth = Number(timelineComponents['eventsWrapper'].css('width').replace('px', ''));
-									var timelineTranslate = getTranslateValue(timelineComponents['eventsWrapper']);
+										timelineWidth = Number(timelineComponents['tmlnWrp'].css('width').replace('px', '')),
+										timelineTotWidth = Number(timelineComponents['evtWpp'].css('width').replace('px', ''));
+									var timelineTranslate = getTranslateValue(timelineComponents['evtWpp']);
 									if ((string == 'next' && eventLeft > timelineWidth - timelineTranslate) || (string == 'prev' && eventLeft < -timelineTranslate)) {
 										translateTimeline(timelineComponents, -eventLeft + timelineWidth / 2, timelineWidth - timelineTotWidth);
 									}
 								}
 								function translateTimeline(timelineComponents, value, totWidth) {
-									var eventsWrapper = timelineComponents['eventsWrapper'].get(0);
+									var evtWpp = timelineComponents['evtWpp'].get(0);
 									value = (value > 0) ? 0 : value;
 									value = (!(typeof totWidth === 'undefined') && value < totWidth) ? totWidth : value;
-									setTransformValue(eventsWrapper, 'translateX', value + 'px');
+									setTransformValue(evtWpp, 'translateX', value + 'px');
 									(value == 0) ? timelineComponents['timelineNavigation'].find('.prev').addClass('inactive'): timelineComponents['timelineNavigation'].find('.prev').removeClass('inactive');
 									(value == totWidth) ? timelineComponents['timelineNavigation'].find('.next').addClass('inactive'): timelineComponents['timelineNavigation'].find('.next').removeClass('inactive');
 								}
@@ -1546,8 +1513,8 @@
 										timeSpanNorm = timeSpan / timelineComponents['eventsMinLapse'],
 										timeSpanNorm = Math.round(timeSpanNorm) + 4,
 										totalWidth = timeSpanNorm * width;
-									timelineComponents['eventsWrapper'].css('width', totalWidth + 'px');
-									updateFilling(timelineComponents['timelineEvents'].eq(0), timelineComponents['fillingLine'], totalWidth);
+									timelineComponents['evtWpp'].css('width', totalWidth + 'px');
+									updateFilling(timelineComponents['timelineEvents'].eq(0), timelineComponents['flLn'], totalWidth);
 									return totalWidth;
 								}
 								function updateVisibleContent(event, eventsContent) {
@@ -1654,7 +1621,7 @@
 									);
 								}
 								function checkMQ() {
-									return window.getComputedStyle(document.querySelector('.cd-horizontal-timeline'), '::before').getPropertyValue('content').replace(/'/g, "").replace(/"/g, "");
+									return window.getComputedStyle(document.querySelector('.hrztl-tl'), '::before').getPropertyValue('content').replace(/'/g, "").replace(/"/g, "");
 								}
 							});
 						</script>
