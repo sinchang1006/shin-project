@@ -21,9 +21,6 @@ selectname::-moz-selection{background:#345898;color:#fff}
 selectname::selection{  background:#345898;  color:#fff}
  */
 
- /* Audio */
- audio{display:none}
-
 /* ActiveHoverEffect */
 .seffect{position:relative}
 .seffect>*{position:relative;z-index:1;border-radius:6px}
