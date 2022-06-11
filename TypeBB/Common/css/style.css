@@ -424,7 +424,7 @@ clip-path:polygon(0% 0%,0% 100%,35% 100%,35% 35%,65% 35%,65% 65%,35% 65%,35% 100
 .gnb div li a{display:block;padding:20px 15px;background-color:#352285;color:#c0b2ff;transition:color .25s,background-color .15s}
 .gnb div li a:hover{background-color:#3a268f;color:#fff}
 @media screen and (max-width:640px){
-  .gnb>ul>li>a{padding:0x}}
+  .gnb>ul>li>a{padding: 0 40px 0 10px;}}
 
 
 /* Search Box Nomal */
