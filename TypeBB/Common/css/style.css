@@ -408,24 +408,25 @@ clip-path:polygon(0% 0%,0% 100%,35% 100%,35% 35%,65% 35%,65% 65%,35% 65%,35% 100
 
 /* StickyLinke */
 #stickyline{background:linear-gradient(90deg,rgb(42 176 250) 0%,rgb(69 41 171) 50%,rgb(20 49 98) 100%)}
-#stickyline.fixed{position:fixed;top:50px;z-index:100;background:linear-gradient(90deg,rgb(15 109 255) 0%,rgb(95 64 209) 50%,rgb(149 33 206) 100%);box-shadow:0 0 10px rgba(0,0,0,.5)}
+#stickyline.fixed{position:fixed;top:50px;height: 40px;z-index:100;background:linear-gradient(90deg,rgb(15 109 255) 0%,rgb(95 64 209) 50%,rgb(149 33 206) 100%);box-shadow: 0 0 10px rgba(0,0,0,.5);}
+#stickyline.fixed>ul>li,
+#stickyline.fixed>ul>li>a,
+#stickyline.fixed>ul>li:hover>a{height:40px;line-height:40px}
+#stickyline.fixed>ul>li li a{padding-top:15px;padding-bottom:15px;}
 .gnb>ul{display:block;margin:0 auto;max-width:1024px;text-align:center;font-size:0}
 .gnb{position:relative;width:100%;height:50px;z-index:1}
-.gnb>ul>li{display:inline-block;vertical-align:top;width:25%;height:50px;position:relative;text-align: center;transition:all .25s;border-right: 1px solid rgba(0,0,0,.1);box-sizing: border-box;}
+.gnb>ul>li{display:inline-block;vertical-align:top;width:25%;height:50px;position:relative;text-align: center;transition:all .25s;box-sizing: border-box;}
 .gnb>ul>li:last-child{border:0 none}
-.gnb>ul>li>a{position:relative;display: inline-block;line-height: 50px;padding: 0 40px 0 0;height:50px;font-size:12px;font-weight:700;color:#ffffff54;box-sizing:border-box;text-align: center;}
-.gnb>ul>li>a ion-icon{position:absolute;top:50%;margin:-5px 0 0 6px;transition:transform .25s;}
-.gnb>ul>li:hover{background-color:#352285;box-shadow:2px 12px 10px rgba(0,0,0,.4);color:#fff}
+.gnb>ul>li>a{position:relative;display: inline-block;line-height: 50px;padding: 0 15px 0 0;height:50px;font-size:12px;font-weight:700;color:#ffffff54;box-sizing:border-box;text-align: center;}
+.gnb>ul>li>a ion-icon{position:absolute;top:50%;margin: -5px 0 0 6px;transition:transform .25s;}
+.gnb>ul>li:hover{background-color: #31236e;box-shadow: 2px 12px 10px rgba(0,0,0,.4);color:#fff}
 .gnb>ul>li:hover a{color:#fff}
 .gnb>ul>li:hover ion-icon{transform:rotate(180deg)}
-.gnb>ul>li div{position:absolute;top:50px;left:0;display:block;height:0;width:100%;visibility:hidden}
+.gnb>ul>li div{position:absolute;top: 40px;left:0;display:block;height:0;width: 100%;visibility:hidden}
 .gnb>ul>li div.focus{visibility:visible;height:100%}
 .gnb div ul{box-shadow:2px 12px 10px rgba(0,0,0,.4)}
-.gnb div li a{display:block;padding:20px 15px;background-color:#352285;color:#c0b2ff;transition:color .25s,background-color .15s}
+.gnb div li a{display:block;padding:20px 15px;background-color: #31236e;color:#c0b2ff;transition:color .25s,background-color .15s}
 .gnb div li a:hover{background-color:#3a268f;color:#fff}
-@media screen and (max-width:640px){
-  .gnb>ul>li>a{padding: 0 40px 0 10px;}}
-
 
 /* Search Box Nomal */
 .scbxnm{position:relative;z-index:1;padding:20px 25vw 0 25vw;background-color:#292437;text-align:center}
@@ -635,7 +636,13 @@ clip-path:polygon(0% 0%,0% 100%,35% 100%,35% 35%,65% 35%,65% 65%,35% 65%,35% 100
     .wrap-slide-box .swiper-pagination-bullet.swiper-pagination-bullet-active{width:100px;border-radius:0;background:#fff;opacity:1;transition:all 1s}
     .wrap-slide-box .swiper-pagination-bullet{border-radius:0;height:2px;width:10px;background-color:#fff;opacity:.37;transition:all .5s}
     .wrap-slide-box .swiper-button-prev,
-    .wrap-slide-box .swiper-button-next{color:#ffffff}
+    .wrap-slide-box .swiper-button-next{color:#ffffff;width: 100px;height: 100px;transition:left .25s, right .25s}
+    .wrap-slide-box .swiper-button-prev{left:-100px}
+    .wrap-slide-box .swiper-button-next{right:-100px}
+    .wrap-slide-box:hover .swiper-button-prev{left:60px}
+    .wrap-slide-box:hover .swiper-button-next{right:60px}
+    .wrap-slide-box .swiper-button-next:after,
+    .wrap-slide-box .swiper-button-prev:after{width: 60px;font-size: 60px;text-align: center;}
     .wrap-slide-box .swiper-horizontal>.swiper-pagination-bullets{bottom:26px}
     .wrap-slide-box .swiper-slide img{width:100%;height:auto}
     .wrap-slide-box .swiper-slide ul{position:absolute;bottom:80px;left:0;width:100%;text-align:center;font-size:0;opacity:0;transition:opacity 2s}
