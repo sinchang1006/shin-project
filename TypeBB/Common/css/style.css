@@ -1667,7 +1667,8 @@ clip-path:polygon(0% 0%,0% 100%,35% 100%,35% 35%,65% 35%,65% 65%,35% 65%,35% 100
   .hrztl-tl .evt-ctt{padding-bottom:100px}
   .hrztl-tl .evt-ctt h2{font-size:24px}
   .hrztl-tl .evt-ctt em{font-size:14px;margin-top:20px}
-  .hrztl-tl .evt-ctt p{font-size:12px}}
+  .hrztl-tl .evt-ctt p{font-size:12px}
+  .hrztl-tl{padding-right:5px;padding-left:5px}}
 
 /* Animation item */
 .anitable{display:flex;align-items:center;justify-content:space-between}
