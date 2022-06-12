@@ -1095,94 +1095,91 @@
 
 					<!-- SwiperControllButton -->
 					<div class="wrap-slide-box">
-						<div class="swiper-button-next"></div>
 						<div class="swiper-container aaaaaa">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide" tabindex="-1">
-								<h1><img src="TypeBB/images/sampleB1.jpg" /></h1>
-								<ul>
-									<li><a href="#!"><span>Push Button</span></a></li>
-								</ul>
+							<div class="swiper-button-next"></div>
+							<div class="swiper-wrapper">
+								<div class="swiper-slide" tabindex="-1">
+									<h1><img src="TypeBB/images/sampleB1.jpg" /></h1>
+									<ul>
+										<li><a href="#!"><span>Push Button</span></a></li>
+									</ul>
+								</div>
+								<div class="swiper-slide" tabindex="-1">
+									<h1><img src="TypeBB/images/sampleB2.jpg" /></h1>
+									<ul>
+										<li><a href="#!"><span>Push Button</span></a></li>
+										<li><a href="#!"><span>Push Button</span></a></li>
+									</ul>
+								</div>
+								<div class="swiper-slide" tabindex="-1">
+									<h1><img src="TypeBB/images/sampleB3.jpg" /></h1>
+									<ul>
+										<li><a href="#!"><span>Push Button</span></a></li>
+										<li><a href="#!"><span>Push Button</span></a></li>
+										<li><a href="#!"><span>Push Button</span></a></li>
+									</ul>
+								</div>
+								<div class="swiper-slide" tabindex="-1">
+									<h1><img src="TypeBB/images/sampleB4.jpg" /></h1>
+									<ul>
+										<li><a href="#!"><span>Push Button</span></a></li>
+										<li><a href="#!"><span>Push Button</span></a></li>
+										<li><a href="#!"><span>Push Button</span></a></li>
+										<li><a href="#!"><span>Push Button</span></a></li>
+									</ul>
+								</div>
+								<div class="swiper-slide" tabindex="-1">
+									<h1><img src="TypeBB/images/sampleB5.jpg" /></h1>
+									<ul>
+										<li><a href="#!"><span>Push Button</span></a></li>
+										<li><a href="#!"><span>Push Button</span></a></li>
+										<li><a href="#!"><span>Push Button</span></a></li>
+										<li><a href="#!"><span>Push Button</span></a></li>
+										<li><a href="#!"><span>Push Button</span></a></li>
+									</ul>
+								</div>
 							</div>
-							<div class="swiper-slide" tabindex="-1">
-								<h1><img src="TypeBB/images/sampleB2.jpg" /></h1>
-								<ul>
-									<li><a href="#!"><span>Push Button</span></a></li>
-									<li><a href="#!"><span>Push Button</span></a></li>
-								</ul>
-							</div>
-							<div class="swiper-slide" tabindex="-1">
-								<h1><img src="TypeBB/images/sampleB3.jpg" /></h1>
-								<ul>
-									<li><a href="#!"><span>Push Button</span></a></li>
-									<li><a href="#!"><span>Push Button</span></a></li>
-									<li><a href="#!"><span>Push Button</span></a></li>
-								</ul>
-							</div>
-							<div class="swiper-slide" tabindex="-1">
-								<h1><img src="TypeBB/images/sampleB4.jpg" /></h1>
-								<ul>
-									<li><a href="#!"><span>Push Button</span></a></li>
-									<li><a href="#!"><span>Push Button</span></a></li>
-									<li><a href="#!"><span>Push Button</span></a></li>
-									<li><a href="#!"><span>Push Button</span></a></li>
-								</ul>
-							</div>
-							<div class="swiper-slide" tabindex="-1">
-								<h1><img src="TypeBB/images/sampleB5.jpg" /></h1>
-								<ul>
-									<li><a href="#!"><span>Push Button</span></a></li>
-									<li><a href="#!"><span>Push Button</span></a></li>
-									<li><a href="#!"><span>Push Button</span></a></li>
-									<li><a href="#!"><span>Push Button</span></a></li>
-									<li><a href="#!"><span>Push Button</span></a></li>
-								</ul>
-							</div>
+							<div class="swiper-button-prev"></div>
+							<div class="swiper-pagination"></div>
+							<div class="wrap-autoplay-control"><button aria-pressed="false" aria-label="Play Stop"></button></div>
 						</div>
-						<div class="swiper-button-prev"></div>
-						<div class="swiper-pagination"></div>
-						<div class="wrap-autoplay-control">
-							<button aria-pressed="false" aria-label="Play Stop"></button>
-						</div>
+						<script>
+							new Swiper('.aaaaaa', {
+								autoplay: {
+									delay:4000,
+									disableOnInteraction:false,
+								},
+								navigation: {
+									nextEl: '.wrap-slide-box .swiper-button-next',
+									prevEl: '.wrap-slide-box .swiper-button-prev',
+								},
+								pagination: {
+									el: ".swiper-pagination",
+								},
+								a11y: {
+									prevSlideMessage: '이전 슬라이드',
+									nextSlideMessage: '다음 슬라이드',
+									slideLabelMessage: '총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.',
+								},
+								on: {
+									init: function () {
+										thisSlide = this;
+										autoPlayBtn = document.querySelector('.wrap-autoplay-control > button');
+										autoPlayBtn.addEventListener('click', (e) => {
+											autoPlayState = autoPlayBtn.getAttribute('aria-pressed');
+											if (autoPlayState === 'false') {
+												autoPlayBtn.setAttribute('aria-pressed', 'true');
+												thisSlide.autoplay.stop();
+											} else if (autoPlayState === 'true') {
+												autoPlayBtn.setAttribute('aria-pressed', 'false');
+												thisSlide.autoplay.start();
+											};
+										});
+									},
+								},
+							})
+						</script>
 					</div>
-				  </div>
-				  <script>
-					  new Swiper('.aaaaaa', {
-						autoplay: {
-							delay:4000,
-							disableOnInteraction:false,
-						},
-						navigation: {
-							nextEl: '.wrap-slide-box .swiper-button-next',
-							prevEl: '.wrap-slide-box .swiper-button-prev',
-						},
-						pagination: {
-							el: ".swiper-pagination",
-						},
-						a11y: {
-							prevSlideMessage: '이전 슬라이드',
-							nextSlideMessage: '다음 슬라이드',
-							slideLabelMessage: '총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.',
-						},
-						on: {
-							init: function () {
-								thisSlide = this;
-								autoPlayBtn = document.querySelector('.wrap-autoplay-control > button');
-								autoPlayBtn.addEventListener('click', (e) => {
-									autoPlayState = autoPlayBtn.getAttribute('aria-pressed');
-									if (autoPlayState === 'false') {
-										autoPlayBtn.setAttribute('aria-pressed', 'true');
-										thisSlide.autoplay.stop();
-									} else if (autoPlayState === 'true') {
-										autoPlayBtn.setAttribute('aria-pressed', 'false');
-										thisSlide.autoplay.start();
-									};
-								});
-							},
-						},
-					})
-				  </script>
-					
 				</div>
 
 				<div class="box-column">
