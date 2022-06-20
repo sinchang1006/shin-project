@@ -5,12 +5,15 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<!-- Media Query를 활용하기 위해 꼭 들어가야 할 메타태그 -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="Subject" content=""> <!-- Page Information -->
+        <meta name="Title" content=""> <!-- Bland Title -->
+        <meta name="Description" content=""> <!-- Bland Detail Content -->
 		<link rel="shortcut icon" type="image/x-icon" href="TypeBB/favicon.ico" /> <!-- favicon -->
-		<title>Javascript Jquery Css3 Example</title>
-		<link type="text/css" rel="stylesheet" href="TypeBB/Common/css/Reset.css" /> <!-- reset -->
-		<link type="text/css" rel="stylesheet" href="TypeBB/Common/css/style.css" /><!-- style -->
-		<script src="TypeBB/Common/js/jquery-3.5.1.min.js"></script> <!-- jquery.js -->
-		<script src="TypeBB/Common/js/materialize.min.js"></script> <!-- materialize js -->
+		<title>Javascript Jquery Css3 Example</title> <!-- Page Title -->
+		<link type="text/css" rel="stylesheet" href="TypeBB/Common/css/Reset.css" /> <!-- Reset.css -->
+		<link type="text/css" rel="stylesheet" href="TypeBB/Common/css/style.css" /><!-- ContentLayout.css -->
+		<script src="TypeBB/Common/js/jquery-3.5.1.min.js"></script> <!-- Library jquery.js -->
+		<script src="TypeBB/Common/js/materialize.min.js"></script> <!-- Library Materialize js -->
 		
 		<!-- A tag Smooth Move  -->
 		<script>
@@ -23,7 +26,7 @@
 	</head>
 	<body id="top">
 		
-		<!-- skip nav -->
+		<!-- Skip Nav -->
         <div id="skip_nav">
             <ul>
                 <li><a href="#content">Top Move</a></li>
@@ -31,7 +34,7 @@
             </ul>
         </div>
 
-		<!-- PromotionBanner
+		<!-- PromotionBanner  -->
 		<div id="promotionBanner" class="promotion-banner">
 			<div class="content">
 				<div class="banner"><img src="../../Common/Images/thumnail_G.png"></div>
@@ -65,7 +68,7 @@
 			else {
 				document.all['promotionBanner'].style.display = "none"; 
 			}
-		</script>  -->
+		</script>
 
 		<!-- FullAllMenu -->
 		<div id="myNav" class="navbtn overlay">
@@ -1260,6 +1263,8 @@
 					
 					<!-- AccessibilityTabContent -->
 					<div class="tabnomal" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+						<h5>Accessibility:Tab&Content</h5>
+						<p>Tab Title Animation, Content a hover effect</p>
 						<div id="acboard" class="acboard">
 							<div class="tabox">
 								<div class="content a active">
@@ -1278,10 +1283,10 @@
 									<h4><a href="#!">Thor</a></h4>
 									<div class="box">
 										<ul>
-											<li><a href="#!" title="">Marvel Studios' Avengers: Endgame | Official Trailer 1</a><span class="date">2022.05.27</span></li>
-											<li><a href="#!" title="">Part of the journey is the end</a><span class="date">2022.05.27</span></li>
-											<li><a href="#!" title="">Marvel Studios' The Avengers | Official Trailer #1</a><span class="date">2022.05.27</span></li>
-											<li><a href="#!" title="">Marvel Studios presents in association with Paramount Pictures "Marvel's The Avengers"--the super hero team up of a lifetime, featuring iconic Marvel super heroes Iron Man, the Incredible Hulk, Thor, Captain America, Hawkeye and Black Widow.</a><span class="date">2022.05.27</span></li>
+											<li><a href="#!" title="">Marvel Studios' Avengers: Endgame</a><span class="date">2022.05.27</span></li>
+											<li><a href="#!" title="">Part of the</a><span class="date">2022.05.27</span></li>
+											<li><a href="#!" title="">Marvel Studios' The Avengers</a><span class="date">2022.05.27</span></li>
+											<li><a href="#!" title="">Black Widow.</a><span class="date">2022.05.27</span></li>
 										</ul>
 										<a href="#!" title="more" class="morebtn"><ion-icon name="chevron-forward-outline"></ion-icon></a>
 									</div>
@@ -1313,6 +1318,8 @@
 					<!-- TimeLine -->
 					<div class="timeline">
 						<section class="hrztl-tl">
+							<h5>History Timeline</h5>
+							<p>Horizontal history layout, date & left and right arrow control function, responsive</p>
 							<div class="timeline">
 								<div class="evt-wrpp">
 									<div class="events">
@@ -1630,6 +1637,8 @@
 
 					<!-- KeyboardLayout -->
 					<div class="kbdpad" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+						<h5>Custom Keyboard Layout</h5>
+						<p>Direct design, publishing of keyboard design using css</p>
 						<div id="keyboard" class="keyboard">
 							<div class="tabox">
 								<div class="content a active">
@@ -1920,11 +1929,41 @@
 						</div>
 						
 						<!-- TypingText -->
+						<h5 class="magt">Typing Animation(Refresh when playback stops)</h5>
+						<p>Change the width to 100% and implement it by changing the color on the right side of the border</p>
 						<div class="tptext">
 							<div class="tptt"><h1>and Marvel Comics Group</h1></div>
 							<div class="tptt a"><h1>Marvel Studios' Avengers: Endgame | Official Trailer 1</h1></div>
 							<div class="tptt b"><h1>Marvel Studios presents in association with Paramount Pictures "Marv</h1></div>
 							<div class="tptt c"><h1>Marvel Studios' The Avengers | Official Trailer #1</h1></div>
+						</div>
+
+						<!-- TabSlideContent -->
+						<h5 class="magt">Tab Slide Content</h5>
+						<p>Slide by clicking tab, using the x-coordinate of translate, and moving the element</p>
+						<div style="padding:20px;background-color:#fff">
+							<div class="tsdctt">
+								<ul>
+									<li class="tsdbutton active"><button><span>Tab 1</span></button></li>
+									<li class="tsdbutton"><button><span>Tab 2</span></button></li>
+									<li class="tsdbutton"><button><span>Tab 3</span></button></li>
+								</ul>
+								<div id="tab" class="tabs">
+									<div><a href="#!">Content 1</a></div>
+									<div><a href="#!">Content 2</a></div>
+									<div><a href="#!">Content 3</a></div>
+								</div>
+								<script>
+									const btn = [].slice.call(document.getElementsByClassName('tsdbutton'));
+									btn.forEach((item, index) => {
+										item.addEventListener('click', function () {
+											btn.forEach(item => {item.classList.remove('active');});
+											item.classList.add('active');
+											document.getElementById('tab').setAttribute('data-tab', index);
+										});
+									});
+								</script>
+							</div>
 						</div>
 					</div>
 
@@ -3195,13 +3234,97 @@
 					</script>
 				</div>
 
+				<!-- SwiperLeftRight -->
+				<div class="swplfrt">
+					<!-- Slider main container -->
+					<div class="swiper-container lfrtslide">
+						<!-- Additional required wrapper -->
+						<div class="swiper-wrapper">
+							<!-- Slides -->
+							<div class="swiper-slide"><img src="TypeBB/images/sampleA1.jpg"></div>
+							<div class="swiper-slide"><img src="TypeBB/images/sampleA2.jpg"></div>
+							<div class="swiper-slide"><img src="TypeBB/images/sampleA3.jpg"></div>
+							<div class="swiper-slide"><img src="TypeBB/images/sampleA4.jpg"></div>
+							<div class="swiper-slide"><img src="TypeBB/images/sampleA5.jpg"></div>
+							<div class="swiper-slide"><img src="TypeBB/images/sampleA6.jpg"></div>
+							<div class="swiper-slide"><img src="TypeBB/images/sampleA7.jpg"></div>
+						</div>
+						<div class="pagination"><ul class="swiper-pagination"></ul></div>
+						<div class="next"><ion-icon name="chevron-forward-sharp"></ion-icon></div>
+						<div class="prev"><ion-icon name="chevron-back-sharp"></ion-icon></div>
+					</div>
+					<script>
+						var bullet = ['1', '2', '3', '4', '5', '6', '7'];
+						var mySwiper = new Swiper ('.lfrtslide', {
+							slidesPerView: 2,
+							speed: 400,
+							spaceBetween:18,
+							initialSlide: 0,
+							autoHeight: false,
+							loopFillGroupWithBlank: true,
+							direction: 'horizontal',
+							loop: true,
+							autoplay: {
+								delay:4000,
+								disableOnInteraction:false,
+							},
+							touchRatio: 0.3,
+							pagination: {
+								el: '.lfrtslide .swiper-pagination',
+								clickable: true,
+								renderBullet: function (index, className) {
+									return '<li class="' + className + '"><span>' + (bullet[index]) + '</span></li>';
+								}
+							},
+							navigation: {
+								nextEl: '.next',
+								prevEl: '.prev',
+							},
+							effect: 'slide',
+							centeredSlides: true,
+							grabCursor: true,
+							breakpoints: {
+								1600: {
+									slidesPerView: 3.75,
+									spaceBetween: 20,
+								},
+								1024: {
+									slidesPerView: 4,
+									spaceBetween: 20,
+								},
+								768: {
+									slidesPerView: 2,
+									spaceBetween: 20,
+								},
+								420: {
+									slidesPerView:1.5,
+									spaceBetween: 20,
+								},
+								360: {
+									slidesPerView:1,
+									spaceBetween:0,
+								},
+								1: {
+									slidesPerView:1,
+									spaceBetween:0,
+								},
+							}
+						});
+						$(".lfrtslide").hover(function () {
+							(this).swiper.autoplay.stop();
+						}, function () {
+							(this).swiper.autoplay.start();
+						});
+					</script>
+				</div>
+
 				<!-- TextShadowStyle -->
 				<div class="tsws">
 					<ul>
 						<li class="tw1"><span><i>A</i><i>v</i><i>e</i><i>n</i><i>g</i><i>e</i><i>r</i><i>'</i><i>s</i></span></li>
 					</ul>
 				</div>
-
+				
 			</div>
 		</div>
 

@@ -34,8 +34,15 @@
             .content h2{display: block;padding: 0 30px;line-height:100%;color: #fff;text-align: center;font-family: 'Black Han Sans','Rajdhani', sans-serif;word-break: keep-all;font-size:34px;font-weight: normal;line-height:40px}
             .content span{display:block;padding:0 20px;color:#fff;font-size:11px;padding-top:10px;text-align:center;font-family: 'Rajdhani', sans-serif;word-break: keep-all;}
             .content span:last-child{padding-top:16px;font-size:10px;letter-spacing:.05em;color:#b4dbff}
-            ion-icon{margin-bottom:20px;animation:puzzleani 3s infinite backwards;font-size:30px;}
+            ion-icon{margin-bottom:20px;animation:puzzleani 3s infinite backwards;font-size:60px;}
             .text{margin-bottom:20%}
+            @-webkit-keyframes puzzleani{
+                0%{transform:rotate(0deg);transform-origin:center;color:rgb(255, 255, 255)}
+                25%{transform:rotate(90deg);transform-origin:center;color:rgb(225, 255, 154)}
+                50%{transform:rotate(180deg);transform-origin:center;color:rgb(168, 230, 255)}
+                75%{transform:rotate(260deg);transform-origin:center;color:rgb(251, 189, 255)}
+                100%{transform:rotate(360deg);transform-origin:center;color:rgb(255, 255, 255)}
+            }
             @keyframes puzzleani{
                 0%{transform:rotate(0deg);transform-origin:center;color:rgb(255, 255, 255)}
                 25%{transform:rotate(90deg);transform-origin:center;color:rgb(225, 255, 154)}
