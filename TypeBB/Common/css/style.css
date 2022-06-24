@@ -531,10 +531,10 @@ clip-path:polygon(0% 0%,0% 100%,35% 100%,35% 35%,65% 35%,65% 65%,35% 65%,35% 100
     .cardslide .swiper-slide.swiper-slide-next>div:before{height:100%;transition:height 4s ease;background-color:#ff00b0}
     .cardslide .swiper-slide>div{position:relative;display:flex;height:100%;align-items:center;justify-content:center}
     .cardslide .swiper-slide>div>div{position:absolute;bottom:25%;left:0;padding:0 30px;width:100%;box-sizing:border-box}
-    .cardslide .swiper-slide h5{color:#ffffff;text-align:center;font-size:4.5vw;letter-spacing:2px;font-weight:700;opacity:0;visibility:hidden;transform:translateY(150px)}
+    .cardslide .swiper-slide h5{color:#ffffff;text-align:center;font-size:4.5vw;letter-spacing:2px;font-weight:700;line-height: 100%;opacity:0;visibility:hidden;transform: translateY(150px);}
     .cardslide .swiper-slide p{color:#ffffff;text-align:center;font-size:18px;margin-bottom:10px;line-height:22px;font-weight:200;letter-spacing:1px;opacity:0;visibility:hidden;transform:translateY(150px)}
     .cardslide .swiper-slide p:last-child{font-size:11px;opacity:0;visibility:hidden;transform:translateY(200px);font-weight:100}
-    .cardslide .swiper-slide-next h5{opacity:1;visibility:visible;transform:translateY(0px);transition-property:all;transition-duration:1s;transition-timing-function:cubic-bezier(0.175,0.885,0.320,1.275)}
+    .cardslide .swiper-slide-next h5{opacity:1;visibility:visible;transform: translateY(-20px);transition-property:all;transition-duration:1s;transition-timing-function:cubic-bezier(0.175,0.885,0.320,1.275)}
     .cardslide .swiper-slide-next p{opacity:1;visibility:visible;transform:translateY(0px);transition-property:all;transition-duration:1s;transition-delay:0.4s;transition-timing-function:cubic-bezier(0.175,0.885,0.320,1.275)}
     .cardslide .swiper-slide-next p:last-child{opacity:1;visibility:visible;transform:translateY(0px);transition-property:all;transition-duration:1s;transition-delay:0.6s;transition-timing-function:cubic-bezier(0.175,0.885,0.320,1.275)}
     .cardslide .swiper-slide svg{position:absolute;top:-100px;left:10px;width:30px;height:auto;z-index:1;opacity:0;transition:top 2s,opacity 2s}
@@ -553,7 +553,9 @@ clip-path:polygon(0% 0%,0% 100%,35% 100%,35% 35%,65% 35%,65% 65%,35% 65%,35% 100
     @media screen and (max-width:1024px){
       .cardslide .swiper-slide>div:after,
       .cardslide .swiper-slide>div:before{width:2px}
-      .cardslide .swiper-slide>div>div{bottom:40px;padding:0 10px}}
+      .cardslide .swiper-slide>div>div{bottom:40px;padding:0 10px}
+      .cardslide .swiper-slide-next h5{transform: translateY(-1vw);}
+      .cardslide .swiper-slide h5{line-height:20px;}}
     @media screen and (max-width:768px){
       .cardslide .swiper-slide>div:after,
       .cardslide .swiper-slide>div:before{width:2px}
@@ -1580,19 +1582,29 @@ clip-path:polygon(0% 0%,0% 100%,35% 100%,35% 35%,65% 35%,65% 65%,35% 65%,35% 100
   .side-item .list li a{padding-right:10px;padding-left:10px}}
 
 /* PromotionBanner */
-.promotion-banner{position:fixed;top:0;left:0;z-index:99999;width:100%;height:100%;background-color:#000000}
-.promotion-banner .content{position:relative;width:100%;height:110px;margin:0 auto;padding:0;overflow:hidden}
-.promotion-banner .content:after{content:'';position:absolute;top:0;left:0;display:block;width:100%;height:110px;box-shadow:border-box;border:1px solid rgba(0,0,0,.5);pointer-events:none}
-.promotion-banner .content>div{overflow:hidden}
-.promotion-banner .banner{width:100%;height:110px}
-.promotion-banner .banner img{height:110px;width:100%}
-.promotion-banner .close-button{position:absolute;top:0;right:0;display:block;width:30px;height:30px;background:rgba(0,0,0,.8) url(../../../Common/Images/btn_close.png)no-repeat center center;transition:all .5s;opacity:.5}
+.promotion-banner{position:fixed;top:0;left:0;z-index:99999;width:100%;height:100%;background-color: rgba(0,0,0,.85);}
+.promotion-banner>div{display:flex;align-items: center;justify-content:center;height: 100%;}
+.promotion-banner .content{position:relative;width: 30%;display: inline-block;padding:0;border-radius: 10px;overflow: hidden;font-size: 0;}
+.promotion-banner h3{position: relative;display: flex;align-items: center;padding: 10px 70px 10px 20px;height: 50px;color: #000;font-size: 14px;background-color: #ffffff;border-bottom: 1px solid #eee;text-align: left;word-break: keep-all;line-height: 20px;}
+.promotion-banner .banner{position: relative;z-index: 1;padding: 16px;background-color: #ececec;width: 100%;max-height: 600px;overflow-y: auto;font-size: 0;box-sizing: border-box;}
+.promotion-banner .banner p{text-align:left;word-break:keep-all}
+.promotion-banner .banner img{margin:20px 0;height: 134%;width: 100%;}
+.promotion-banner .close-button{position:absolute;top: 0;right: 0;z-index: 1;width: 50px;height: 100%;display: flex;align-items: center;justify-content: center;transition:all .5s;color: #000;text-align: center;font-size: 30px;}
 .promotion-banner .close-button:hover,
 .promotion-banner .close-button:focus{transition:all .5s;opacity:1}
-.promotion-banner .close-info{position:absolute;bottom:0;right:0;padding:0 0 0 20px;width:auto;height:30px;box-sizing:border-box;background-color:rgba(0,0,0,.4);color:#fff;text-align:right;line-height:30px}
-.promotion-banner .close-info input{position:relative;top:-1px;vertical-align:middle}
-.promotion-banner .close-info label{display:inline-block;padding:0 20px 0 8px;line-height:30px;cursor:pointer}
+.promotion-banner .close-info{display: flex;justify-content: right;align-items: center;width: 100%;height: 50px;box-sizing:border-box;background-color: #4f49da;color:#fff;}
+.promotion-banner .close-info input{position:relative;}
+.promotion-banner .close-info label{display:inline-block;padding:0 20px 0 8px;line-height:30px;font-weight: 300;font-size: 12px;cursor:pointer}
 .promotion-banner .close-info label:hover{opacity:.8;text-decoration:underline}
+@media screen and (max-width:1024px){
+  .promotion-banner .content{width:80%}
+  .promotion-banner .banner{max-height:400px}}
+@media screen and (max-width:768px){
+  .promotion-banner .content{width:80%}
+.promotion-banner .banner{max-height:300px}}
+@media screen and (max-width:640px){
+  .promotion-banner .content{width:80%}
+.promotion-banner .banner{max-height:250px}}
 
 /* TypingText */
 .tptext{padding: 30px 0 0 0;text-align:left}
