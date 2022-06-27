@@ -1593,8 +1593,7 @@ clip-path:polygon(0% 0%,0% 100%,35% 100%,35% 35%,65% 35%,65% 65%,35% 65%,35% 100
 .promotion-banner .close-button:hover,
 .promotion-banner .close-button:focus{transition:all .5s;opacity:1}
 .promotion-banner .close-info{display: flex;justify-content: right;align-items: center;width: 100%;height: 50px;box-sizing:border-box;background-color: #4f49da;color:#fff;}
-.promotion-banner .close-info input{position:relative;}
-.promotion-banner .close-info label{display:inline-block;padding:0 20px 0 8px;line-height:30px;font-weight: 300;font-size: 12px;cursor:pointer}
+.promotion-banner .close-info label{margin-right: 20px;line-height:30px;font-weight: 200;font-size: 11px;cursor:pointer}
 .promotion-banner .close-info label:hover{opacity:.8;text-decoration:underline}
 @media screen and (max-width:1024px){
   .promotion-banner .content{width:80%}
@@ -1737,7 +1736,19 @@ clip-path:polygon(0% 0%,0% 100%,35% 100%,35% 35%,65% 35%,65% 65%,35% 65%,35% 100
 .tsdctt .tabs[data-tab='3'] {transform: translateX(-300%);}
 .tsdctt .tabs[data-tab='4'] {transform: translateX(-400%);}
 
-/* AccessibilityTabContent */
+/* CheckBoxStyle */
+.checkboxstyle, .radiostyle{position: relative;display: inline-block;padding-left: 40px;margin-right: 60px;font-size: 18px;}
+.checkboxstyle input, .radiostyle input{position: absolute;left: 0;top: 0;width: 26px;height: 26px;opacity: 0;}
+.cbicon,
+.rficon{position: absolute;width: 26px;height: 26px;top: 0;left: 0px;border: 1px solid #3a35a6;background: #3a35a6;border-radius: 4px;transition: all .25s;}
+.rficon{border-radius: 50%;}
+.checkboxstyle input:checked ~ .cbicon,
+.radiostyle input:checked ~ .rficon{background: #2d2988;border-color: #211e67;animation: CheckRadioAnimation 250ms linear;}
+.checkboxstyle input:checked ~ .cbicon:before{content: '';width: 10px;height: 4px;top: 8px;left: 7px;border-left: 2px solid #ffffff;border-bottom: 2px solid #ffffff;position: absolute;transform: rotate(-45deg);}
+.radiostyle input:checked ~ .rficon:before{content: '';position: absolute;top: 5px;left: 5px;width: 16px;height: 16px;border-radius: 50%;background: #fff;}
+@keyframes CheckRadioAnimation{
+  from{transform: scale(1.2); opacity: 0.1}
+  to{transform: scale(1); opacity: 0.7}}
 
 /* Animation item */
 .anitable{display:flex;align-items:center;justify-content:space-between}
