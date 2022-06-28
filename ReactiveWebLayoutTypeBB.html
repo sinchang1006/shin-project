@@ -44,9 +44,9 @@
 						<img src="TypeBB/images/sampleA5.jpg" style="width:100%;height:auto">
 					</div>
 					<div class="close-info">
-						<label class="checkboxstyle">
-							<input type="checkbox" name="" />
-							<span class="cbicon"></span>오늘 하루 그만보기
+						<label for="chkday" class="checkboxstyle">오늘 하루 그만보기
+							<input type="checkbox" name="chkbox" id="chkday" />
+							<span class="cbicon"></span></label>
 						</label>
 					</div>
 				</div>
@@ -60,7 +60,6 @@
 			}
 			$(document).ready(function(){
 				$("#promotionBanner .close-button").click(function(){
-					//cooki
 					if($("#chkday").is(':checked')){
 						//$.cookie('topPop','done',{expores:1, path:'/'});
 						setCookie( "topPop", "done" , 1 ); 
@@ -2902,21 +2901,34 @@
 					</ul>
 				</div>
 
-				<div class="box-column">
+				<!-- CheckBoxStyle -->
+				<div class="box-column ipchrdo">
 					<div>
-						<label class="checkboxstyle">
+						<label class="checkboxstyle a">CheckBoxStyle
+							<input type="checkbox" name="" checked="checked" />
+							<span class="cbicon"></span>
+						</label>
+						<label class="checkboxstyle b">CheckBoxStyle
 							<input type="checkbox" name="" />
-							<span class="cbicon"></span>CheckBoxStyle
+							<span class="cbicon"></span>
+						</label>
+						<label class="checkboxstyle c">CheckBoxStyle
+							<input type="checkbox" name="" />
+							<span class="cbicon"></span>
 						</label>
 					</div>
 					<div>
-						<label class="radiostyle">
-							<input type="radio" name="lang">
-							<span class="rficon"></span>RadioButtonStyle
+						<label class="radiostyle a">RadioButtonStyle
+							<input type="radio" name="lang" checked="checked">
+							<span class="rficon"></span>
 						</label>
-						<label class="radiostyle">
+						<label class="radiostyle b">RadioButtonStyle
 							<input type="radio" name="lang">
-							<span class="rficon"></span>RadioButtonStyle
+							<span class="rficon"></span>
+						</label>
+						<label class="radiostyle c">RadioButtonStyle
+							<input type="radio" name="lang">
+							<span class="rficon"></span>
 						</label>
 					</div>
 				</div>
