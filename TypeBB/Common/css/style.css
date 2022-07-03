@@ -1767,14 +1767,15 @@ clip-path:polygon(0% 0%,0% 100%,35% 100%,35% 35%,65% 35%,65% 65%,35% 65%,35% 100
 .checkboxstyle.b .cbicon{background-color:#eee;border-color:#ccc}
 .checkboxstyle.c .cbicon{background-color:#eee;border-color:#ccc}
 .radiostyle.a .rficon{background-color:#eee;border-color:#ccc}
-.radiostyle.b .rficon{background-color:#eee;border-color:#ccc}
+.radiostyle.b .rficon{background-color:#eee;border-color: transparent;}
 .radiostyle.c .rficon{background-color:#eee;border-color:#ccc}
-.radiostyle.a input:checked ~ .rficon{background-color: #555;border-color: #333;}
-.radiostyle.b input:checked ~ .rficon{background-color: #2d2988;border-color: #211e67}
-.radiostyle.c input:checked ~ .rficon{background-color: #2d2988;border-color: #211e67}
-.radiostyle.a input:checked ~ .rficon:before{background-color:#ff0}
-.radiostyle.b input:checked ~ .rficon:before{background-color:#ff0}
-.radiostyle.c input:checked ~ .rficon:before{background-color:#ff0}
+.radiostyle.a input:checked ~ .rficon{background-color: #555;border-color: #555555;}
+.radiostyle.b input:checked ~ .rficon{background-color: #545454;border-color: #000000;}
+.radiostyle.c input:checked ~ .rficon{background-color: #5f95c8;border-color: #4378ab;}
+.radiostyle.a input:checked ~ .rficon:before{background-color: #fff;}
+.radiostyle.b input ~ .rficon:before{content: '';position: absolute;top: 50%;left: 50%;width: 10px;height: 10px;border-radius: 50%;background: #fff;box-shadow: 1px 1px 0 rgba(0,0,0,.1);transition: width .25s, height .25s;transform: translate(-50%, -50%);}
+.radiostyle.b input:checked ~ .rficon:before{background-color: #fff;width: 18px;height: 18px;}
+.radiostyle.c input:checked ~ .rficon:before{background-color: #fff;}
 @keyframes CheckRadioAnimation{
   from{transform: scale(1.2); opacity: 0.1}
   to{transform: scale(1); opacity: 0.7}}
