@@ -310,6 +310,7 @@
 		</header>
 
 		<div class="wrap">
+
 			<div class="container" id="container">
 
 				<!-- Search Box Nomal -->
@@ -1206,7 +1207,7 @@
 					</script>
 
 					<!-- MetarializeButtonEffect -->
-					<div class="bttef" data-aos="fade-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<div class="bttef" data-aos="fade-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 						<h5>Metarialize :active background-color effect</h5>
 						<p>nomal class setting : btn, secondary-content = delete</p>
 						<ul class="materializeiconstyle">
@@ -1222,7 +1223,7 @@
 					</div>
 
 					<!-- ReadMore -->
-					<div class="readmore" data-aos="fade-down" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<div class="readmore" data-aos="fade-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 						<h5>Read more text</h5>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel
 							<span id="dots" style="display: inline-block;">...</span>
@@ -1270,10 +1271,77 @@
 					</div>
 				</div>
 
+				<div class="box-column">
+					<div class="conopp" data-aos="fade-down" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
+						<h5>Css Only Modal Popup</h5>
+						<p>Activating the target by connecting element id value and id value of a tag</p>
+						<p>Finding ways to add javascript to solve this</p>
+						<p>※ When you click the back key, the history is left.</p>
+						<div class="cono">
+							<a class="csspbutton" href="#popup1">popup with button</a>
+							<!-- onclick="return false;" 위치 이동 막기 -->
+							<a class="csspbutton" href="#popup2">popup without button</a>
+						</div>
+						
+						<div id="popup1" class="csspopoverlay">
+							<div class="csspp">
+								<h2>popup with button</h2>
+								<a class="close" href="#!">&times;</a>
+								<div class="content">
+									<p>This is done totally without JavaScript. Just HTML and CSS.</p>
+								</div>
+							</div>
+						</div>
+						
+						<div id="popup2" class="csspopoverlay light">
+							<a class="cancel" href="#!"></a>
+							<div class="csspp">
+								<h2>popup without button</h2>
+								<div class="content">
+							  		<p>Click outside the popup to close.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="siopp">
+						
+						<h5>Simple implementation of popup</h5>
+						<p>Dynamic simple popup with transform applied</p>
+						<a class="btn popup-btn" href="#">Open Popup Button</a>
+						<div class="popup-wrap">
+							<div class="popup-box">
+								<h2>Simple implementation of popup</h2>
+								<h3>Dynamic simple popup with transform applied</h3>
+								<a class="close-btn popup-close" href="#"><ion-icon name="close-outline"></ion-icon></a>
+							</div>
+						</div>
+							
+
+						<script>
+							$(document).ready(function() {
+								$('.popup-btn').click(function(e) {
+									$('.popup-wrap').fadeIn(500);
+									$('.popup-box').removeClass('transform-out').addClass('transform-in');
+
+									e.preventDefault();
+								});
+
+								$('.popup-close').click(function(e) {
+									$('.popup-wrap').fadeOut(500);
+									$('.popup-box').removeClass('transform-in').addClass('transform-out');
+
+									e.preventDefault();
+								});
+							});
+						</script>
+					</div>
+
+				</div>
+
 				<div class="box-column twothree">
 					
 					<!-- AccessibilityTabContent -->
-					<div class="tabnomal" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<div class="tabnomal" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 						<h5>Accessibility:Tab&Content</h5>
 						<p>Tab Title Animation, Content a hover effect</p>
 						<div id="acboard" class="acboard">
@@ -1647,7 +1715,7 @@
 				<div class="box-column">
 
 					<!-- KeyboardLayout -->
-					<div class="kbdpad" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<div class="kbdpad" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 						<h5>Custom Keyboard Layout</h5>
 						<p>Direct design, publishing of keyboard design using css</p>
 						<div id="keyboard" class="keyboard">
@@ -1979,7 +2047,7 @@
 					</div>
 
 					<!-- StoreItemList -->
-					<div class="stit" data-aos="fade-left" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<div class="stit" data-aos="fade-left" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 						<div class="side-item">
 							<div class="item-top">
 								<h5>Market Store Name</h5>
@@ -2086,7 +2154,7 @@
 				<div class="box-column">
 
 					<!-- FileUploadIN -->
-					<div class="ipmultipleremovename" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<div class="ipmultipleremovename" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 						<h5>file upload multiple(image, name)</h5>
 						<ul>
 							<li>Uploadable file : jpg, png, gif</li>
@@ -2259,11 +2327,10 @@
 								};
 								arrCounter = arrCounter + 1;
 							}
-						</script>
+						</script>						
 					</div>
-
 					<!-- FileUploadI -->
-					<div class="ipmultipleremove" data-aos="fade-left" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<div class="ipmultipleremove" data-aos="fade-left" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 						<h5>file upload multiple(image)</h5>
 						<div class="file-page">
 							<div class="buttons">
@@ -2336,7 +2403,7 @@
 
 				<!-- InputAutoLineDelete -->
 				<div class="box-column">
-					<div class="iald" data-aos="zoom-in-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<div class="iald" data-aos="zoom-in-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 						<h5>Input :Active Line Animation</h5>
 						<p>Line Color Black</p>
 						<div class="autoline">
@@ -2359,7 +2426,7 @@
 						</script>
 					</div>
 					
-					<div class="iald" data-aos="zoom-in-down" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<div class="iald" data-aos="zoom-in-down" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 						<h5>Input Css :Active Title Top Animation</h5>
 						<p>Active title visible, Disable title hidden</p>
 						<section class="ipctin">
@@ -2389,7 +2456,7 @@
 				<div class="box-column">
 
 					<!-- PaginationTypeA -->
-					<div class="pagination a" data-aos="zoom-out" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<div class="pagination a" data-aos="zoom-out" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 						<h5>Pagination one middle pages</h5>
 						<p>The form in which the middle page can be seen</p>
 						<div class="pfntl" data-pagination="">
@@ -2413,7 +2480,7 @@
 					</div>
 
 					<!-- PaginationTypeB -->
-					<div class="pagination b" data-aos="zoom-out-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<div class="pagination b" data-aos="zoom-out-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 						<h5>Pagination two middle pages - javascript</h5>
 						<p>A form that shows two middle pages</p>
 						<div id="pagination" class="pfntlb"></div>
@@ -2481,7 +2548,7 @@
 
 				<!-- EllipsisContent -->
 				<div class="box-column elss">
-					<div class="ellipsisa" data-aos="fade-left" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<div class="ellipsisa" data-aos="fade-left" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 						<h5>Post Two Line Limit</h5>
 						<p>maximum 2 lines limit</p>
 						<ul>
@@ -2517,7 +2584,7 @@
 							</li>
 						</ul>
 					</div>
-					<div class="ellipsisb" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<div class="ellipsisb" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 						<h5>Post One Line Limit</h5>
 						<p>maximum 1 lines limit</p>
 						<ul>
@@ -2558,7 +2625,7 @@
 				<div class="box-column pwhfl">
 
 					<!-- PassWordHidden -->
-					<div class="passwordhidden" data-aos="fade-left" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<div class="passwordhidden" data-aos="fade-left" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 						<h5>Password Hidden or Show</h5>
 						<p>checkbox click &gt; input type="password" &gt; type="text" change</p>
 						<p>i tag : Metarilize Icon = inline / data-icon="visibility", visibility = icon name</p>
@@ -2582,7 +2649,7 @@
 					</div>
 
 					<!-- NoticeIcon -->
-					<div class="nti" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<div class="nti" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 						<h5>:Hover :Active Animation Bell</h5>
 						<p>checkbox click &gt; input type="password" &gt; type="text" change</p>
 						<ul class="noticeicon">
@@ -2599,7 +2666,7 @@
 				<div class="box-column">
 
 					<!-- FixedLayout -->
-					<div class="hdbtfixed" data-aos="fade-left" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<div class="hdbtfixed" data-aos="fade-left" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 						<h5>Header Bottom Fixed Layout</h5>
 						<p>position:absolute &gt; header, footer, content layout</p>
 						<div>
@@ -2614,7 +2681,7 @@
 					</div>
 
 					<!-- FlipTransform -->
-					<div class="flipbox" data-aos="fade-left" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+					<div class="flipbox" data-aos="fade-left" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 						<div class="panel">
 							<div class="f">
 								<h5>Front Image</h5>
@@ -2638,7 +2705,7 @@
 					</div>
 				</div>
 				
-				<div class="box-column" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+				<div class="box-column" data-aos="fade-right" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 
 					<!-- MetarializeCollapasibleMenu -->
 					<div class="mtrlclpsbmn">
@@ -2764,7 +2831,7 @@
 				</div>
 
 				<!-- ColorSet -->
-				<div class="colorset" data-aos="zoom-out-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+				<div class="colorset" data-aos="zoom-out-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 					<ul class="textcr">
 						<li class="txtred">Red</li>
 						<li class="txtorange">Orange</li>
@@ -2808,7 +2875,7 @@
 				</div>
 
 				<!-- ClipPath : https://www.cssportal.com/css-clip-path-generator/ -->
-				<div class="cppt flxlayout" data-aos="zoom-out-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+				<div class="cppt flxlayout" data-aos="zoom-out-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 					<ul>
 						<li class="sw1"><span><img src="TypeBB/images/sampleA1.jpg" /></span></li>
 						<li class="sw2"><span><img src="TypeBB/images/sampleA2.jpg" /></span></li>
@@ -2824,7 +2891,7 @@
 				</div>
 
 				<!-- BoxShadowStyle -->
-				<div class="bsws flxlayout" data-aos="zoom-out-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+				<div class="bsws flxlayout" data-aos="zoom-out-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 					<ul>
 						<li class="sw1"><span class="waves-effect waves-teal">Shadow All</span></li>
 						<li class="sw2"><span class="waves-effect waves-teal">Shadow LRB</span></li>
@@ -2840,7 +2907,7 @@
 				</div>
 
 				<!-- BorderStyleButton -->
-				<div class="bdstbt flxlayout" data-aos="zoom-out-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+				<div class="bdstbt flxlayout" data-aos="zoom-out-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 					<ul>
 						<li class="sw1"><span><i>Button</i></span></li>
 						<li class="sw2"><span><i>Button</i></span></li>
@@ -2855,7 +2922,7 @@
 					</ul>
 				</div>
 
-				<div class="cbxs flxlayout" data-aos="zoom-out-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="500">
+				<div class="cbxs flxlayout" data-aos="zoom-out-up" data-aos-duration="600" data-aos-offset="100" data-aos-delay="200">
 					<ul>
 						<!-- CheckBoxStyleA -->
 						<li class="cb1">
