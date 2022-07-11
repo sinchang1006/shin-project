@@ -313,66 +313,6 @@
 
 			<div class="container" id="container">
 
-				<!-- Search Box Nomal -->
-				<div class="scbxnm">
-					<div class="search-input">
-						<input class="iptxt" type="text" placeholder="Search Ex.y*****" />
-						<ul class="autocom-box">
-							<li><span>Search Text Type A</span></li>
-							<li><span>Search Text Type B</span></li>
-							<li><span>Search Text Type C</span></li>
-							<li><span>Search Text Type D</span></li>
-							<li><span>Search Text Type E</span></li>
-						</ul>
-						<button class="icon"><ion-icon name="search-outline"></ion-icon></button>
-					</div>
-					<script>
-						const searchWrapper = document.querySelector(".search-input");
-						const inputBox = searchWrapper.querySelector(".iptxt");
-						const suggBox = searchWrapper.querySelector(".autocom-box");
-	
-						inputBox.onkeyup = (e)=>{
-							let userData = e.target.value;
-							let emptyArray = [];
-							if(userData){
-								emptyArray = suggestions.filter((data)=>{
-									return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
-								});
-								emptyArray = emptyArray.map((data)=>{
-									return data = '<li><span>'+ data +'</span></li>';
-								});
-								console.log(emptyArray);
-								searchWrapper.classList.add("active");
-								showSuggestions(emptyArray);
-								let allList = suggBox.querySelectorAll("li");
-								for (let i = 0; i < allList.length; i++){
-									allList[i].setAttribute("onclick", "select(this)");
-								}
-							} else {
-								searchWrapper.classList.remove("active");
-							}
-						}
-	
-						function select(element){
-							let selectUserData = element.textContent;
-							inputBox.value = selectUserData;
-							searchWrapper.classList.remove("active");
-						}
-	
-						function showSuggestions(list){
-							let listData;
-							if(!list.length){
-								userValue = inputBox.value;
-								listData = '<li><span>'+userValue+'</span></li>';
-							} else {
-								listData = list.join('');
-							}
-							suggBox.innerHTML = listData;
-						}
-					</script>
-					<script src="TypeBB/Common/js/suggerstions.js"></script>
-				</div>
-
 				<!-- ScrollOpacity -->
 				<div class="scot">
 					<div id="prbn">
@@ -406,17 +346,12 @@
 						});
 					</script>
 				</div>
-				
-				<!-- Receipt Top Bottom Background Style -->
-				<div class="rctbbs">
-					<div class="receiptbox">
-						<div>Receipt Paper Css3 Only</div>
-					</div>
-				</div>
 
 				<div class="box-column">
 					<!-- selector Box -->
 					<div class="sltbx" id="studya">
+						<h5>Configure tags other than the select tag</h5>
+						<p>Div + UL LI + javascript</p>
 						<div class="dropdown">
 							<div class="select" tabindex="0">
 								<div class="selected"><span>Select Box Design Program</span></div>
@@ -467,6 +402,8 @@
 					<div class="cttopcl" id="studyb">
 						<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 						<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+						<h5>Basic card profile</h5>
+						<p>Provided in a layout that can be configured in various forms</p>
 						<div class="card">
 							<div class="profile"><span><img src="TypeBB/images/profile_a.jpg" /></span>User Profile Card, Arrow Click</div>
 							<ul>
@@ -537,7 +474,7 @@
 					$(function(){
 						$(window).scroll(function(){
 							//Header
-							if($(window).scrollTop()>= 900){
+							if($(window).scrollTop()>= 990){
 								$('#stickyline').addClass('fixed');
 							}
 							else {
@@ -1061,42 +998,42 @@
 						<div class="swiper-pagination"></div>
 						<div class="next"><ion-icon name="chevron-forward-outline"></ion-icon></div>
 						<div class="prev"><ion-icon name="chevron-back-outline"></ion-icon></div>
-					</div>
-					<script>
-						// motionslide
-						let swiperMotion = new Swiper(".motionslide", {
-							slidesPerView :'auto', 
-							spaceBetween:0,
-							// slidesPerGroup: 2,
-							loop: true,
-							initialSlide: 0,
-							loopFillGroupWithBlank: true,
-							grabCursor: true,
-							autoplayDisableOnInteraction:true,
-							touchRatio: 0.1,
-							autoplay: {
-								delay:4000,
-								disableOnInteraction:false,
-							},
-							navigation: {
-								nextEl: '.next',
-								prevEl: '.prev',
-							},
-							pagination: {
-								el: ".motionslide .swiper-pagination",
-								// clickable: true,
-								type: "fraction",
-								renderBullet: function (index, className){
-									return '<li class="' + className + '">' + "<span>" + (index + 1) + "</span>" + "</li>";
+						<script>
+							// motionslide
+							let swiperMotion = new Swiper(".motionslide", {
+								slidesPerView :'auto', 
+								spaceBetween:0,
+								// slidesPerGroup: 2,
+								loop: true,
+								initialSlide: 0,
+								loopFillGroupWithBlank: true,
+								grabCursor: true,
+								autoplayDisableOnInteraction:true,
+								touchRatio: 0.1,
+								autoplay: {
+									delay:4000,
+									disableOnInteraction:false,
 								},
-							},
-						});
-						$(".motionslide").hover(function () {
-							(this).swiper.autoplay.stop();
-						}, function () {
-							(this).swiper.autoplay.start();
-						});
-					</script>
+								navigation: {
+									nextEl: '.next',
+									prevEl: '.prev',
+								},
+								pagination: {
+									el: ".motionslide .swiper-pagination",
+									// clickable: true,
+									type: "fraction",
+									renderBullet: function (index, className){
+										return '<li class="' + className + '">' + "<span>" + (index + 1) + "</span>" + "</li>";
+									},
+								},
+							});
+							$(".motionslide").hover(function () {
+								(this).swiper.autoplay.stop();
+							}, function () {
+								(this).swiper.autoplay.start();
+							});
+						</script>
+					</div>
 
 					<!-- Shape Background bulr -->
 					<div class="shapebg">
@@ -1195,6 +1132,73 @@
 							})
 						</script>
 					</div>
+				</div>
+
+				<!-- Receipt Top Bottom Background Style -->
+				<div class="rctbbs">
+					<div class="receiptbox">
+						<div>Receipt Paper Css3 Only</div>
+					</div>
+				</div>
+
+				<!-- Search Box Nomal -->
+				<div class="scbxnm">
+					<div class="search-input">
+						<input class="iptxt" type="text" placeholder="Search Ex.y*****" />
+						<ul class="autocom-box">
+							<li><span>Search Text Type A</span></li>
+							<li><span>Search Text Type B</span></li>
+							<li><span>Search Text Type C</span></li>
+							<li><span>Search Text Type D</span></li>
+							<li><span>Search Text Type E</span></li>
+						</ul>
+						<button class="icon"><ion-icon name="search-outline"></ion-icon></button>
+					</div>
+					<script>
+						const searchWrapper = document.querySelector(".search-input");
+						const inputBox = searchWrapper.querySelector(".iptxt");
+						const suggBox = searchWrapper.querySelector(".autocom-box");
+	
+						inputBox.onkeyup = (e)=>{
+							let userData = e.target.value;
+							let emptyArray = [];
+							if(userData){
+								emptyArray = suggestions.filter((data)=>{
+									return data.toLocaleLowerCase().startsWith(userData.toLocaleLowerCase());
+								});
+								emptyArray = emptyArray.map((data)=>{
+									return data = '<li><span>'+ data +'</span></li>';
+								});
+								console.log(emptyArray);
+								searchWrapper.classList.add("active");
+								showSuggestions(emptyArray);
+								let allList = suggBox.querySelectorAll("li");
+								for (let i = 0; i < allList.length; i++){
+									allList[i].setAttribute("onclick", "select(this)");
+								}
+							} else {
+								searchWrapper.classList.remove("active");
+							}
+						}
+	
+						function select(element){
+							let selectUserData = element.textContent;
+							inputBox.value = selectUserData;
+							searchWrapper.classList.remove("active");
+						}
+	
+						function showSuggestions(list){
+							let listData;
+							if(!list.length){
+								userValue = inputBox.value;
+								listData = '<li><span>'+userValue+'</span></li>';
+							} else {
+								listData = list.join('');
+							}
+							suggBox.innerHTML = listData;
+						}
+					</script>
+					<script src="TypeBB/Common/js/suggerstions.js"></script>
 				</div>
 
 				<div class="box-column">
@@ -1336,6 +1340,11 @@
 						</script>
 					</div>
 
+				</div>
+
+				<!-- Video -->
+				<div style="height:400px;padding:0">
+					<iframe width="100%" height="400px" src="https://www.youtube.com/embed/aXgoJs7_HDY?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 
 				<div class="box-column twothree">
@@ -2661,6 +2670,76 @@
 						</ul>
 					</div>
 
+				</div>
+
+				<div class="box-column">
+					<div class="bdanimation">
+						<style>
+							.bdanimation{background-color:#eee}
+							.loader {position: relative;width: 8vw;height: 8vw;border-width: 4px;border-style: solid;border-color: #000 #ccc #ccc;animation: 1500ms linear infinite rotate;}
+							.loader:before, .loader:after {content: "";position: absolute;width: 1rem;height: 1rem;}
+							.loader.round {border-radius: 50%;}
+							/* .loader.single:hover {animation: 1500ms linear infinite rotate;} hover play */
+							@keyframes rotate {
+								0% {tranform: rotate(0);}
+								100% {transform: rotate(-360deg);}}
+						</style>
+						<div class="loader single round"></div>
+
+						<style>
+							.loader-icon {
+  position: relative;
+    width: 100px;
+  height: 100px;
+  padding: 10px;
+  font-family: sans-serif;
+  font-size: 10px;
+  text-align: center;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.loader-icon::before,
+.loader-icon::after {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loader-icon::before {
+  width: 140%;
+  height: 140%;
+  background-image: linear-gradient(0deg, currentColor, transparent 75%);
+  animation: loader-gradient-border-rotate 2500ms infinite linear;
+  opacity: 1;
+}
+
+.loader-icon::after {
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  background-color: #eee;
+  border-radius:8px;
+}
+.loader-icon span{position:relative;z-index:2}
+
+@keyframes loader-gradient-border-rotate {
+  from {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+						</style>
+						<div class="loader-icon">
+							<span>LOADING</span>
+						  </div>
+					</div>
+					<div>3</div>
 				</div>
 
 				<div class="box-column">
